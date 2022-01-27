@@ -12,5 +12,23 @@
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bravo68web/url-minify.git"
+  },
+  "keywords": [
+    "url-minify",
+    "short-link",
+    "generator",
+    "nextjs",
+    "frontend",
+    "api",
+    "rest"
+  ],
+  "author": "BRAVO68WEB",
+  "bugs": {
+    "url": "https://github.com/bravo68web/url-minify/issues"
+  },
+  "homepage": "https://github.com/bravo68web/url-minify#readme"
 }
