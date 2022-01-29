@@ -10,7 +10,7 @@
 
 <br />
 
-<img src="assets/logo/url-minify.jpg" />
+<img src="frontend/assets/logo/url-minify.jpg" />
 
 <br />
 
