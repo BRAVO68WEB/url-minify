@@ -18,6 +18,7 @@ app.use(
     // TODO change the secret before deployment secret need to be proper key for now we put some random text
     saveUninitialized: false,
     resave: false,
+    secret: process.env.SECRET,
     cookie: {
       maxAge: 1000 * 60 * 30,
     },
