@@ -45,10 +45,10 @@ You will see the benefits of adding remote later.
 ***
 Open Source projects have a number of contributors who can push code anytime. So it is necessary to make your forked copy equal with the original repository. The remote added above called Upstream helps in this.
 
-```$ git checkout master```
+```$ git checkout main```
 ```$ git fetch upstream```
-```$ git merge upstream/master```
-```$ git push origin master```
+```$ git merge upstream/main```
+```$ git push origin main```
 The last command pushes the latest code to your forked repository on Github. The origin is the remote pointing to your forked repository on github.
 
 ### CREATE A NEW BRANCH FOR A FEATURE OR BUGFIX -
@@ -66,7 +66,7 @@ The first command adds all the files or you can add specific files by removing -
 It can happen that your feature takes time to complete and other contributors are constantly pushing code. After completing the feature your feature branch should be rebase on latest changes to upstream master branch.
 
 ```$ git checkout <feature-branch>```
-```$ git pull --rebase upstream master```
+```$ git pull --rebase upstream main```
 Now you get the latest commits from other contributors and check that your commits are compatible with the new commits. If there are any conflicts solve them.
 
 ### SQUASHING YOUR COMMITS-
