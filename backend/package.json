@@ -1,43 +1,45 @@
 {
-  "name": "url-minify-api",
-  "version": "1.0.0",
-  "description": "URL Minify Backend",
-  "main": "index.js",
-  "scripts": {
-    "dev": "nodemon index.js",
-    "start": "node index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/bravo68web/url-minify.git"
-  },
-  "keywords": [
-    "express",
-    "api",
-    "url",
-    "rest"
-  ],
-  "author": "BRAVO68WEB",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/bravo68web/url-minify/issues"
-  },
-  "homepage": "https://github.com/bravo68web/url-minify#readme",
-  "dependencies": {
-    "axios": "^0.25.0",
-    "body-parser": "^1.19.1",
-    "chalk": "^5.0.0",
-    "connect-mongo": "^4.6.0",
-    "cors": "^2.8.5",
-    "dotenv": "^14.3.2",
-    "express": "^4.17.2",
-    "express-session": "^1.17.2",
-    "helmet": "^5.0.2",
-    "mongoose": "^6.1.8",
-    "morgan": "^1.10.0",
-    "nanoid": "^3.2.0"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.15"
-  }
+   "name": "url-minify-api",
+   "version": "1.0.0",
+   "description": "URL Minify Backend",
+   "main": "index.js",
+   "scripts": {
+      "dev": "nodemon index.js",
+      "start": "node index.js",
+      "prettier": "prettier --write ."
+   },
+   "repository": {
+      "type": "git",
+      "url": "git+https://github.com/bravo68web/url-minify.git"
+   },
+   "keywords": [
+      "express",
+      "api",
+      "url",
+      "rest"
+   ],
+   "author": "BRAVO68WEB",
+   "license": "MIT",
+   "bugs": {
+      "url": "https://github.com/bravo68web/url-minify/issues"
+   },
+   "homepage": "https://github.com/bravo68web/url-minify#readme",
+   "dependencies": {
+      "axios": "^0.25.0",
+      "body-parser": "^1.19.1",
+      "chalk": "^5.0.0",
+      "connect-mongo": "^4.6.0",
+      "cors": "^2.8.5",
+      "dotenv": "^14.3.2",
+      "express": "^4.17.2",
+      "express-session": "^1.17.2",
+      "helmet": "^5.0.2",
+      "mongoose": "^6.1.8",
+      "morgan": "^1.10.0",
+      "nanoid": "^3.2.0"
+   },
+   "devDependencies": {
+      "nodemon": "^2.0.15",
+      "prettier": "2.5.1"
+   }
 }
