@@ -11,6 +11,7 @@ const minifiedUrlSchema = new Schema(
       alias: {
          type: String,
          required: true,
+         unique: true,
       },
       minifiedUrl: {
          type: String,
