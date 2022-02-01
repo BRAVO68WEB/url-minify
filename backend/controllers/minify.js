@@ -12,3 +12,14 @@ module.exports.getURLData = async (req, res) => {
       res.sendStatus(500)
    }
 }
+
+module.exports.addURL = async (req, res) => {
+   Minfy.create(req.body)
+   .then((data)=>{
+       res.send(data)
+   })
+   .catch((err)=>{
+       console.error(err)
+       res.sendStaus(500)
+   })
+}
