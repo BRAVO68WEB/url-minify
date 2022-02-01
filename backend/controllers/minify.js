@@ -14,6 +14,7 @@ module.exports.getURLData = async (req, res) => {
 }
 
 module.exports.addURL = async (req, res) => {
+   req.body.minifiedUrl = base_url + req.body.alias
    Minfy.create(req.body)
    .then((data)=>{
        res.send(data)
