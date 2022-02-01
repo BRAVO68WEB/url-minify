@@ -1,6 +1,17 @@
 const Minfy = require("../models/minifed_urls")
 const base_url = 'https://minfy.xyz/'
 
+module.exports.getAllData = async (req, res) => {
+   Minfy.find()
+   .then((data)=>{
+      res.send(data)
+  })
+  .catch((err)=>{
+      console.error(err)
+      res.sendStaus(500)
+  })
+}
+
 module.exports.getURLData = async (req, res) => {
    try {
       const {
@@ -30,14 +41,14 @@ module.exports.findUrlById = async (req, res) => {
 
 module.exports.addURL = async (req, res) => {
    req.body.minifiedUrl = base_url + req.body.alias
-   Minfy.create(req.body).select("-__v")
-      .then((data) => {
-         res.send(data)
-      })
-      .catch((err) => {
-         console.error(err)
-         res.sendStatus(500)
-      })
+   Minfy.create(req.body)
+   .then((data)=>{
+       res.send(data)
+   })
+   .catch((err)=>{
+       console.error(err)
+       res.sendStatus(500)
+   })
 }
 
 module.exports.deleteUrlData = async (req, res) => {
