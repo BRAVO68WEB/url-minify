@@ -21,7 +21,7 @@ module.exports.addURL = async (req, res) => {
    })
    .catch((err)=>{
        console.error(err)
-       res.sendStaus(500)
+       res.sendStatus(500)
    })
 }
 
@@ -32,6 +32,20 @@ module.exports.deleteUrlData = async (req,res) =>{
    })
    .catch((err)=>{
       console.error(err)
-      res.sendStaus(500)
+      res.sendStatus(500)
+  })
+}
+
+module.exports.updateUrlData = async (req,res) =>{
+   //find a data object with url's id and update the alias 
+   Minfy.findByIdAndUpdate(req.params.id, {'alias': req.body.alias})
+   .then((data)=>{
+      //send back the updated data object
+      res.send(data);
+   })
+   .catch((err)=>{
+      //found error
+      console.error(err)
+      res.sendStatus(500)
   })
 }
