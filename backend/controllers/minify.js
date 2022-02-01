@@ -8,7 +8,7 @@ module.exports.getAllData = async (req, res) => {
   })
   .catch((err)=>{
       console.error(err)
-      res.sendStaus(500)
+      res.sendStatus(500)
   })
 }
 
