@@ -2,6 +2,7 @@ import React from 'react';
 import {Avatar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Tooltip, Typography} from "@mui/material";
 import MenuIcon from '@mui/icons-material/Menu';
 import NavbarStyle from "./Navbar.style";
+import Logo from './Logo';
 
 const pages = ['Products', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -28,17 +29,10 @@ function Index(props) {
     return (
         <NavbarStyle position="fixed">
             <Container maxWidth="xl">
-                <Toolbar disableGutters>
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="div"
-                        sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
-                    >
-                        LOGO
-                    </Typography>
-
+                <Toolbar disableGutters="false">
+                    <Logo/>
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                        
                         <IconButton
                             size="large"
                             aria-label="account of current user"
@@ -74,14 +68,7 @@ function Index(props) {
                             ))}
                         </Menu>
                     </Box>
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="div"
-                        sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
-                    >
-                        LOGO
-                    </Typography>
+                    
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
                             <Button
