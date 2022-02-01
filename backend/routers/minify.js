@@ -9,6 +9,8 @@ router.get("/alias/:alias", controller.getURLData)
 
 router.post("/add",controller.addURL)
 
+router.get("/id/:id", controller.findUrlById)
+
 router.delete('/delete/:id',controller.deleteUrlData)
 
 router.patch('/edit/:id', controller.updateUrlData)
