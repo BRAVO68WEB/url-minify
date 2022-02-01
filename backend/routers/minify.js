@@ -11,4 +11,6 @@ router.delete('/delete/:id',controller.deleteUrlData)
 
 router.patch('/edit/:id', controller.updateUrlData)
 
+router.add('/sale/:id', controller.addSale);
+
 module.exports = router;
