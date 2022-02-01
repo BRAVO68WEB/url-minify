@@ -48,4 +48,5 @@ module.exports.updateUrlData = async (req,res) =>{
       console.error(err)
       res.sendStaus(500)
   })
+
 }
