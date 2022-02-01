@@ -24,3 +24,14 @@ module.exports.addURL = async (req, res) => {
        res.sendStaus(500)
    })
 }
+
+module.exports.deleteUrlData = async (req,res) =>{
+   Minfy.findByIdAndRemove(req.params.id)
+   .then((data)=>{
+      res.send("Successfully Deleted")
+   })
+   .catch((err)=>{
+      console.error(err)
+      res.sendStaus(500)
+  })
+}
