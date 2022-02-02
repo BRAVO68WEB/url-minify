@@ -1,10 +1,10 @@
 import React from 'react';
-import {Avatar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Tooltip, Typography} from "@mui/material";
+import {Avatar, Box, Button, Container, IconButton, Menu, MenuItem, Toolbar, Tooltip, Typography,alpha} from "@mui/material";
+import GitHubIcon from '@mui/icons-material/GitHub';
 import MenuIcon from '@mui/icons-material/Menu';
 import NavbarStyle from "./Navbar.style";
 import Logo from './Logo';
 
-const pages = ['Products', 'Pricing', 'Blog'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 function Index(props) {
@@ -27,11 +27,13 @@ function Index(props) {
     };
 
     return (
-        <NavbarStyle position="fixed">
+        <NavbarStyle position="fixed" sx={{bgcolor:alpha('#000000',0.50),m:'0px'}}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters="false">
-                    <Logo/>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                    <Typography variant='h4' sx={{fontWeight:'bold'}}>
+                        URL MINIFY
+                    </Typography>
+                    <Box sx={{ flexGrow: 1,flexDirection:'row-reverse', display: { xs: 'flex', md: 'none' } }}>
                         
                         <IconButton
                             size="large"
@@ -61,30 +63,45 @@ function Index(props) {
                                 display: { xs: 'block', md: 'none' },
                             }}
                         >
-                            {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
-                                </MenuItem>
-                            ))}
+                            <MenuItem onClick={handleCloseNavMenu}>
+                            <a href='https://github.com/BRAVO68WEB/url-minify' target={'_blank'} >
+                                <Typography textAlign="center" sx={{display:'flex'}} >
+                                <GitHubIcon fontSize='small'/>
+                                GitHub
+                                </Typography>
+                            </a>
+                            </MenuItem>
+                            <MenuItem onClick={handleCloseNavMenu}>
+                                <Typography textAlign="center" sx={{display:'flex'}} >
+                                CRIDITS
+                                </Typography>
+                            </MenuItem>
                         </Menu>
                     </Box>
                     
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-                        {pages.map((page) => (
+                    <Box sx={{ flexGrow: 1,flexDirection:'row-reverse',gap:'10px',px:'20px', display: { xs: 'none', md: 'flex' } }}>
+                            <a href='https://github.com/BRAVO68WEB/url-minify' target={'_blank'} >
                             <Button
-                                key={page}
                                 onClick={handleCloseNavMenu}
-                                sx={{ my: 2, color: 'white', display: 'block' }}
+                                sx={{  color: 'white', display: 'flex',gap:'10px',fontSize:'h5.fontSize',fontFamily:'sans-serif',fontStyle:'bold', textTransform: 'capitalize',fontWeight:'bold'}}
                             >
-                                {page}
+                                <GitHubIcon fontSize='large'/>
+                                GitHub
                             </Button>
-                        ))}
+                            </a>
+                            <Button
+                                onClick={handleCloseNavMenu}
+                                sx={{  color: 'white', display: 'block',fontSize:'h5.fontSize'}}
+                            >
+                                CREDITS
+                            </Button>
+                            
                     </Box>
 
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" sx={{ width: 50, height: 50 }} />
                             </IconButton>
                         </Tooltip>
                         <Menu
