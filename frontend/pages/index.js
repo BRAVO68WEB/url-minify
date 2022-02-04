@@ -2,7 +2,7 @@ import { useState } from 'react'
 import Head from 'next/head'
 import HomeSection from "components/HomeSection/homeSection"
 import NavBar from "components/NavBar";
-
+import Features from 'components/Features'
 
 
 export default function Home() {
@@ -18,6 +18,7 @@ export default function Home() {
          <main className={""}>
              <NavBar />
              <HomeSection />
+             <Features/>
          </main>
       </div>
    )
