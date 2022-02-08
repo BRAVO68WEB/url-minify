@@ -27,7 +27,7 @@ function Index(props) {
     };
 
     return (
-        <NavbarStyle position="fixed" sx={{bgcolor:alpha('#000000',0.50),m:'0px'}}>
+        <NavbarStyle position="relative" sx={{bgcolor:alpha('#000000',0.50),m:'0px'}}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters="false">
                     <Typography variant='h4' sx={{fontWeight:'bold'}}>

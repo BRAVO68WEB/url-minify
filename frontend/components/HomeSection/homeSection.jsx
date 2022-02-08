@@ -2,6 +2,7 @@ import { borderRadius, padding } from '@mui/system';
 import React from 'react';
 import { render } from 'react-dom';
 import HomeSectionStyle from "./HomeSection.style";
+import Link from 'next/link';
 
 
 const head={
@@ -48,9 +49,9 @@ function HomeSection(props) {
           <button style={btn} id="minify">MINIFY</button>
         </div>
         <div>
-            <h3>Need more advanced features? | <a href="">Create an account</a></h3>
+            <h3>Need more advanced features? | <Link href="/signup">Create an account</Link></h3>
         </div>
-       </div>
+        </div>
         </HomeSectionStyle>
     );
 }
