@@ -23,5 +23,12 @@ section{
    width:100vw;
    min-height:100vh;
 }
-
+.flex-column{
+   display: flex;
+   flex-direction: column;
+   background-image: url("./../assets/bg/main-bg.png");
+}
+.main-bg{
+   background-image: url("./../assets/bg/main-bg.png");
+}
 

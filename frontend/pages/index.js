@@ -16,7 +16,7 @@ export default function Home() {
             <Loginform />
          </Head>
 
-         <main className={""}>
+         <main className={"main-bg"}>
              <NavBar />
              <HomeSection />
              <Features/>
