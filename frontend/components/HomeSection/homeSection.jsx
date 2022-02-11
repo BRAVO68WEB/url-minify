@@ -3,7 +3,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import HomeSectionStyle from "./HomeSection.style";
 import Link from 'next/link';
-
+import { nanoid } from 'nanoid'
 
 const head={
     fontSize:'5rem',
@@ -36,7 +36,27 @@ const searchBox={
 };
 function HomeSection(props) {
     
-    
+    const setMinfy = async () => {
+        // generate a new alias and send to store in db
+        const res = await fetch('localhost:5000/minify/add', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                longUrl: props.longUrl,
+                alias: nanoid()
+            })
+        });
+        if (res===null) {
+            console.log("error"); 
+            return;
+        }
+
+        const data = await res.json();
+        props.setShortUrl(data.minifiedUrl)
+        navigator.clipboard.write(props.shortUrl)
+    }
     return (
         <HomeSectionStyle>
             <div className="content">
@@ -45,8 +65,8 @@ function HomeSection(props) {
                 </h1>
     
         <div style={searchBox}>
-           <input style={box}placeholder="Enter the url to be minified......"/>
-          <button style={btn} id="minify">MINIFY</button>
+           <input style={box} placeholder="Enter the url to be minified......" value={props.longUrl} onChange={ (e) => {props.setLongUrl(e.target.value)}}/>
+          <button style={btn} id="minify" onClick={setMinfy}>MINIFY</button>
         </div>
         <div>
             <h3>Need more advanced features? | <Link href="/signup">Create an account</Link></h3>
