@@ -7,7 +7,7 @@ import Features from 'components/Features'
 
 export default function Home() {
    const [shortUrl, setShortUrl] = useState(null)
-   const [longURL, setLongURL] = useState('')
+   const [longUrl, setLongUrl] = useState('')
    return (
       <div className={""}>
          <Head>
@@ -17,7 +17,7 @@ export default function Home() {
 
          <main className={"main-bg"}>
              <NavBar />
-             <HomeSection />
+             <HomeSection shortUrl={shortUrl} setShortUrl={setShortUrl} longUrl={longUrl} setLongUrl={setLongUrl}/>
              <Features/>
          </main>
       </div>
