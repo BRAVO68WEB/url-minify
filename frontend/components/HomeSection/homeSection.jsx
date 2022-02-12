@@ -37,7 +37,7 @@ const searchBox = {
 function HomeSection(props) {
 
     const setMinfy = async () => {
-        const res = await fetch('localhost:5000/minify/add', {
+        const res = await fetch('http://localhost:5000/minify/add', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -45,8 +45,8 @@ function HomeSection(props) {
 
             },
             body: JSON.stringify({
-                alias: nanoid(),
-                longUrl: props.longUrl
+                alias: nanoid(5),
+                originalUrl: props.longUrl
             }),
         });
 
