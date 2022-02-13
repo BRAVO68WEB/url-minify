@@ -1,106 +1,106 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;700&display=swap");
 
-.reg-label{
-    font-size: 24px;
-    width: 30px;
-    color: #9134bd;
-    position: relative;
+.reg-label {
+  font-size: 24px;
+  width: 30px;
+  color: #9134bd;
+  position: relative;
 }
-.reg-title{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    font-size: 36px;
-    text-align: center;
-    margin-bottom: 40px;
-    color:#9134bd;
+.reg-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #9134bd;
 }
-.reg-wide-container{
-    width: 100%;
-    text-align: right;
-    color: #9134bd;
-    font-size: 24px;
+.reg-wide-container {
+  width: 100%;
+  text-align: right;
+  color: #9134bd;
+  font-size: 24px;
 }
-.reg-input{
-    margin-left: 10px;
-    height: 35px;
-    width: 340px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    border-radius: 20px;
-    padding: 10px;
-    border: none;
-    justify-content: flex-end;
-    color: #9134bd;
+.reg-input {
+  margin-left: 10px;
+  height: 35px;
+  width: 340px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  border-radius: 20px;
+  padding: 10px;
+  border: none;
+  justify-content: flex-end;
+  color: #9134bd;
 }
-.reg-input:active, .reg-input:focus{
-    outline: none;
+.reg-input:active,
+.reg-input:focus {
+  outline: none;
 }
-.reg-input::placeholder{
-    color: #6babc7;
+.reg-input::placeholder {
+  color: #6babc7;
 }
-.reg-field{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    margin-right: 20px;
+.reg-field {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
 }
-.form-wrapper{
-    background-color: rgba(255,255,255,0.5);
-    padding: 20px 30px 40px 30px;
-    border-radius: 20px;
-    font-size: 24px;
-    text-align: center;
-    backdrop-filter: blur(6px);
-    border-style: solid;
-    border-color: #f1faff;
-    border-width: 1px 0px 0px 1px;
-    margin-top: 0;
+.form-wrapper {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 20px 30px 40px 30px;
+  border-radius: 20px;
+  font-size: 24px;
+  text-align: center;
+  backdrop-filter: blur(6px);
+  border-style: solid;
+  border-color: #f1faff;
+  border-width: 1px 0px 0px 1px;
+  margin-top: 0;
 }
-.submit-button{
-
-    width: 100px;
-    height: 40px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    border-radius: 10px;
-    border: none;
-    margin-top: 20px ;    
-    background-image: linear-gradient(135deg ,#cc5fff, #7E3EE4, #0087ca, #2db9ff);
-    background-size: 200%;
-    background-position: left;
-    color: white;
-    transition: 0.5s;
+.submit-button {
+  width: 100px;
+  height: 40px;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  border-radius: 10px;
+  border: none;
+  margin-top: 20px;
+  background-image: linear-gradient(135deg, #cc5fff, #7e3ee4, #0087ca, #2db9ff);
+  background-size: 200%;
+  background-position: left;
+  color: white;
+  transition: 0.5s;
 }
-.submit-button:hover{
-    background-position: right;
+.submit-button:hover {
+  background-position: right;
 }
-.submit-button:active{
-    transform: scale(0.95);
-    transition: 0.1s
-}
-
-.icon{
-    fill: black;
+.submit-button:active {
+  transform: scale(0.95);
+  transition: 0.1s;
 }
 
-.foot-text{
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    margin-top: 50px;
-    color: black;
-    text-decoration: none;
+.icon {
+  fill: black;
 }
 
-.underline{
-    text-decoration: underline;
-    color: #9134bd;
+.foot-text {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  margin-top: 50px;
+  color: black;
+  text-decoration: none;
 }
-.underline:hover{
-    color: #008ed4;
-    transition: 0.5s;
+
+.underline {
+  text-decoration: underline;
+  color: #9134bd;
+}
+.underline:hover {
+  color: #008ed4;
+  transition: 0.5s;
 }

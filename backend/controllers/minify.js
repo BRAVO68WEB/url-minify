@@ -15,12 +15,15 @@ module.exports.getAllData = async (req, res) => {
 
 module.exports.getURLData = async (req, res) => {
    try {
-      const { alias } = req.params
       const data = await Minfy.findOne({
-         alias: alias,
+         alias: req.params.alias,
       })
-      data.minifiedUrl = base_url + data.alias
-      return res.json(data)
+      // data.minifiedUrl = base_url + data.alias
+      if (!data || data == null) {
+         return res.json({ success: false, message: 'No data found' })
+      } else {
+         res.json({ success: true, data })
+      }
    } catch (err) {
       console.error(err)
       res.sendStatus(500)
