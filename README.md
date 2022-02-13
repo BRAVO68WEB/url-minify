@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to url-minify 👋</h1>
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <p>
   <a href="LICENSE" target="_blank">
@@ -75,6 +75,12 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/luxunator"><img src="https://avatars.githubusercontent.com/u/50147562?v=4?s=55" width="55px;" alt=""/><br /><sub><b>luxunator</b></sub></a><br /><a href="https://github.com/BRAVO68WEB/url-minify/commits?author=luxunator" title="Code">💻</a></td>
+  </tr>
+</table>
+
 <!-- markdownlint-restore -->
 <!-- prettier-ignore-end -->
 
