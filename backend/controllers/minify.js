@@ -42,7 +42,7 @@ module.exports.findUrlById = async (req, res) => {
 
 module.exports.addURL = async (req, res) => {
    req.body.alias = nanoid(5);
-   req.body.minifiedUrl = base_url +
+   req.body.minifiedUrl = base_url + alias;
    Minfy.create(req.body)
    .then((data)=>{
        res.json(data)
