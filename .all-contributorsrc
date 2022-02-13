@@ -1,14 +1,25 @@
 {
   "projectName": "url-minify",
-  "projectOwner": "bravo68web",
+  "projectOwner": "BRAVO68WEB",
   "repoType": "github",
-  "repoHost": "https://github.com/BRAVO68WEB/url-minify",
+  "repoHost": "https://github.com",
   "files": [
     "README.md"
   ],
   "imageSize": 55,
   "commit": true,
   "commitConvention": "none",
-  "contributors": [],
-  "contributorsPerLine": 7
+  "contributors": [
+    {
+      "login": "DarkFalc0n",
+      "name": "Pratyay Roy",
+      "avatar_url": "https://avatars.githubusercontent.com/u/59203815?v=4",
+      "profile": "https://github.com/DarkFalc0n",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true
 }
