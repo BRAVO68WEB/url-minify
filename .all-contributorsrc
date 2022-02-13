@@ -1,0 +1,14 @@
+{
+  "projectName": "url-minify",
+  "projectOwner": "bravo68web",
+  "repoType": "github",
+  "repoHost": "https://github.com/BRAVO68WEB/url-minify",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 55,
+  "commit": true,
+  "commitConvention": "none",
+  "contributors": [],
+  "contributorsPerLine": 7
+}

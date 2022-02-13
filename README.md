@@ -1,4 +1,7 @@
 <h1 align="center">Welcome to url-minify 👋</h1>
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 <p>
   <a href="LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
@@ -14,8 +17,7 @@
 
 <br />
 
-> A URL shortener build with Nextjs, ExpressJS, MongoDB 
-
+> A URL shortener build with Nextjs, ExpressJS, MongoDB
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white&color=green)
@@ -38,7 +40,7 @@ cd backend && npm install
 ## Usage
 
 ```sh
-# Running Frondend 
+# Running Frondend
 npm run start
 
 # Running Backend
@@ -49,14 +51,26 @@ npm run start
 
 👤 **BRAVO68WEB**
 
-* Website: https://bravo68web.me
-* Twitter: [@BRAVO68WEB](https://twitter.com/BRAVO68WEB)
-* Github: [@BRAVO68WEB](https://github.com/BRAVO68WEB)
-* LinkedIn: [@BRAVO68WEB](https://linkedin.com/in/BRAVO68WEB)
+- Website: https://bravo68web.me
+- Twitter: [@BRAVO68WEB](https://twitter.com/BRAVO68WEB)
+- Github: [@BRAVO68WEB](https://github.com/BRAVO68WEB)
+- LinkedIn: [@BRAVO68WEB](https://linkedin.com/in/BRAVO68WEB)
 
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/BRAVO68WEB/url-minify/issues). You can also take a look at the [contributing guide](CONTRIBUTING.md).
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## Show your support
 
@@ -66,3 +80,5 @@ Give a ⭐️ if this project helped you!
 
 Copyright © 2022 [BRAVO68WEB](https://github.com/BRAVO68WEB).<br />
 This project is [MIT](LICENSE) licensed.
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
