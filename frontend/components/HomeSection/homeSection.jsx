@@ -1,9 +1,6 @@
-import { borderRadius, padding } from '@mui/system';
 import React from 'react';
-import { render } from 'react-dom';
 import HomeSectionStyle from "./HomeSection.style";
 import Link from 'next/link';
-import { nanoid } from 'nanoid';
 
 const head = {
     fontSize: '5rem',
@@ -37,7 +34,8 @@ const searchBox = {
 function HomeSection(props) {
 
     const setMinfy = async () => {
-        const res = await fetch('http://localhost:5000/minify/add', {
+        var API_URL = 'http://localhost:5000';
+        const res = await fetch(`${API_URL}/minify/add`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -45,7 +43,6 @@ function HomeSection(props) {
 
             },
             body: JSON.stringify({
-                alias: nanoid(5),
                 originalUrl: props.longUrl
             }),
         });

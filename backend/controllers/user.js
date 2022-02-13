@@ -19,6 +19,7 @@ module.exports.register =  async ({ body: { email, password } }, res) => {
         if (!validationError) return res.send(user.generateJWT());
 
     }catch(e){
+        console.log(e)
         return res.sendStatus(500)
     }
 }
@@ -28,9 +29,10 @@ module.exports.login = async ({ body: { email, password } }, res) => {
         let user = await User.findOne({email}).catch((err) => console.error(err));
 
         if (user && user.validatePassword(password))
-            return res.send(user.generateJWT());
+            return res.json({access_token:user.generateJWT()});
         return res.status(401).send(null);
     }catch(err) {
+        console.log(err)
         return res.sendStatus(500)
     }
 }

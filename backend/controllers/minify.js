@@ -1,10 +1,11 @@
 const Minfy = require("../models/minifed_urls")
 const base_url = 'https://minfy.xyz/'
+const nanoid = require("nanoid")
 
 module.exports.getAllData = async (req, res) => {
-   Minfy.find()
+   Minfy.find({})
    .then((data)=>{
-      res.send(data)
+      res.json(data)
   })
   .catch((err)=>{
       console.error(err)
@@ -21,7 +22,7 @@ module.exports.getURLData = async (req, res) => {
          alias: alias
       })
       data.minifiedUrl = base_url + data.alias
-      return res.send(data)
+      return res.json(data)
    } catch (err) {
       console.error(err)
       res.sendStatus(500)
@@ -40,10 +41,11 @@ module.exports.findUrlById = async (req, res) => {
 }
 
 module.exports.addURL = async (req, res) => {
-   req.body.minifiedUrl = base_url + req.body.alias
+   req.body.alias = nanoid(5);
+   req.body.minifiedUrl = base_url +
    Minfy.create(req.body)
    .then((data)=>{
-       res.send(data)
+       res.json(data)
    })
    .catch((err)=>{
        console.error(err)
@@ -75,3 +77,27 @@ module.exports.updateUrlData = async (req,res) =>{
       res.sendStatus(500)
   })
 } 
+
+module.exports.addURLAuthed = async (req, res) => {
+   const {
+      alias,
+      originalUrl
+   } = req.body;
+   var createdBy = req.user.data.email;
+   // console.log(req.user);
+   const minifiedUrl = base_url + alias
+   const data = {
+      alias,
+      originalUrl,
+      minifiedUrl, 
+      createdBy
+   }
+   Minfy.create(data)
+      .then((data) => {
+         res.send(data)
+      })
+      .catch((err) => {
+         console.error(err)
+         res.sendStatus(500)
+      })
+}
