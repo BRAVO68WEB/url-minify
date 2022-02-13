@@ -13,7 +13,7 @@
 
 <br />
 
-<img src="frontend/assets/logo/url-minify.jpg" />
+<img src="https://user-images.githubusercontent.com/41448663/153746139-237f8e4d-be25-4f04-91ec-2bb3ff6f0e34.png" />
 
 <br />
 
@@ -55,6 +55,14 @@ npm run start
 - Twitter: [@BRAVO68WEB](https://twitter.com/BRAVO68WEB)
 - Github: [@BRAVO68WEB](https://github.com/BRAVO68WEB)
 - LinkedIn: [@BRAVO68WEB](https://linkedin.com/in/BRAVO68WEB)
+
+## Participations
+
+### Current
+* JWOC (https://jwoc.tech) <br> <img src="https://jwoc.tech/assets/img/opengraph.png" height=75px/>
+
+### Past
+* None
 
 ## 🤝 Contributing
 
