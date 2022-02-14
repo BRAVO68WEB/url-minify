@@ -17,7 +17,12 @@ import MenuIcon from "@mui/icons-material/Menu";
 import NavbarStyle from "./Navbar.style";
 import Logo from "./Logo";
 
+<<<<<<< HEAD
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
+=======
+
+const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+>>>>>>> bce703d (dashboard feat)
 
 function Index(props) {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -102,6 +107,7 @@ function Index(props) {
             </Menu>
           </Box>
 
+<<<<<<< HEAD
           <Box
             sx={{
               flexGrow: 1,
@@ -180,3 +186,42 @@ function Index(props) {
 }
 
 export default Index;
+=======
+                    <Box sx={{ flexGrow: 0 }}>
+                        <Tooltip title="Open settings">
+                            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" sx={{ width: 50, height: 50 }} />
+                            </IconButton>
+                        </Tooltip>
+                        <Menu
+                            sx={{ mt: '45px' }}
+                            id="menu-appbar"
+                            anchorEl={anchorElUser}
+                            anchorOrigin={{
+                                vertical: 'top',
+                                horizontal: 'right',
+                            }}
+                            keepMounted
+                            transformOrigin={{
+                                vertical: 'top',
+                                horizontal: 'right',
+                            }}
+                            open={Boolean(anchorElUser)}
+                            onClose={handleCloseUserMenu}
+                        >
+                            {settings.map((setting) => (
+                                <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                                    <Typography textAlign="center">{setting}</Typography>
+                                 </MenuItem>
+                            ))}
+                        </Menu>
+                    </Box>
+                </Toolbar>
+            </Container>
+        </NavbarStyle>
+    );
+}
+
+
+export default Index;
+>>>>>>> bce703d (dashboard feat)
