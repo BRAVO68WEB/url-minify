@@ -59,10 +59,12 @@ npm run start
 ## Participations
 
 ### Current
-* JWOC (https://jwoc.tech) <br> <img src="https://jwoc.tech/assets/img/opengraph.png" height=75px/>
+
+- JWOC (https://jwoc.tech) <br> <img src="https://jwoc.tech/assets/img/opengraph.png" height=75px/>
 
 ### Past
-* None
+
+- None
 
 ## 🤝 Contributing
 
@@ -78,6 +80,15 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://github.com/para-docx"><img src="https://avatars.githubusercontent.com/u/72385299?v=4?s=55" width="55px;" alt=""/><br /><sub><b>Dhruv Pruthi</b></sub></a><br /><a href="https://github.com/BRAVO68WEB/url-minify/commits?author=para-docx" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/chirag3003"><img src="https://avatars.githubusercontent.com/u/68195580?v=4?s=55" width="55px;" alt=""/><br /><sub><b>Chirag Bhalotia</b></sub></a><br /><a href="https://github.com/BRAVO68WEB/url-minify/commits?author=chirag3003" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/dakshgupta2002"><img src="https://avatars.githubusercontent.com/u/78641951?v=4?s=55" width="55px;" alt=""/><br /><sub><b>Daksh Gupta</b></sub></a><br /><a href="https://github.com/BRAVO68WEB/url-minify/commits?author=dakshgupta2002" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/logan4473"><img src="https://avatars.githubusercontent.com/u/69055524?v=4?s=55" width="55px;" alt=""/><br /><sub><b>Logna</b></sub></a><br /><a href="https://github.com/BRAVO68WEB/url-minify/commits?author=logan4473" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/DarkFalc0nx"><img src="https://avatars.githubusercontent.com/u/59203815?v=4?s=55" width="55px;" alt=""/><br /><sub><b>Pratyay Roy</b></sub></a><br /><a href="https://github.com/BRAVO68WEB/url-minify/commits?author=DarkFalc0nx" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/luxunator"><img src="https://avatars.githubusercontent.com/u/50147562?v=4?s=55" width="55px;" alt=""/><br /><sub><b>luxunator</b></sub></a><br /><a href="https://github.com/BRAVO68WEB/url-minify/commits?author=luxunator" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/aaheli8"><img src="https://avatars.githubusercontent.com/u/66815283?v=4?s=55" width="55px;" alt=""/><br /><sub><b>Aaheli Sadhukhan</b></sub></a><br /><a href="https://github.com/BRAVO68WEB/url-minify/commits?author=aaheli8" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/XxThunderBlastxX"><img src="https://avatars.githubusercontent.com/u/74706101?v=4?s=55" width="55px;" alt=""/><br /><sub><b>Koustav Mondal</b></sub></a><br /><a href="https://github.com/BRAVO68WEB/url-minify/commits?author=XxThunderBlastxX" title="Code">💻</a></td>
   </tr>
 </table>
 
