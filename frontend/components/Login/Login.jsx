@@ -1,6 +1,6 @@
 import React from 'react'
-import RegStyle from './Reg.style'
-import Image from 'next/image'
+import LoginStyle from './Login.style'
+import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faUser,
@@ -8,15 +8,15 @@ import {
   faLock,
   faClose,
 } from '@fortawesome/free-solid-svg-icons'
+import { UserContext } from '../../helpers/user/usercontext'
 import { useState } from 'react'
-import { Link } from '@mui/material'
+import Link from 'next/link'
+import { useContext } from 'react'
 
-function Reg() {
+function Login() {
   const [userData, setUserData] = useState({
-    username: '',
     email: '',
     password: '',
-    repassword: '',
   })
 
   const handleInput = (event) => {
@@ -26,27 +26,21 @@ function Reg() {
   }
 
   return (
-    <RegStyle>
+    <LoginStyle>
       <form className="form-wrapper">
         <div className="reg-wide-container">
           <FontAwesomeIcon icon={faClose} />
         </div>
 
-        <p className="reg-title">Sign Up</p>
-        <div className="reg-field">
-          <div className="reg-label">
-            <FontAwesomeIcon icon={faUser} />
-          </div>
-          <input
-            className="reg-input"
-            name="username"
-            autoComplete="off"
-            type="text"
-            value={userData.username}
-            onChange={handleInput}
-            placeholder="Full Name"
-          />
-        </div>
+        <p className="reg-title">Sign in</p>
+
+        <img
+          src="/images/user.png"
+          width={100}
+          height={100}
+          style={{ 'margin-bottom': 20 }}
+        ></img>
+
         <div className="reg-field">
           <div className="reg-label">
             <FontAwesomeIcon icon={faEnvelope} />
@@ -75,31 +69,19 @@ function Reg() {
             placeholder="Password"
           />
         </div>
-        <div className="reg-field">
-          <div className="reg-label">
-            <FontAwesomeIcon icon={faLock} />
-          </div>
-          <input
-            className="reg-input"
-            name="repassword"
-            autoComplete="off"
-            onChange={handleInput}
-            type="password"
-            value={userData.repassword}
-            placeholder="Confirm Password"
-          />
-        </div>
-        <button type="submit" className="submit-button">
-          Submit
-        </button>
+        <Link href="/">
+          <button type="submit" className="submit-button">
+            Submit
+          </button>
+        </Link>
         <p className="foot-text">
-          Already registered? Login&nbsp;
-          <Link href="/login" exact className="foot-text underline">
-            here
+          New here?&nbsp;
+          <Link href="/signup" exact className="foot-text underline">
+            Create an account
           </Link>
         </p>
       </form>
-    </RegStyle>
+    </LoginStyle>
   )
 }
-export default Reg
+export default Login

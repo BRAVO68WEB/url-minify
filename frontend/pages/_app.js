@@ -1,9 +1,14 @@
-import "../styles/globals.css";
-import "../styles/logostyles.css";
-import "../components/Reg/styles.css";
+import '../styles/globals.css'
+import '../styles/logostyles.css'
+import '../styles/styles.css'
+import { UserAuthProvider } from '../helpers/user/usercontext'
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+    <UserAuthProvider>
+      <Component {...pageProps} />
+    </UserAuthProvider>
+  )
 }
 
-export default MyApp;
+export default MyApp
