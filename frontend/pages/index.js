@@ -5,7 +5,7 @@ import NavBar from 'components/NavBar'
 import Features from 'components/Features'
 import Reg from 'components/Reg/Reg'
 import Login from 'components/Login/Login'
-import { UserAuthProvider, UserContext } from './user/usercontext'
+import { UserAuthProvider, UserContext } from '../helpers/user/usercontext'
 
 export default function Home() {
   const [shortUrl, setShortUrl] = useState(null)

@@ -1,29 +1,29 @@
-import React from "react";
-import LoginStyle from "./Login.style";
-import AccountCircleIcon from "@mui/icons-material/AccountCircle";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from 'react'
+import LoginStyle from './Login.style'
+import AccountCircleIcon from '@mui/icons-material/AccountCircle'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faUser,
   faEnvelope,
   faLock,
   faClose,
-} from "@fortawesome/free-solid-svg-icons";
-import { UserContext } from "../../pages/user/usercontext";
-import { useState } from "react";
-import Link from "next/link";
-import { useContext } from "react";
+} from '@fortawesome/free-solid-svg-icons'
+import { UserContext } from '../../helpers/user/usercontext'
+import { useState } from 'react'
+import Link from 'next/link'
+import { useContext } from 'react'
 
 function Login() {
   const [userData, setUserData] = useState({
-    email: "",
-    password: "",
-  });
+    email: '',
+    password: '',
+  })
 
   const handleInput = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setUserData({ ...userData, [name]: value });
-  };
+    const name = event.target.name
+    const value = event.target.value
+    setUserData({ ...userData, [name]: value })
+  }
 
   return (
     <LoginStyle>
@@ -38,7 +38,7 @@ function Login() {
           src="/images/user.png"
           width={100}
           height={100}
-          style={{ "margin-bottom": 20 }}
+          style={{ 'margin-bottom': 20 }}
         ></img>
 
         <div className="reg-field">
@@ -82,6 +82,6 @@ function Login() {
         </p>
       </form>
     </LoginStyle>
-  );
+  )
 }
-export default Login;
+export default Login
