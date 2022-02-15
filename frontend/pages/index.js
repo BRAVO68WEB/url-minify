@@ -1,4 +1,4 @@
-import { useState, useMemo } from "react";
+import { useState } from "react";
 import Head from "next/head";
 import HomeSection from "components/HomeSection/homeSection";
 import NavBar from "components/NavBar";
@@ -21,7 +21,12 @@ export default function Home() {
 
       <main className={"main-bg"}>
         <NavBar />
-        <HomeSection />
+        <HomeSection
+          shortUrl={shortUrl}
+          setShortUrl={setShortUrl}
+          longUrl={longUrl}
+          setLongUrl={setLongUrl}
+        />
         <Features />
       </main>
     </>

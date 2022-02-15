@@ -1,4 +1,5 @@
 const express = require('express')
+const cors = require('cors')
 const http = require('http')
 const { urlencoded, json } = require('body-parser')
 const session = require('express-session')
@@ -9,6 +10,7 @@ require('dotenv').config()
 const app = express()
 
 app.use(express.json())
+app.use(cors())
 app.use(json())
 app.use(
    urlencoded({

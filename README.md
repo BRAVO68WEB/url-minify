@@ -1,4 +1,7 @@
 <h1 align="center">Welcome to url-minify 👋</h1>
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+<img src="https://img.shields.io/badge/all_contributors-8-orange.svg?style=flat-square" />
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 <p>
   <a href="LICENSE" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
@@ -10,12 +13,11 @@
 
 <br />
 
-<img src="frontend/assets/logo/url-minify.jpg" />
+<img src="https://user-images.githubusercontent.com/41448663/153746139-237f8e4d-be25-4f04-91ec-2bb3ff6f0e34.png" />
 
 <br />
 
-> A URL shortener build with Nextjs, ExpressJS, MongoDB 
-
+> A URL shortener build with Nextjs, ExpressJS, MongoDB
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white&color=green)
@@ -38,7 +40,7 @@ cd backend && npm install
 ## Usage
 
 ```sh
-# Running Frondend 
+# Running Frondend
 npm run start
 
 # Running Backend
@@ -49,14 +51,51 @@ npm run start
 
 👤 **BRAVO68WEB**
 
-* Website: https://bravo68web.me
-* Twitter: [@BRAVO68WEB](https://twitter.com/BRAVO68WEB)
-* Github: [@BRAVO68WEB](https://github.com/BRAVO68WEB)
-* LinkedIn: [@BRAVO68WEB](https://linkedin.com/in/BRAVO68WEB)
+- Website: https://bravo68web.me
+- Twitter: [@BRAVO68WEB](https://twitter.com/BRAVO68WEB)
+- Github: [@BRAVO68WEB](https://github.com/BRAVO68WEB)
+- LinkedIn: [@BRAVO68WEB](https://linkedin.com/in/BRAVO68WEB)
+
+## Participations
+
+### Current
+
+- JWOC (https://jwoc.tech) <br> <img src="https://jwoc.tech/assets/img/opengraph.png" height=75px/>
+
+### Past
+
+- None
 
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/BRAVO68WEB/url-minify/issues). You can also take a look at the [contributing guide](CONTRIBUTING.md).
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/para-docx"><img src="https://avatars.githubusercontent.com/u/72385299?v=4?s=55" width="55px;" alt=""/><br /><sub><b>Dhruv Pruthi</b></sub></a><br /><a href="https://github.com/BRAVO68WEB/url-minify/commits?author=para-docx" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/chirag3003"><img src="https://avatars.githubusercontent.com/u/68195580?v=4?s=55" width="55px;" alt=""/><br /><sub><b>Chirag Bhalotia</b></sub></a><br /><a href="https://github.com/BRAVO68WEB/url-minify/commits?author=chirag3003" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/dakshgupta2002"><img src="https://avatars.githubusercontent.com/u/78641951?v=4?s=55" width="55px;" alt=""/><br /><sub><b>Daksh Gupta</b></sub></a><br /><a href="https://github.com/BRAVO68WEB/url-minify/commits?author=dakshgupta2002" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/logan4473"><img src="https://avatars.githubusercontent.com/u/69055524?v=4?s=55" width="55px;" alt=""/><br /><sub><b>Logna</b></sub></a><br /><a href="https://github.com/BRAVO68WEB/url-minify/commits?author=logan4473" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/DarkFalc0nx"><img src="https://avatars.githubusercontent.com/u/59203815?v=4?s=55" width="55px;" alt=""/><br /><sub><b>Pratyay Roy</b></sub></a><br /><a href="https://github.com/BRAVO68WEB/url-minify/commits?author=DarkFalc0nx" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/luxunator"><img src="https://avatars.githubusercontent.com/u/50147562?v=4?s=55" width="55px;" alt=""/><br /><sub><b>luxunator</b></sub></a><br /><a href="https://github.com/BRAVO68WEB/url-minify/commits?author=luxunator" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/aaheli8"><img src="https://avatars.githubusercontent.com/u/66815283?v=4?s=55" width="55px;" alt=""/><br /><sub><b>Aaheli Sadhukhan</b></sub></a><br /><a href="https://github.com/BRAVO68WEB/url-minify/commits?author=aaheli8" title="Code">💻</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/XxThunderBlastxX"><img src="https://avatars.githubusercontent.com/u/74706101?v=4?s=55" width="55px;" alt=""/><br /><sub><b>Koustav Mondal</b></sub></a><br /><a href="https://github.com/BRAVO68WEB/url-minify/commits?author=XxThunderBlastxX" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ## Show your support
 
@@ -66,3 +105,5 @@ Give a ⭐️ if this project helped you!
 
 Copyright © 2022 [BRAVO68WEB](https://github.com/BRAVO68WEB).<br />
 This project is [MIT](LICENSE) licensed.
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

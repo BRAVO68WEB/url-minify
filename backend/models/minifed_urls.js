@@ -20,6 +20,10 @@ const minifiedUrlSchema = new Schema(
       views: {
          type: Number,
       },
+      createdBy: {
+         type: String,
+         default: 'Anonymous',
+      },
    },
    { timestamp: true }
 )
