@@ -3,7 +3,7 @@ import Head from "next/head";
 import NavBar from "../../components/NavBar";
 import Dashboard from "components/Dashboard/Dashboard"
 
-function Index(props) {
+function Index() {
     return (
         <div className={""}>
             <Head>

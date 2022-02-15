@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import Head from "next/head";
 import HomeSection from "components/HomeSection/homeSection";
 import NavBar from "components/NavBar";
