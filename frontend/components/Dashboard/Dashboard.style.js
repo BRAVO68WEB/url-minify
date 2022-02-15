@@ -4,7 +4,7 @@ export default styled.div`
   .sidebar{
     float: left;
     width: 20%;
-    height: 600px;
+    height: 100vh;
   }
   .nav-item {
     margin: 2.5rem;
@@ -23,7 +23,7 @@ export default styled.div`
 
   .column {
     flex: 30%;
-    height: 200px;
+    height: 250px;
   }
   .list2{
     margin-bottom: 10px;

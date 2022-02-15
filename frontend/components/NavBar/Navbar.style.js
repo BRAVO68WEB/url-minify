@@ -1,4 +1,4 @@
-import styled from "styled-components"
-import {AppBar} from "@mui/material";
+import styled from "styled-components";
+import { AppBar } from "@mui/material";
 
-export default styled(AppBar)``
+export default styled(AppBar)``;

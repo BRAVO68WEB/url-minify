@@ -23,7 +23,7 @@ const minifiedUrlSchema = new Schema(
       createdBy: {
          type: String,
          default: 'Anonymous',
-      }
+      },
    },
    { timestamp: true }
 )

@@ -1,0 +1,88 @@
+{
+  "projectName": "url-minify",
+  "projectOwner": "BRAVO68WEB",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 55,
+  "commit": true,
+  "commitConvention": "none",
+  "contributors": [
+    {
+      "login": "para-docx",
+      "name": "Dhruv Pruthi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/72385299?v=4",
+      "profile": "https://github.com/para-docx",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "chirag3003",
+      "name": "Chirag Bhalotia",
+      "avatar_url": "https://avatars.githubusercontent.com/u/68195580?v=4",
+      "profile": "https://github.com/chirag3003",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "dakshgupta2002",
+      "name": "Daksh Gupta",
+      "avatar_url": "https://avatars.githubusercontent.com/u/78641951?v=4",
+      "profile": "https://github.com/dakshgupta2002",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "logan4473",
+      "name": "Logan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/69055524?v=4",
+      "profile": "https://github.com/logan4473",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "DarkFalc0n",
+      "name": "Pratyay Roy",
+      "avatar_url": "https://avatars.githubusercontent.com/u/59203815?v=4",
+      "profile": "https://github.com/DarkFalc0n",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "luxunator",
+      "name": "luxunator",
+      "avatar_url": "https://avatars.githubusercontent.com/u/50147562?v=4",
+      "profile": "https://github.com/luxunator",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "aaheli8",
+      "name": "Aaheli Sadhukhan",
+      "avatar_url": "https://avatars.githubusercontent.com/u/66815283?v=4",
+      "profile": "https://github.com/aaheli8",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "XxThunderBlastxX",
+      "name": "Koustav Mondal",
+      "avatar_url": "https://avatars.githubusercontent.com/u/74706101?v=4",
+      "profile": "https://github.com/XxThunderBlastxX",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "skipCi": true
+}
