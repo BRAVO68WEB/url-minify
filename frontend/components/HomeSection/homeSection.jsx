@@ -1,17 +1,20 @@
-import React from "react";
+import React, {useState} from "react";
 import HomeSectionStyle from "./HomeSection.style";
 import Link from "next/link";
 import Image from 'next/image'
 import Axios from "helpers/Axios";
+import {Alert, Button, Collapse, IconButton} from "@mui/material";
+import CloseIcon from '@mui/icons-material/Close';
+import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import QRCode from 'qrcode'
 
 const QR = {
     marginTop: '1.8em'
 }
-
 const head = {
-  fontSize: "5rem",
+  fontSize: "5.5rem",
   fontWeight: "bold",
+  color:"white",
   marginBottom: "30px",
 };
 const box = {
@@ -20,6 +23,9 @@ const box = {
   padding: "1em",
   width: "500px",
   height: "50px",
+  outline:"none !important",
+  border:"none !important",
+  marginBottom:"15px"
 };
 const btn = {
   fontWeight: "bold",
@@ -41,7 +47,11 @@ const searchBox = {
 function HomeSection(props) {
   var qrCode;
   var minifiedUrl;
+  const [disabled,setDisabled] = useState(false)
+  const [open, setOpen] = React.useState(false);
   const setMinfy = async () => {
+    setOpen(false)
+    setDisabled(true);
     let res;
     try {
       res = await Axios.post(`/minify/add`, {
@@ -59,6 +69,9 @@ function HomeSection(props) {
     if(minifiedUrl){
         generateQR();
     }
+    await navigator.clipboard.writeText(data.minifiedUrl);
+    setOpen(true)
+    setDisabled(false)
   };
 
 
@@ -90,14 +103,14 @@ function HomeSection(props) {
               props.setLongUrl(e.target.value);
             }}
           />
-          <button style={btn} id="minify" onClick={setMinfy}>
+          <Button variant={"contained"} disabled={disabled} style={btn} id="minify" onClick={setMinfy}>
             MINIFY
-          </button>
+          </Button>
         </div>
-        <div>
+        <div style={{marginBottom:"40px",color:"#fff"}}>
           <h3>
             Need more advanced features? |{" "}
-            <Link href="/signup">Create an account</Link>
+            <Link href="/signup"><span style={{textDecoration:"underline"}}>Create an account</span></Link>
           </h3>
         </div>
         {   // show QR code if a url is generated 
@@ -108,6 +121,25 @@ function HomeSection(props) {
             : ""
         }
       </div>
+      <Collapse in={open}>
+        <Alert
+            action={
+              <IconButton
+                  aria-label="close"
+                  color="inherit"
+                  size="small"
+                  onClick={() => {
+                    setOpen(false);
+                  }}
+              >
+                <CloseIcon fontSize="inherit" />
+              </IconButton>
+            }
+            sx={{ mb: 2 }}
+        >
+          Your Shortened URL: {props.shortUrl} <IconButton onClick={() => navigator.clipboard.writeText(props.shortUrl)} style={{marginLeft:"15px",padding:0}}><ContentCopyIcon /></IconButton>
+        </Alert>
+      </Collapse>
     </HomeSectionStyle>
   );
 }

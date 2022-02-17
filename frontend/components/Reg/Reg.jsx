@@ -1,29 +1,29 @@
-import React from "react";
-import RegStyle from "./Reg.style";
-import Image from "next/image";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React from 'react'
+import RegStyle from './Reg.style'
+import Image from 'next/image'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
   faUser,
   faEnvelope,
   faLock,
   faClose,
-} from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
-import { Link } from "@mui/material";
+} from '@fortawesome/free-solid-svg-icons'
+import { useState } from 'react'
+import { Link } from '@mui/material'
 
 function Reg() {
   const [userData, setUserData] = useState({
-    username: "",
-    email: "",
-    password: "",
-    repassword: "",
-  });
+    username: '',
+    email: '',
+    password: '',
+    repassword: '',
+  })
 
   const handleInput = (event) => {
-    const name = event.target.name;
-    const value = event.target.value;
-    setUserData({ ...userData, [name]: value });
-  };
+    const name = event.target.name
+    const value = event.target.value
+    setUserData({ ...userData, [name]: value })
+  }
 
   return (
     <RegStyle>
@@ -94,12 +94,12 @@ function Reg() {
         </button>
         <p className="foot-text">
           Already registered? Login&nbsp;
-          <Link href="/" exact className="foot-text underline">
+          <Link href="/login" exact className="foot-text underline">
             here
           </Link>
         </p>
       </form>
     </RegStyle>
-  );
+  )
 }
-export default Reg;
+export default Reg
