@@ -5,6 +5,11 @@ import NavBar from 'components/NavBar'
 import Features from 'components/Features'
 
 export default function Home() {
+
+  const [shortUrl, setShortUrl] = useState(null);
+  const [longUrl, setLongUrl] = useState("");
+  const [qrData, setQrData] = useState("");
+  const [showQrCode , setShowQrCode] = useState(false);
   const [shortUrl, setShortUrl] = useState(null)
   const [longUrl, setLongUrl] = useState('')
 
@@ -22,6 +27,10 @@ export default function Home() {
           setShortUrl={setShortUrl}
           longUrl={longUrl}
           setLongUrl={setLongUrl}
+          qrData = {qrData}
+          setQrData = {setQrData}
+          showQrCode = {showQrCode}
+          setShowQrCode = {setShowQrCode}
         />
         <Features />
       </main>
