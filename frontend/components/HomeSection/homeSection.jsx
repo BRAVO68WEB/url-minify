@@ -5,6 +5,7 @@ import Axios from "helpers/Axios";
 import {Alert, Button, Collapse, IconButton} from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
+import QRCode from 'qrcode'
 import NotFound from "@pages/404";
 
 const head = {
