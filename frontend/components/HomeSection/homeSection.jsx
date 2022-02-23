@@ -7,6 +7,7 @@ import {Alert, Button, Collapse, IconButton} from "@mui/material";
 import CloseIcon from '@mui/icons-material/Close';
 import ContentCopyIcon from '@mui/icons-material/ContentCopy';
 import QRCode from 'qrcode'
+import NotFound from "@pages/404";
 
 const QR = {
     marginTop: '1.8em'
@@ -103,9 +104,11 @@ function HomeSection(props) {
               props.setLongUrl(e.target.value);
             }}
           />
+          <a href = "NotFound">
           <Button variant={"contained"} disabled={disabled} style={btn} id="minify" onClick={setMinfy}>
             MINIFY
           </Button>
+          </a>
         </div>
         <div style={{marginBottom:"40px",color:"#fff"}}>
           <h3>

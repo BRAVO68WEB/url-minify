@@ -17,6 +17,7 @@ import {
 import QrCodeScannerIcon from "@mui/icons-material/QrCodeScanner";
 import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
+import NotFound from "@pages/404";
 
 export default function Index() {
   return (
@@ -51,8 +52,10 @@ export default function Index() {
             alignItems: "center",
           }}
         >
+          <a href = "NotFound" style = {{display: "flex" , flexDirection: "column" , alignItems: "center"}}>
           <RemoveRedEyeIcon sx={{ width: "3.5rem", height: "3.5rem" }} />
           <h4>VIEW COUNTER</h4>
+          </a>
         </Box>
         <Box
           style={{
@@ -62,8 +65,10 @@ export default function Index() {
             alignItems: "center",
           }}
         >
+          <a href = "NotFound" style = {{display: "flex" , flexDirection: "column" , alignItems: "center"}}>
           <QrCodeScannerIcon sx={{ width: "3.5rem", height: "3.5rem" }} />
           <h4>QR CODE</h4>
+          </a>
         </Box>
         <Box
           style={{
@@ -73,8 +78,10 @@ export default function Index() {
             alignItems: "center",
           }}
         >
+          <a href = "NotFound" style = {{display: "flex" , flexDirection: "column" , alignItems: "center"}}>
           <RocketLaunchIcon sx={{ width: "3.5rem", height: "3.5rem" }} />
           <h4>ROBUST API</h4>
+          </a>
         </Box>
       </Box>
     </Box>
