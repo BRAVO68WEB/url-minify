@@ -19,6 +19,7 @@ import Logo from './Logo'
 import UserAuth, { UserContext } from 'helpers/user/usercontext'
 import Link from 'next/link'
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout']
+import NotFound from '@pages/404'
 
 function Index(props) {
   const [anchorElNav, setAnchorElNav] = React.useState(null)
@@ -98,9 +99,11 @@ function Index(props) {
                 </a>
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
+                <a href = "NotFound">
                 <Typography textAlign="center" sx={{ display: 'flex' }}>
                   CREDITS
                 </Typography>
+                </a>
               </MenuItem>
             </Menu>
           </Box>
@@ -135,12 +138,14 @@ function Index(props) {
                 GitHub
               </Button>
             </a>
+            <a href = "NotFound">
             <Button
               onClick={handleCloseNavMenu}
               sx={{ color: 'white', display: 'block', fontSize: 'h5.fontSize' }}
             >
               CREDITS
             </Button>
+            </a>
           </Box>
 
           {user ? (
