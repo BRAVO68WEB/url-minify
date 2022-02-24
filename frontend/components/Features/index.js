@@ -52,7 +52,7 @@ export default function Index() {
             alignItems: "center",
           }}
         >
-          <a href = "NotFound" style = {{display: "flex" , flexDirection: "column" , alignItems: "center"}}>
+          <a className="Link" href = "NotFound">
           <RemoveRedEyeIcon sx={{ width: "3.5rem", height: "3.5rem" }} />
           <h4>VIEW COUNTER</h4>
           </a>
@@ -65,7 +65,7 @@ export default function Index() {
             alignItems: "center",
           }}
         >
-          <a href = "NotFound" style = {{display: "flex" , flexDirection: "column" , alignItems: "center"}}>
+          <a className="Link" href = "NotFound">
           <QrCodeScannerIcon sx={{ width: "3.5rem", height: "3.5rem" }} />
           <h4>QR CODE</h4>
           </a>
@@ -78,7 +78,7 @@ export default function Index() {
             alignItems: "center",
           }}
         >
-          <a href = "NotFound" style = {{display: "flex" , flexDirection: "column" , alignItems: "center"}}>
+          <a className="Link" href = "NotFound">
           <RocketLaunchIcon sx={{ width: "3.5rem", height: "3.5rem" }} />
           <h4>ROBUST API</h4>
           </a>
