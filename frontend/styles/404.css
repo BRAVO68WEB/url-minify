@@ -1,0 +1,46 @@
+.Box{
+    position: absolute;
+    background: rgb(231,231,231);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    padding: 15px;
+}
+
+.Box2{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.P1{
+    font-size: 55px;
+    color: #16a085;
+}
+
+.P2{
+    color: #16a085;
+}
+
+.Button{
+    width: 55%;
+    padding: 13px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: none;
+    border: none;
+    background: #16a085;
+    font-size: 25px;
+}
+
+.Take-me-back{
+    text-decoration: none;
+    color: white;
+    font-family: monospace;
+}
