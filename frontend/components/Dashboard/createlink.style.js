@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 
-
 export default styled.div` 
 h2{
       color:#00253A;
