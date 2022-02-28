@@ -99,10 +99,10 @@ function Index(props) {
                 </a>
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
-                <a href = "NotFound">
-                <Typography textAlign="center" sx={{ display: 'flex' }}>
-                  CREDITS
-                </Typography>
+                <a href="NotFound">
+                  <Typography textAlign="center" sx={{ display: 'flex' }}>
+                    CREDITS
+                  </Typography>
                 </a>
               </MenuItem>
             </Menu>
@@ -138,13 +138,17 @@ function Index(props) {
                 GitHub
               </Button>
             </a>
-            <a href = "NotFound">
-            <Button
-              onClick={handleCloseNavMenu}
-              sx={{ color: 'white', display: 'block', fontSize: 'h5.fontSize' }}
-            >
-              CREDITS
-            </Button>
+            <a href="NotFound">
+              <Button
+                onClick={handleCloseNavMenu}
+                sx={{
+                  color: 'white',
+                  display: 'block',
+                  fontSize: 'h5.fontSize',
+                }}
+              >
+                CREDITS
+              </Button>
             </a>
           </Box>
 

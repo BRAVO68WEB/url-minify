@@ -15,4 +15,6 @@ router.patch('/edit/:id', auth, controller.updateUrlData)
 
 router.delete('/delete/:id', auth, controller.deleteUrlData)
 
+router.get('/:alias/views', controller.visitor)
+
 module.exports = router

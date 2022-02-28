@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;700&display=swap');
 
 .reg-label {
   font-size: 24px;
@@ -7,7 +7,7 @@
   position: relative;
 }
 .reg-title {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   font-size: 36px;
   text-align: center;
@@ -24,7 +24,7 @@
   margin-left: 10px;
   height: 35px;
   width: 340px;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 16px;
   border-radius: 20px;
@@ -63,7 +63,7 @@
 .submit-button {
   width: 100px;
   height: 40px;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 18px;
   border-radius: 10px;
@@ -88,7 +88,7 @@
 }
 
 .foot-text {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 18px;
   margin-top: 50px;
