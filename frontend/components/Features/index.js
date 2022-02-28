@@ -1,4 +1,4 @@
-import * as React from "react";
+import * as React from 'react'
 import {
   Avatar,
   Box,
@@ -12,21 +12,21 @@ import {
   Typography,
   alpha,
   AppBar,
-} from "@mui/material";
+} from '@mui/material'
 
-import QrCodeScannerIcon from "@mui/icons-material/QrCodeScanner";
-import RocketLaunchIcon from "@mui/icons-material/RocketLaunch";
-import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
-import NotFound from "@pages/404";
+import QrCodeScannerIcon from '@mui/icons-material/QrCodeScanner'
+import RocketLaunchIcon from '@mui/icons-material/RocketLaunch'
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye'
+import NotFound from '@pages/404'
 
 export default function Index() {
   return (
     <Box
       sx={{
         flexGrow: 1,
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
         my: 2,
       }}
     >
@@ -37,53 +37,53 @@ export default function Index() {
       <Box
         sx={{
           flexGrow: 1,
-          display: "flex",
-          justifyContent: "space-around",
-          alignContent: "space-around",
-          alignItems: "space-around",
-          width: "50vw",
+          display: 'flex',
+          justifyContent: 'space-around',
+          alignContent: 'space-around',
+          alignItems: 'space-around',
+          width: '50vw',
         }}
       >
         <Box
           style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "centre",
-            alignItems: "center",
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'centre',
+            alignItems: 'center',
           }}
         >
-          <a className="Link" href = "NotFound">
-          <RemoveRedEyeIcon sx={{ width: "3.5rem", height: "3.5rem" }} />
-          <h4>VIEW COUNTER</h4>
+          <a className="Link" href="NotFound">
+            <RemoveRedEyeIcon sx={{ width: '3.5rem', height: '3.5rem' }} />
+            <h4>VIEW COUNTER</h4>
           </a>
         </Box>
         <Box
           style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "centre",
-            alignItems: "center",
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'centre',
+            alignItems: 'center',
           }}
         >
-          <a className="Link" href = "NotFound">
-          <QrCodeScannerIcon sx={{ width: "3.5rem", height: "3.5rem" }} />
-          <h4>QR CODE</h4>
+          <a className="Link" href="NotFound">
+            <QrCodeScannerIcon sx={{ width: '3.5rem', height: '3.5rem' }} />
+            <h4>QR CODE</h4>
           </a>
         </Box>
         <Box
           style={{
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "centre",
-            alignItems: "center",
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'centre',
+            alignItems: 'center',
           }}
         >
-          <a className="Link" href = "NotFound">
-          <RocketLaunchIcon sx={{ width: "3.5rem", height: "3.5rem" }} />
-          <h4>ROBUST API</h4>
+          <a className="Link" href="NotFound">
+            <RocketLaunchIcon sx={{ width: '3.5rem', height: '3.5rem' }} />
+            <h4>ROBUST API</h4>
           </a>
         </Box>
       </Box>
     </Box>
-  );
+  )
 }

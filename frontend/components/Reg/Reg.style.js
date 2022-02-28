@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 export default styled.section`
   display: flex;
@@ -10,4 +10,4 @@ export default styled.section`
     align-items: center;
     flex-direction: column;
   }
-`;
+`
