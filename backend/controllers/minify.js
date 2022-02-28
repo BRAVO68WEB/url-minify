@@ -99,3 +99,18 @@ module.exports.addURLAuthed = async (req, res) => {
          res.sendStatus(500)
       })
 }
+
+module.exports.visitor = async (req, res) => {
+   Minfy.findOneAndUpdate(
+      { alias: req.params.alias },
+      { $inc: { views: 1 } },
+      { new: true }
+   )
+      .then((data) => {
+         res.send(`views increased`)
+      })
+      .catch((err) => {
+         console.error(err)
+         res.sendStatus(500)
+      })
+}

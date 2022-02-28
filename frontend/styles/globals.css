@@ -26,8 +26,8 @@ section {
 .flex-column {
   display: flex;
   flex-direction: column;
-  background-image: url("./../assets/bg/main-bg.png");
+  background-image: url('./../assets/bg/main-bg.png');
 }
 .main-bg {
-  background-image: url("./../assets/bg/main-bg.png");
+  background-image: url('./../assets/bg/main-bg.png');
 }

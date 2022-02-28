@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react'
 
 export default function Logo() {
   return (
@@ -22,5 +22,5 @@ export default function Logo() {
       </svg>
       <p className="logo-text">URL MINIFY</p>
     </div>
-  );
+  )
 }
