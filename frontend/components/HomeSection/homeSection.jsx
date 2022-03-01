@@ -101,17 +101,15 @@ function HomeSection(props) {
               props.setLongUrl(e.target.value)
             }}
           />
-          <a href="NotFound">
-            <Button
-              variant={'contained'}
-              disabled={disabled}
-              style={btn}
-              id="minify"
-              onClick={setMinfy}
-            >
-              MINIFY
-            </Button>
-          </a>
+          <Button
+            variant={'contained'}
+            disabled={disabled}
+            style={btn}
+            id="minify"
+            onClick={setMinfy}
+          >
+            MINIFY
+          </Button>
         </div>
         <div style={{ marginBottom: '40px', color: '#fff' }}>
           <h3>
