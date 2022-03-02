@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to url-minify 👋</h1>
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
+<img src="https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square">
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <p>
   <a href="LICENSE" target="_blank">
@@ -61,6 +61,7 @@ npm run start
 ### Current
 
 - JWOC (https://jwoc.tech) <br> <img src="https://jwoc.tech/assets/img/opengraph.png" height=75px/>
+- GSSoC (https://gssoc.girlscript.tech/) <br> <img src="https://raw.githubusercontent.com/GSSoC-Web/gssoc-assets/main/Logos/GS_logo_White.png" height=75px/>
 
 ### Past
 
