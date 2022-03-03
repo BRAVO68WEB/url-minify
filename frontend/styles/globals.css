@@ -27,7 +27,13 @@ section {
   display: flex;
   flex-direction: column;
   background-image: url('./../assets/bg/main-bg.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .main-bg {
   background-image: url('./../assets/bg/main-bg.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }

@@ -15,12 +15,13 @@
 }
 
 .icons{
-   font-size: 3.5rem;
+   font-size: 3.5rem !important;
 }
 
 @media screen and (max-width: 500px)  {
    .featuresContainer{
       width: 90vw;
+      padding: 0;
       flex-direction: column;
    }
    
@@ -37,6 +38,6 @@
    }
 
    .icons{
-      font-size: clamp(2rem, 10vw, 4rem);
+      font-size: clamp(2rem, 10vw, 4rem) !important;
    }
 }
