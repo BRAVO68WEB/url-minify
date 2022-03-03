@@ -6,7 +6,6 @@ import {
   faUser,
   faEnvelope,
   faLock,
-  faClose,
 } from '@fortawesome/free-solid-svg-icons'
 import { useState } from 'react'
 import { Link } from '@mui/material'
@@ -28,11 +27,8 @@ function Reg() {
   return (
     <RegStyle>
       <form className="form-wrapper">
-        <div className="reg-wide-container">
-          <FontAwesomeIcon icon={faClose} />
-        </div>
-
         <p className="reg-title">Sign Up</p>
+
         <div className="reg-field">
           <div className="reg-label">
             <FontAwesomeIcon icon={faUser} />
@@ -47,6 +43,7 @@ function Reg() {
             placeholder="Full Name"
           />
         </div>
+
         <div className="reg-field">
           <div className="reg-label">
             <FontAwesomeIcon icon={faEnvelope} />
@@ -61,6 +58,7 @@ function Reg() {
             placeholder="Email Address"
           />
         </div>
+
         <div className="reg-field">
           <div className="reg-label">
             <FontAwesomeIcon icon={faLock} />
@@ -75,6 +73,7 @@ function Reg() {
             placeholder="Password"
           />
         </div>
+
         <div className="reg-field">
           <div className="reg-label">
             <FontAwesomeIcon icon={faLock} />
@@ -89,9 +88,11 @@ function Reg() {
             placeholder="Confirm Password"
           />
         </div>
+
         <button type="submit" className="submit-button">
           Submit
         </button>
+
         <p className="foot-text">
           Already registered? Login&nbsp;
           <Link href="/login" exact className="foot-text underline">

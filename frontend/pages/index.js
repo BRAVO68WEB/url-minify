@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Head from 'next/head'
-import HomeSection from 'components/HomeSection/homeSection'
+import HomeSection from 'components/HomeSection/HomeSection'
 import NavBar from 'components/NavBar'
 import Features from 'components/Features'
 
