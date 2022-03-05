@@ -152,23 +152,6 @@ export default styled.div`
       }
     }
   }
-  
-  .sidebar2 {
-    text-align: center;
-    margin-top:10px;
-    padding-left:5%;
-    .dash {
-      text-align: left;
-      margin-bottom: 40px;
-    }
-    .row {
-      display: flex;
-      align-items: center;
-      justify-content:space-between;
-      padding-right:40px;
-      overflow-x:auto;
-    }
-  }
 
   .sidebar3 {
     text-align: center;
@@ -215,9 +198,12 @@ export default styled.div`
 
   .table {
     text-align: center;
-    margin-top: 10px;
+    margin-top: -15px;
     padding-left: 5%;
     .row2 {
+      padding-top: 5%;
+      height: 1px;
+      border-bottom: 1px solid gray;
       display: flex;
       justify-content: space-between;
       padding-left: 20px;

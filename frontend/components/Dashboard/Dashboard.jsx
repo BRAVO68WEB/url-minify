@@ -2,6 +2,8 @@ import {useState} from "react";
 import DashboardStyle from "./Dashboard.style";
 import Card from "./Card";
 import dynamic from 'next/dynamic';
+import * as ReactBootStrap from "react-bootstrap";
+import Link from 'next/link'
 
 const Chart = dynamic(() => import('react-apexcharts'), {ssr: false});
 
@@ -22,12 +24,12 @@ function Sidebar1() {
             <li className="nav-buttons">
                 <div className="nav-item">
                     <button>
-                        Overview
+                        <Link href="./dashboard">Overview</Link>
                     </button>
                 </div>
                 <div className="nav-item">
                     <button>
-                        My Links
+                        <Link href="./myLinks">My Links</Link>
                     </button>
                 </div>
                 <div className="nav-item">
