@@ -1,5 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;700&display=swap');
 
+.form-wrapper {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 20px 30px 40px 30px;
+  border-radius: 20px;
+  font-size: 24px;
+  text-align: center;
+  backdrop-filter: blur(6px);
+  border-style: solid;
+  border-color: #f1faff;
+  border-width: 1px 0px 0px 1px;
+}
+
+.form-wrapper img{
+  width: 100px;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.reg-field {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0 20px 20px;
+}
 .reg-label {
   font-size: 24px;
   width: 30px;
@@ -13,12 +38,6 @@
   text-align: center;
   margin-bottom: 40px;
   color: #9134bd;
-}
-.reg-wide-container {
-  width: 100%;
-  text-align: right;
-  color: #9134bd;
-  font-size: 24px;
 }
 .reg-input {
   margin-left: 10px;
@@ -40,26 +59,7 @@
 .reg-input::placeholder {
   color: #6babc7;
 }
-.reg-field {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  margin-bottom: 20px;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-.form-wrapper {
-  background-color: rgba(255, 255, 255, 0.5);
-  padding: 20px 30px 40px 30px;
-  border-radius: 20px;
-  font-size: 24px;
-  text-align: center;
-  backdrop-filter: blur(6px);
-  border-style: solid;
-  border-color: #f1faff;
-  border-width: 1px 0px 0px 1px;
-  margin-top: 0;
-}
+
 .submit-button {
   width: 100px;
   height: 40px;
@@ -74,6 +74,7 @@
   background-position: left;
   color: white;
   transition: 0.5s;
+  cursor: pointer;
 }
 .submit-button:hover {
   background-position: right;
@@ -81,10 +82,6 @@
 .submit-button:active {
   transform: scale(0.95);
   transition: 0.1s;
-}
-
-.icon {
-  fill: black;
 }
 
 .foot-text {
@@ -104,4 +101,21 @@
 .underline:hover {
   color: #008ed4;
   transition: 0.5s;
+}
+
+@media screen and (max-width: 600px) {
+  .form-wrapper{
+    margin: 1rem;
+    padding: 20px 10px;
+  }
+
+  .reg-input{
+    width: 60vw;
+  }
+}
+
+@media screen and (max-width: 300px){
+  .reg-input{
+    width: 50vw;
+  }
 }
