@@ -4,7 +4,7 @@ export default function Logo() {
   return (
     <div className="logo-wrapper">
       <svg
-        class="logo"
+        className="logo"
         data-name="Layer 4"
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 53.4 53.31"

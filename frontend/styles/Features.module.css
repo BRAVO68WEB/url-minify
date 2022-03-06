@@ -1,0 +1,43 @@
+.heading{
+   width: 90%;
+   text-align: center;
+   margin: 0 auto;
+}
+
+.featuresContainer{
+   display: flex;
+   flex-direction: row;
+   width: 500px;
+   margin: 0 auto;
+   padding: 1rem;
+   align-items: center;
+   justify-content: space-between;
+}
+
+.icons{
+   font-size: 3.5rem !important;
+}
+
+@media screen and (max-width: 500px)  {
+   .featuresContainer{
+      width: 90vw;
+      padding: 0;
+      flex-direction: column;
+   }
+   
+   .feature{      
+      width: 200px;
+   }
+
+   .feature a{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin: 10px 0;
+      width: 100%;
+   }
+
+   .icons{
+      font-size: clamp(2rem, 10vw, 4rem) !important;
+   }
+}

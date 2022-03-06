@@ -8,47 +8,19 @@ import CloseIcon from '@mui/icons-material/Close'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import QRCode from 'qrcode'
 import NotFound from '@pages/404'
+import styles from '../../styles/HomeSection.module.css'
 
 const QR = {
   marginTop: '1.8em',
 }
-const head = {
-  fontSize: '5.5rem',
-  fontWeight: 'bold',
-  color: 'white',
-  marginBottom: '30px',
-}
-const box = {
-  fontSize: '1.5em',
-  borderRadius: '50px',
-  padding: '1em',
-  width: '500px',
-  height: '50px',
-  outline: 'none !important',
-  border: 'none !important',
-  marginBottom: '15px',
-}
-const btn = {
-  fontWeight: 'bold',
-  position: 'absolute',
-  alignItems: 'center',
-  right: '0px',
-  marginRight: '5px',
-  marginTop: '4.5px',
-  marginBottom: '3px',
-  height: '40px',
-  width: '100px',
-  borderRadius: '50px',
-}
-const searchBox = {
-  position: 'relative',
-}
 
 function HomeSection(props) {
-  var qrCode
-  var minifiedUrl
+  let qrCode
+  let minifiedUrl
   const [disabled, setDisabled] = useState(false)
-  const [open, setOpen] = React.useState(false)
+  const [open, setOpen] = useState(false)
+
+
   const setMinfy = async () => {
     setOpen(false)
     setDisabled(true)
@@ -63,6 +35,8 @@ function HomeSection(props) {
     }
 
     const data = await res.data
+    console.log(`Data: ${data}`);
+
     props.setShortUrl(data.minifiedUrl)
     minifiedUrl = data.minifiedUrl
     navigator.clipboard.writeText(props.shortUrl)
@@ -88,13 +62,11 @@ function HomeSection(props) {
   return (
     <HomeSectionStyle>
       <div className="content">
-        <h1 style={head} className="title">
-          URL MINIFY
-        </h1>
+        <h1 className={styles.title}>URL MINIFY</h1>
 
-        <div style={searchBox}>
+        <div className={styles.searchBox}>
           <input
-            style={box}
+            className={styles.search}
             placeholder="Enter the url to be minified......"
             value={props.longUrl}
             onChange={(e) => {
@@ -104,14 +76,15 @@ function HomeSection(props) {
           <Button
             variant={'contained'}
             disabled={disabled}
-            style={btn}
+            className={styles.btn}
             id="minify"
             onClick={setMinfy}
           >
             MINIFY
           </Button>
         </div>
-        <div style={{ marginBottom: '40px', color: '#fff' }}>
+
+        <div className={styles.info}>
           <h3>
             Need more advanced features? |{' '}
             <Link href="/signup">
@@ -121,6 +94,7 @@ function HomeSection(props) {
             </Link>
           </h3>
         </div>
+
         {
           // show QR code if a url is generated
           props.showQrCode ? (
@@ -138,8 +112,10 @@ function HomeSection(props) {
           )
         }
       </div>
+      
       <Collapse in={open}>
         <Alert
+        className={styles.showUrl}
           action={
             <IconButton
               aria-label="close"
@@ -163,6 +139,7 @@ function HomeSection(props) {
           </IconButton>
         </Alert>
       </Collapse>
+
     </HomeSectionStyle>
   )
 }
