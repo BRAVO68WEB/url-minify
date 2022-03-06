@@ -1,7 +1,9 @@
-import { useState } from 'react'
-import DashboardStyle from './Dashboard.style'
-import Card from './Card'
-import dynamic from 'next/dynamic'
+import {useState} from "react";
+import DashboardStyle from "./Dashboard.style";
+import Card from "./Card";
+import dynamic from 'next/dynamic';
+import * as ReactBootStrap from "react-bootstrap";
+import Link from 'next/link'
 import MenuOpenIcon from '@mui/icons-material/MenuOpen'
 import CloseIcon from '@mui/icons-material/Close'
 import { Close } from '@mui/icons-material'
@@ -14,6 +16,38 @@ function toggleSidebar1(e) {
 }
 
 function Sidebar1() {
+    return (<div className="sidebar">
+        <ul>
+            <div className="nav-item mb-2 brand-name"><h1>Brand Name</h1></div>
+            <div className="profile">
+                <div className="profile-image"><img
+                    src="https://png.pngtree.com/png-vector/20190307/ourlarge/pngtree-vector-edit-profile-icon-png-image_760869.jpg"/>
+                </div>
+                <p className="name">Hayat</p>
+                <p className="profession">Product Designer</p>
+            </div>
+            <div className="creatButton">
+                <button className={""}>Create Link</button>
+            </div>
+            <li className="nav-buttons">
+                <div className="nav-item">
+                    <button>
+                        <Link href="./dashboard">Overview</Link>
+                    </button>
+                </div>
+                <div className="nav-item">
+                    <button>
+                        <Link href="./myLinks">My Links</Link>
+                    </button>
+                </div>
+                <div className="nav-item">
+                    <button>
+                        Extras
+                    </button>
+                </div>
+            </li>
+        </ul>
+    </div>)
   return (
     <div className="sidebar">
       <CloseIcon className="close_icon" onClick={toggleSidebar1} />
@@ -46,6 +80,7 @@ function Sidebar1() {
       </ul>
     </div>
   )
+main
 }
 
 function Sidebar2() {
