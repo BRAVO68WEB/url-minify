@@ -172,7 +172,6 @@ export default styled.div`
       height: 50px;
       padding-right: 80px;
       padding-left: 20px;
-      overflow-x: auto;
       background: #c0c0c0;
       max-width: 970px;
     }
@@ -219,15 +218,18 @@ export default styled.div`
         width: 665px;
       }
       .talias {
+        padding-left: 1%;
         width: 158px;
         text-align: left;
       }
       .tstatus {
+        padding-left: 3%;
         width: 85px;
         text-align: left;
       }
       .tviews {
         padding-left: 1%;
+        margin-left: 8px;
       }
     }
   }

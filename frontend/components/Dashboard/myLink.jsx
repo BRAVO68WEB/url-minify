@@ -73,10 +73,10 @@ function Sidebar3() {
 
 function Table() {
     const data = [
-        {serialNo:1, url:"https://www.facebook.com", alias:"silver", status:"yes", views: "2M"},
-        {serialNo:2, url:"https://www.google.com", alias:"silver", status:"yes", views: "2M"},
-        {serialNo:3, url:"https://www.amazon.com", alias:"silver", status:"yes", views: "2M"},
-        {serialNo:4, url: "https://www.netflix.com", alias:"silver", status:"yes", views: "2M"}
+        {url:"https://www.facebook.com", alias:"silver", status:"yes", views: "2M"},
+        {url:"https://www.google.com", alias:"silver", status:"yes", views: "2M"},
+        {url:"https://www.amazon.com", alias:"silver", status:"yes", views: "2M"},
+        {url: "https://www.netflix.com", alias:"silver", status:"yes", views: "2M"}
     ]
 
     const renderData = (data, index) => {
@@ -84,7 +84,7 @@ function Table() {
             <tr key={index}>
                 <div className="trow">
                     <div className="row2">
-                        <td className="tname">{data.serialNo}</td>
+                        <td className="tname">{index+1}</td>
                         <td className="tage">{data.url}</td>
                         <td className="talias">{data.alias}</td>
                         <td className="tstatus">{data.status}</td>
