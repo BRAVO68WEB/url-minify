@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to url-minify 👋</h1>
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-<img src="https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square">
+[![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <p>
   <a href="LICENSE" target="_blank">
@@ -91,6 +91,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://github.com/XxThunderBlastxX"><img src="https://avatars.githubusercontent.com/u/74706101?v=4?s=55" width="55px;" alt=""/><br /><sub><b>Koustav Mondal</b></sub></a><br /><a href="https://github.com/BRAVO68WEB/url-minify/commits?author=XxThunderBlastxX" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/himanshusanecha"><img src="https://avatars.githubusercontent.com/u/52252631?v=4?s=55" width="55px;" alt=""/><br /><sub><b>Himanshu Sanecha</b></sub></a><br /><a href="https://github.com/BRAVO68WEB/url-minify/commits?author=himanshusanecha" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/Tejas-117"><img src="https://avatars.githubusercontent.com/u/75026048?v=4?s=55" width="55px;" alt=""/><br /><sub><b>Tejas</b></sub></a><br /><a href="https://github.com/BRAVO68WEB/url-minify/commits?author=Tejas-117" title="Code">💻</a></td>
   </tr>
 </table>
 
