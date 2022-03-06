@@ -1,6 +1,6 @@
 <h1 align="center">Welcome to url-minify 👋</h1>
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-11-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-12-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 <p>
   <a href="LICENSE" target="_blank">
@@ -93,6 +93,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/himanshusanecha"><img src="https://avatars.githubusercontent.com/u/52252631?v=4?s=55" width="55px;" alt=""/><br /><sub><b>Himanshu Sanecha</b></sub></a><br /><a href="https://github.com/BRAVO68WEB/url-minify/commits?author=himanshusanecha" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/Tejas-117"><img src="https://avatars.githubusercontent.com/u/75026048?v=4?s=55" width="55px;" alt=""/><br /><sub><b>Tejas</b></sub></a><br /><a href="https://github.com/BRAVO68WEB/url-minify/commits?author=Tejas-117" title="Code">💻</a></td>
     <td align="center"><a href="http://www.linkedin.com/in/omar-sherif-2152021a3"><img src="https://avatars.githubusercontent.com/u/69806823?v=4?s=55" width="55px;" alt=""/><br /><sub><b>Omar Sherif Ali</b></sub></a><br /><a href="https://github.com/BRAVO68WEB/url-minify/commits?author=omar-sherif9992" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/aadityasinha-dotcom"><img src="https://avatars.githubusercontent.com/u/75474786?v=4?s=55" width="55px;" alt=""/><br /><sub><b>Aaditya Sinha</b></sub></a><br /><a href="https://github.com/BRAVO68WEB/url-minify/commits?author=aadityasinha-dotcom" title="Code">💻</a></td>
   </tr>
 </table>
 
