@@ -21,6 +21,7 @@
     "@next/env": "^12.1.0",
     "apexcharts": "^3.33.1",
     "axios": "^0.26.0",
+    "framer-motion": "^6.2.8",
     "nanoid": "^3.2.0",
     "next": "12.0.9",
     "qrcode": "^1.5.0",

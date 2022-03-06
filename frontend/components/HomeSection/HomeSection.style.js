@@ -10,5 +10,7 @@ export default styled.section`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    .title{display: flex;
+    margin-bottom:0.5rem;}
   }
 `
