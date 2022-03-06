@@ -1,19 +1,12 @@
-new-feature
 import {useState} from "react";
 import DashboardStyle from "./Dashboard.style";
 import Card from "./Card";
 import dynamic from 'next/dynamic';
 import * as ReactBootStrap from "react-bootstrap";
 import Link from 'next/link'
-=======
-import { useState } from 'react'
-import DashboardStyle from './Dashboard.style'
-import Card from './Card'
-import dynamic from 'next/dynamic'
 import MenuOpenIcon from '@mui/icons-material/MenuOpen'
 import CloseIcon from '@mui/icons-material/Close'
 import { Close } from '@mui/icons-material'
-main
 
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
@@ -23,7 +16,6 @@ function toggleSidebar1(e) {
 }
 
 function Sidebar1() {
-new-feature
     return (<div className="sidebar">
         <ul>
             <div className="nav-item mb-2 brand-name"><h1>Brand Name</h1></div>
@@ -56,7 +48,6 @@ new-feature
             </li>
         </ul>
     </div>)
-=======
   return (
     <div className="sidebar">
       <CloseIcon className="close_icon" onClick={toggleSidebar1} />
