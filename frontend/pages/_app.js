@@ -3,7 +3,7 @@ import '../styles/logostyles.css'
 import '../styles/formStyles.css'
 import '../styles/index.css'
 import '../styles/404.css'
-import { UserAuthProvider } from '../helpers/user/usercontext'
+import UserAuthProvider from 'helpers/user/userState'
 import Page from 'react-page-loading'
 
 
