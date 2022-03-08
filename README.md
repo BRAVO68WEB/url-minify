@@ -85,7 +85,11 @@ Contributions, issues and feature requests are welcome! Feel free to check the [
 
     `$ git push -u origin main`
 
-8. Go to your forked repository on GitHub. Create a pull request from the button provided there. Make sure you write a detailed description of the changes you have made.
+8. Go to your forked repository on GitHub. Create a pull request from the `🔃Contribute` button provided there.
+    
+    <img height="200px" src="https://user-images.githubusercontent.com/59930625/157313470-71a2e194-17e5-4cd4-9949-ecfedc200c15.png">
+    
+    Contribute -> Open pull request -> Create pull request. (Make sure you write a detailed description of the changes you have made.)
 
 #### And you're done! 🤩🤩
 
