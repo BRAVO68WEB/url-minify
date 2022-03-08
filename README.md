@@ -1,79 +1,131 @@
 <h1 align="center">Welcome to url-minify 👋</h1>
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-12-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
-<p>
-  <a href="LICENSE" target="_blank">
-    <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
-  </a>
-  <a href="https://twitter.com/BRAVO68WEB" target="_blank">
-    <img alt="Twitter: BRAVO68WEB" src="https://img.shields.io/twitter/follow/BRAVO68WEB.svg?style=social" />
-  </a>
-</p>
 
-<br />
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/All_Contributors-12-orange.svg)](#-our-contributors)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+
+<a href="LICENSE" target="_blank">
+  <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
+</a>
+
+<a href="https://twitter.com/BRAVO68WEB" target="_blank">
+  <img alt="Twitter: BRAVO68WEB" src="https://img.shields.io/twitter/follow/BRAVO68WEB.svg?style=social" />
+</a>
+
+<br><br>
 
 <img src="https://user-images.githubusercontent.com/41448663/153746139-237f8e4d-be25-4f04-91ec-2bb3ff6f0e34.png" />
 
-<br />
+<br>
 
-> A URL shortener build with Nextjs, ExpressJS, MongoDB
+## 📜 Overview
 
-[![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
-![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white&color=green)
-![NextJS](https://img.shields.io/badge/nextjs-1.svg?style=for-the-badge&logo=data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAQAAADZc7J/AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAHdElNRQfiBBsIJyeUHDDBAAACFUlEQVRIx52VzWtTURDFf7kvKrW1qI2BxC5EEKRWqEg+RFykQvBvkEJFFBEU6t7iQkQS3JZmI0J3giLuRJTYLlwK0i5Sgg1BMaRFupBYNLXHRVrt+06cWd15nPNm7p05E8FtUU5wkRynSbAf+EGDRcq8pcomIWaRoUSNNnJ4mxolMlhB8CRFVl3Q3b5KkaQfPMUCW4FwIbZYIOUFz7EcCt7xZXJOeJpK13AhKqTttc/3BBdi/t9dGAo9w4UoYDoEWZr/RdAkCwaLSeK764lwiKEd8m0bZIK8I0acSSwYoWZnjuuVPuiCLZbSd73XAWcONUYM4wzbiQc4xRnuEbM1qEWUiPPthhk35Ih6t8UNN8A9NTnDqDse4Rcb3OZ8GAGMGhJeBA1KDDHN4TCChKHfKy6e8JI818MI+o13PMI696kzxbkQBkPLOwPDRwrEmOZgEL5laPh/neM5l7gGfGPN+00ahiWvAoSAFg9Y4Q5pqszQ9iJYMpSDdG6RhxzhLoM85rVbzTYpe7TycX3Vio5un/o0p9+aEoppr0crg8WsPXxMX1RV4u/5pCr6rLNe8zjbScoxzn26ognb3y6rpRfuUWqS3XnKEEHZo0f6qVu+gtKFpMX1RnWN+UgadCGqKdX1TAM+ogpdyPpVreumr6xD6GLZpxl90pjvYuncReBqS+rd2tMiyaD1GLJc8xlFNxxt77ae1vsfiXkPp1Pd4OwAAAAldEVYdGRhdGU6Y3JlYXRlADIwMTgtMDQtMjdUMDg6Mzk6MzkrMDI6MDCNfQiCAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDE4LTA0LTI3VDA4OjM5OjM5KzAyOjAw/CCwPgAAAFd6VFh0UmF3IHByb2ZpbGUgdHlwZSBpcHRjAAB4nOPyDAhxVigoyk/LzEnlUgADIwsuYwsTIxNLkxQDEyBEgDTDZAMjs1Qgy9jUyMTMxBzEB8uASKBKLgDqFxF08kI1lQAAAABJRU5ErkJggg==&color=grey)
+#### ➡️ Link: https://minfy.xyz
 
-## Getting Started
+#### What is URL MiniFy?
+A URL shortener build with Nextjs, ExpressJS, MongoDB
 
-Read here :- [How to Contribute](HOW_TO_CONTRIBUTE.md)
+#### Technologies Used:
+<img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white&color=green"> <img src="https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white&color=grey"> <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white"> <img src="https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white">
 
-## Install
+<br>
 
-```sh
-# Installing Frontend
-cd frontend && npm install
+## 🎯 Getting Started
 
-# Installing Backend
-cd backend && npm install
-```
+#### How to Contribute?
 
-## Usage
+Contributions, issues and feature requests are welcome! Feel free to check the [issues page](https://github.com/BRAVO68WEB/url-minify/issues).
 
-```sh
-# Running Frondend
-npm run start
+- Read the full guide here: [Contributing Guide](CONTRIBUTING.md)
+- Detailed document on how to contribute: [How to Contribute](HOW_TO_CONTRIBUTE.md)
 
-# Running Backend
-npm run start
-```
+### ✒️ Summary
 
-## Author
+1. Fork this repository on GitHub.
 
-👤 **BRAVO68WEB**
+2. Clone the forked repository in your computer.
+
+    `$ git clone https://github.com/<your-username>/url-minify.git`
+    
+    `$ cd url-minify`
+
+3. Add a remote (upstream) to the original project repository
+
+    `$ git remote add upstream https://github.com/BRAVO68WEB/url-minify.git`
+    
+    `$ git fetch upstream`
+    
+    `$ git checkout main`
+    
+    `$ git merge upstream/main`
+
+    This makes your fork up to date with the original project repo.
+
+#### Installation and Usage 
+
+4. Go the folder where you want to contribute:
+
+    `$ cd frontend` OR `cd backend`
+
+5. Install the dependencies and run the development server using:
+
+    `$ npm install`
+    
+    `$ npm run start`
+
+#### We can start making changes now! 🥳
+
+6. Make your changes. Then, stage and commit them using:
+
+    `$ git add .`
+    
+    `$ git commit -m "This is a commit message"`
+    
+7. Push your changes to your forked repository.
+
+    `$ git push -u origin main`
+
+8. Go to your forked repository on GitHub. Create a pull request from the button provided there. Make sure you write a detailed description of the changes you have made.
+
+#### And you're done! 🤩🤩
+
+<br>
+
+## 😊 Author
+
+**BRAVO68WEB**
 
 - Website: https://bravo68web.me
 - Twitter: [@BRAVO68WEB](https://twitter.com/BRAVO68WEB)
-- Github: [@BRAVO68WEB](https://github.com/BRAVO68WEB)
+- GitHub: [@BRAVO68WEB](https://github.com/BRAVO68WEB)
 - LinkedIn: [@BRAVO68WEB](https://linkedin.com/in/BRAVO68WEB)
 
-## Participations
+<br>
 
-### Current
+## 🎡 Participations
 
-- JWOC (https://jwoc.tech) <br> <img src="https://jwoc.tech/assets/img/opengraph.png" height=75px/>
-- GSSoC (https://gssoc.girlscript.tech/) <br> <img src="https://raw.githubusercontent.com/GSSoC-Web/gssoc-assets/main/Logos/GS_logo_White.png" height=75px/>
+#### Current:
 
-### Past
+<table>
+  <tr>
+    <td align="center" width="50%">
+      <img height="72px" src="https://user-images.githubusercontent.com/59930625/157309089-bb24d8d3-cf2a-4ac3-aae2-6774051056b9.png">
+      <br>
+      <sub><b>GSSoC (https://gssoc.girlscript.tech/)</b></sub>
+    </td>
+    <td align="center" width="50%">
+      <img height="72px" src="https://jwoc.tech/assets/img/opengraph.png">
+      <br>
+      <sub><b>JWOC (https://jwoc.tech/)</b></sub>
+    </td>
+  </tr>
+</table>
 
-- None
+<br>
 
-## 🤝 Contributing
+## ✨ Our Contributors
 
-Contributions, issues and feature requests are welcome!<br />Feel free to check [issues page](https://github.com/BRAVO68WEB/url-minify/issues). You can also take a look at the [contributing guide](CONTRIBUTING.md).
-
-## Contributors ✨
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+Thanks goes to these wonderful people:
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
@@ -102,13 +154,24 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-## Show your support
+<br>
 
-Give a ⭐️ if this project helped you!
+### 😽 Show your support
 
-## 📝 License
+Star the repository if this project helped you! ⭐️
 
-Copyright © 2022 [BRAVO68WEB](https://github.com/BRAVO68WEB).<br />
+### 🤝 Contributing
+
+Contributions, issues and feature requests are welcome! 
+
+- Feel free to check the [issues page](https://github.com/BRAVO68WEB/url-minify/issues).
+- Read the full guide here: [Contributing Guide](CONTRIBUTING.md)
+- Detailed document on how to contribute: [How to Contribute](HOW_TO_CONTRIBUTE.md)
+
+### 📝 License
+
+Copyright © 2022 [BRAVO68WEB](https://github.com/BRAVO68WEB).
+
 This project is [MIT](LICENSE) licensed.
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
