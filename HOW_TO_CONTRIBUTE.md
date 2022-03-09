@@ -4,11 +4,11 @@ Hello 👋. We are glad to have you here.
 
 ## GIT AND GITHUB
 ***
-Before continuing we want to clarify the difference between Git and Github. Git is a version control system(VCS) which is a tool to manage the history of our Source Code. GitHub is a hosting service for Git projects.
+Before continuing we want to clarify the difference between Git and GitHub. Git is a version control system(VCS) which is a tool to manage the history of our Source Code. GitHub is a hosting service for Git projects.
 
-We assume you have created an account on Github and installed Git on your System.
+We assume you have created an account on GitHub and installed Git on your System.
 
-Now tell Git your name and E-mail (used on Github) address.
+Now tell Git your name and E-mail (used on GitHub) address.
 
 ``` $ git config --global user.name "YOUR NAME" ```
 ```$ git config --global user.email "YOUR EMAIL ADDRESS"```
@@ -16,7 +16,7 @@ This is an important step to mark your commits to your name and email.
 
 ### FORK A PROJECT -
 ***
-You can use github explore - https://github.com/explore to find a project that interests you and match your skills. Once you find your cool project to workon, you can make a copy of project to your account. This process is called forking a project to your Github account. On Upper right side of project page on Github, you can see -
+You can use GitHub explore - https://github.com/explore to find a project that interests you and match your skills. Once you find your cool project to workon, you can make a copy of project to your account. This process is called forking a project to your GitHub account. On Upper right side of project page on GitHub, you can see -
 
 <p align="center">  <img  src="https://i.imgur.com/P0n6f97.png">  </p>
 Click on fork to create a copy of project to your account. This creates a separate copy for you to workon.
@@ -29,14 +29,14 @@ Open Source projects always have something to workon and improves with each new 
 
 ### CLONE THE FORKED PROJECT -
 ***
-You have forked the project you want to contribute to your github account. To get this project on your development machine we use clone command of git.
+You have forked the project you want to contribute to your GitHub account. To get this project on your development machine we use clone command of git.
 
 ```$ git clone https://github.com/<your-account-username>/<your-forked-project>.git```
 Now you have the project on your local machine.
 
 ### ADD A REMOTE (UPSTREAM) TO ORIGINAL PROJECT REPOSITORY 
 ***
-Remote means the remote location of project on Github. By cloning, we have a remote called origin which points to your forked repository. Now we will add a remote to the original repository from where we had forked.
+Remote means the remote location of project on GitHub. By cloning, we have a remote called origin which points to your forked repository. Now we will add a remote to the original repository from where we had forked.
 
 ```$ cd <your-forked-project-folder>```
 ```$ git remote add upstream https://github.com/<author-account-username>/<project>.git```
@@ -49,7 +49,7 @@ Open Source projects have a number of contributors who can push code anytime. So
 ```$ git fetch upstream```
 ```$ git merge upstream/main```
 ```$ git push origin main```
-The last command pushes the latest code to your forked repository on Github. The origin is the remote pointing to your forked repository on github.
+The last command pushes the latest code to your forked repository on GitHub. The origin is the remote pointing to your forked repository on GitHub.
 
 ### CREATE A NEW BRANCH FOR A FEATURE OR BUGFIX -
 ***
@@ -77,7 +77,7 @@ This will open an editor which will allow you to squash the commits.
 
 ### PUSH CODE AND CREATE A PULL REQUEST -
 ***
-Till this point you have a new branch with the feature or bugfix you want in the project you had forked. Now push your new branch to your remote fork on github.
+Till this point you have a new branch with the feature or bugfix you want in the project you had forked. Now push your new branch to your remote fork on GitHub.
 
 ```$ git push origin <feature-branch>```
 Now you are ready to help the project by opening a pull request means you now tell the project managers to add the feature or bugfix to original repository. You can open a pull request by clicking on green icon -
