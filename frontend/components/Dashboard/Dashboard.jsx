@@ -1,7 +1,9 @@
-import { useState } from 'react'
-import DashboardStyle from './Dashboard.style'
-import Card from './Card'
-import dynamic from 'next/dynamic'
+import {useState} from "react";
+import DashboardStyle from "./Dashboard.style";
+import Card from "./Card";
+import dynamic from 'next/dynamic';
+import * as ReactBootStrap from "react-bootstrap";
+import Link from 'next/link'
 import MenuOpenIcon from '@mui/icons-material/MenuOpen'
 import CloseIcon from '@mui/icons-material/Close'
 import { Close } from '@mui/icons-material'
@@ -172,6 +174,7 @@ function Graph() {
           </div>
           <div className="title">Total Views</div>
         </div>
+
       </div>
     </div>
   )

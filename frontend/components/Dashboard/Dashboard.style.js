@@ -22,48 +22,43 @@ export default styled.div`
     height: 100%;
     color: white !important;
     transition: all 0.25s;
-
+    
     @media (max-width: 1100px) {
       left: -300px;
       position: absolute;
       z-index: 100;
     }
-
+    
     /* for small screens */
     @media (max-width: 300px) {
       width: 100vw;
     }
-
+    
     .brand-name {
       margin-top: 40px;
       padding-left: 20px;
       text-align: center;
     }
-
     .profile {
       margin: 25px 0;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-
       .profile-image {
         max-width: 35%;
         margin: auto;
         border-radius: 100%;
-
         img {
           max-width: 100%;
           border-radius: 100%;
         }
       }
-
       .name {
         font-size: 1.2rem;
         font-weight: bold;
         margin: 3px 0;
       }
-
       .profession {
         color: gray;
         font-size: 0.8rem;
@@ -71,11 +66,9 @@ export default styled.div`
         margin: 0;
       }
     }
-
     .creatButton {
       margin: 40px auto 80px;
       width: 70%;
-
       button {
         width: 100%;
         color: white;
@@ -102,11 +95,9 @@ export default styled.div`
       }
     }
   }
-
   .nav-buttons {
     .nav-item {
       margin: 0;
-
       button {
         width: 100%;
         background-color: transparent;
@@ -117,7 +108,6 @@ export default styled.div`
         margin: 0;
         padding: 10px 10px 10px 20px;
         text-align: left;
-
         :hover {
           background-color: #07344a;
           color: #43bfd6;
@@ -210,7 +200,7 @@ export default styled.div`
     text-align: center;
     margin-top: 10px;
     position: relative;
-
+    
     .hamburger_icon {
       position: absolute;
       top: 0;
@@ -232,18 +222,17 @@ export default styled.div`
       align-items: center;
       justify-content: space-evenly;
       overflow-x: auto;
-
+      
       @media (max-width: 800px) {
         flex-direction: column;
       }
     }
   }
-
+  
   .column {
     flex: 30%;
     height: 250px;
   }
-
   .list2 {
     margin-bottom: 10px;
     list-style-type: none;

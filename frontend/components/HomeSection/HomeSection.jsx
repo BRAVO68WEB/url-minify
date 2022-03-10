@@ -1,14 +1,51 @@
 import React, { useState } from 'react'
 import HomeSectionStyle from './HomeSection.style'
 import Link from 'next/link'
+import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Axios from 'helpers/Axios'
 import { Alert, Button, Collapse, IconButton } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import QRCode from 'qrcode'
+import { signup } from '@pages/signup'
 import NotFound from '@pages/404'
 import styles from '../../styles/HomeSection.module.css'
+
+const spanVariants = {
+  visible: { y: 0, scaleY: 1 },
+  hover: {
+    y: [-1, -2, -2.8, 0.9, 0],
+    scaleY: [1, 1.3, 0.8, 1.2, 1],
+    color: '#4A1C40'
+  }
+}
+const list = {
+  hidden: {
+    opacity: 0,
+    transition: {
+      when: 'afterChildren'
+    }
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      when: 'beforeChildren',
+      staggerChildren: 0.3
+    }
+  }
+}
+
+const effect = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    y: [-1, -1.9, -2.7, 1],
+    scaleY: [1, 1.3, 0.8, 1]
+  }
+}
 
 const QR = {
   marginTop: '1.8em',
@@ -22,6 +59,7 @@ function HomeSection(props) {
 
 
   const setMinfy = async () => {
+    props.setLongUrl('')
     setOpen(false)
     setDisabled(true)
     let res
@@ -59,12 +97,33 @@ function HomeSection(props) {
     }
   }
 
+  const text1 = "Url";
+  const text2 = "MiniFy";
+
+
   return (
     <HomeSectionStyle>
       <div className="content">
-        <h1 className={styles.title}>URL MINIFY</h1>
+        <motion.span style={{ display: 'flex' }} variants={list} initial="hidden" animate="visible">
+          <div style={{ display: 'flex', marginBottom: '20px' }}>
+            {text1.split("").map((Letter, id) => (
+              <motion.div variants={effect}>
+                <span className={styles.head} key={id}>
+                  <motion.h1 className={styles.letter} variants={spanVariants} initial="visible" whileHover="hover">{Letter}</motion.h1>
+                </span></motion.div>
+            ))}
+            &nbsp;&nbsp;&nbsp;&nbsp;
+          </div>
+          <div style={{ display: 'flex' }}>
+            {text2.split("").map((Letter, id) => (
+              <motion.div variants={effect}><span className={styles.head} key={id}>
+                <motion.h1 className={styles.letter} variants={spanVariants} initial="visible" whileHover="hover">{Letter}</motion.h1>
+              </span></motion.div>
+            ))}
+          </div>
+        </motion.span>
+        <motion.div initial={{ x: '-100vw', opacity: 0 }} animate={{ x: 0, opacity: 1, transition: { delay: 3, type: 'spring', stiffness: 150 } }} className={styles.searchBox}>
 
-        <div className={styles.searchBox}>
           <input
             className={styles.search}
             placeholder="Enter the url to be minified......"
@@ -77,22 +136,24 @@ function HomeSection(props) {
             variant={'contained'}
             disabled={disabled}
             className={styles.btn}
+            component={motion.div}
+            whileHover={{ scale: 1.15 }}
             id="minify"
             onClick={setMinfy}
           >
             MINIFY
           </Button>
-        </div>
+        </motion.div>
 
-        <div className={styles.info}>
-          <h3>
+        <div className={styles.info} style={{ marginBottom: '40px', color: 'black', fontWeight: 'bold', fontSize: '1rem' }}>
+          <motion.h3 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0, transition: { delay: 3.4, duration: 0.4 } }}>
             Need more advanced features? |{' '}
             <Link href="/signup">
-              <span style={{ textDecoration: 'underline' }}>
-                Create an account
+              <span style={{ textDecoration: 'underline', cursor: 'pointer' }} >
+                <a href={signup}>Create an account</a>
               </span>
             </Link>
-          </h3>
+          </motion.h3>
         </div>
 
         {
@@ -112,10 +173,10 @@ function HomeSection(props) {
           )
         }
       </div>
-      
+
       <Collapse in={open}>
         <Alert
-        className={styles.showUrl}
+          className={styles.showUrl}
           action={
             <IconButton
               aria-label="close"
@@ -139,7 +200,6 @@ function HomeSection(props) {
           </IconButton>
         </Alert>
       </Collapse>
-
     </HomeSectionStyle>
   )
 }

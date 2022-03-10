@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import Head from 'next/head'
+import React from 'react'
 import NavBar from 'components/NavBar'
 import Features from 'components/Features'
 import Login from 'components/Login/Login'

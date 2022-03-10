@@ -2,13 +2,10 @@ import React from 'react'
 import RegStyle from './Reg.style'
 import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faUser,
-  faEnvelope,
-  faLock,
-} from '@fortawesome/free-solid-svg-icons'
-import { useState } from 'react'
+import { faUser, faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons'
+import { useState, useContext } from 'react'
 import { Link } from '@mui/material'
+import UserAuth from 'helpers/user/usercontext'
 
 function Reg() {
   const [userData, setUserData] = useState({
@@ -23,10 +20,15 @@ function Reg() {
     const value = event.target.value
     setUserData({ ...userData, [name]: value })
   }
-
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setUserData(userData)
+    context.createAcc(userData)
+  }
+  const context = useContext(UserAuth);
   return (
     <RegStyle>
-      <form className="form-wrapper">
+      <form onSubmit={handleSubmit} className="form-wrapper">
         <p className="reg-title">Sign Up</p>
 
         <div className="reg-field">

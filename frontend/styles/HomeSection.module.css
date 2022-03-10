@@ -1,18 +1,22 @@
-.title {
+.head {
+  font-family: 'Montserrat Alternates', sans-serif;
+  color: #fff;
+  margin-bottom: 30px;
+  text-shadow: 3px 2px 1px black;
   line-height: 1.15;
   font-size: 5.5rem;
   font-weight: bold;
-  color: white;
   margin-bottom: 30px;
   text-align: center;
 }
 
-.searchBox{
+.searchBox {
   position: relative;
 }
 
-.search{
-  font-size: 1.5rem;
+.search {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 1.3rem;
   border-radius: 50px;
   padding: 1rem;
   width: 500px;
@@ -22,7 +26,7 @@
   margin-bottom: 15px;
 }
 
-.btn{
+.btn {
   font-weight: bold !important;
   position: absolute !important;
   align-items: center !important;
@@ -31,40 +35,40 @@
   height: 40px;
   width: 100px;
   border-radius: 50px !important  ;
-} 
+}
 
-.info{
+.info {
   color: #fff;
   text-align: center;
 }
 
-.showUrl{
+.showUrl {
   margin-top: 1rem;
 }
 
 @media (max-width: 600px) {
-  .title{
-      font-size: clamp(1rem, 15vw, 4rem);
+  .letter {
+    font-size: clamp(1rem, 15vw, 4rem);
   }
 
-  .search{
+  .search {
     width: 90vw;
     font-size: 1.2rem;
   }
-
-  .showUrl{
+  
+  .showUrl {
     width: 90vw;
   }
 }
 
 @media (max-width: 400px) {
-  .btn{
+  .btn {
     top: 100%;
     width: 90vw;
     font-size: 1.5rem;
   }
 
-  .info{
+  .info {
     margin-top: 50px;
     width: 90vw;
     font-size: 1rem;

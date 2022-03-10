@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import { motion } from 'framer-motion'
 import {
   Avatar,
   Box,
@@ -49,8 +50,9 @@ function Index(props) {
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters="false">
-          <Typography variant="h4" sx={{ fontWeight: 'bold' }}>
-            URL MINIFY
+          <span><Logo /></span>
+          <Typography component={motion.div} initial={{ y: -50, opacity: 0 }} animate={{ y: 0, opacity: 1, transition: { delay: 1 } }} variant="h5" sx={{ fontWeight: 'bold', fontFamily: "'Montserrat Alternates', sans-serif;" }}>
+            UrlMiniFy
           </Typography>
           <Box
             sx={{
@@ -60,7 +62,7 @@ function Index(props) {
             }}
           >
             <IconButton
-              size="large"
+              size="medium"
               aria-label="account of current user"
               aria-controls="menu-appbar"
               aria-haspopup="true"
@@ -92,15 +94,15 @@ function Index(props) {
                   href="https://github.com/BRAVO68WEB/url-minify"
                   target={'_blank'}
                 >
-                  <Typography textAlign="center" sx={{ display: 'flex' }}>
-                    <GitHubIcon fontSize="small" />
+                  <Typography textAlign="center" variant="h6" sx={{ display: 'flex' }}>
+                    <GitHubIcon fontSize="medium" />
                     GitHub
                   </Typography>
                 </a>
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
-                <a href="NotFound">
-                  <Typography textAlign="center" sx={{ display: 'flex' }}>
+                <a href={NotFound}>
+                  <Typography textAlign="center" variant="h6" sx={{ display: 'flex' }}>
                     CREDITS
                   </Typography>
                 </a>
@@ -127,24 +129,33 @@ function Index(props) {
                   color: 'white',
                   display: 'flex',
                   gap: '10px',
-                  fontSize: 'h5.fontSize',
-                  fontFamily: 'sans-serif',
-                  fontStyle: 'bold',
+                  fontSize: 'h6.fontSize',
+                  fontFamily: "'Open Sans', sans-serif;",
                   textTransform: 'capitalize',
                   fontWeight: 'bold',
                 }}
+                component={motion.div}
+                initial={{ y: -50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1, transition: { delay: 1 } }}
+                whileHover={{ scale: 1.1, textShadow: '2px 2px black' }}
               >
-                <GitHubIcon fontSize="large" />
+                <GitHubIcon fontSize="medium" />
                 GitHub
               </Button>
             </a>
-            <a href="NotFound">
+            <a href={NotFound}>
               <Button
+                component={motion.div}
+                initial={{ y: -50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1, transition: { delay: 1 } }}
+                whileHover={{ scale: 1.1, textShadow: '2px 2px black' }}
                 onClick={handleCloseNavMenu}
                 sx={{
                   color: 'white',
                   display: 'block',
-                  fontSize: 'h5.fontSize',
+                  fontSize: 'h6.fontSize',
+                  fontFamily: "'Open Sans', sans-serif;",
+                  fontWeight: 'bold',
                 }}
               >
                 CREDITS
@@ -187,7 +198,16 @@ function Index(props) {
               </Menu>
             </Box>
           ) : (
-            <Typography onClick={login}>
+            <Typography sx={{
+              color: 'white',
+              display: 'flex',
+              fontSize: 'h6.fontSize',
+              fontFamily: "'Open Sans', sans-serif;",
+              fontWeight: 'bold',
+            }} component={motion.div}
+              initial={{ y: -50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1, transition: { delay: 1 } }}
+              whileHover={{ scale: 1.1, textShadow: '2px 2px black' }} onClick={login}>
               <Link href="./login">LOGIN</Link>
             </Typography>
           )}
