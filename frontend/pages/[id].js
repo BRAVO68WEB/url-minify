@@ -46,7 +46,7 @@ Redirector.getInitialProps = async (context) => {
 
   if (context?.res) {
     const go = resData?.data?.originalUrl ? resData?.data?.originalUrl : '/404'
-    console.log(go)
+    // console.log(go)
     context?.res.writeHead(302, {
       Location: go,
     })
