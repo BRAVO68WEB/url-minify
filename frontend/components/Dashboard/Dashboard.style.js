@@ -2,7 +2,6 @@ import styled from 'styled-components'
 
 export default styled.div`
   display: flex;
-  position: relative;
   height: 100vh;
   @media (max-width: 1100px) {
     display: block;

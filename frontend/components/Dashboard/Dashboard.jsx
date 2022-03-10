@@ -13,6 +13,12 @@ function toggleSidebar1(e) {
   sidebar.classList.toggle('toggle_sidebar')
 }
 
+function changePageContent(e){
+    // change contents of the page according to the option selected by user.
+
+    toggleSidebar1(e);
+}
+
 function Sidebar1() {
   return (
     <div className="sidebar">
@@ -30,17 +36,17 @@ function Sidebar1() {
           <p className="profession">Product Designer</p>
         </div>
         <div className="creatButton">
-          <button className={''}>Create Link</button>
+          <button>Create Link</button>
         </div>
         <li className="nav-buttons">
           <div className="nav-item">
-            <button>Overview</button>
+            <button onClick={changePageContent}>Overview</button>
           </div>
           <div className="nav-item">
-            <button>My Links</button>
+            <button onClick={changePageContent}>My Links</button>
           </div>
           <div className="nav-item">
-            <button>Extras</button>
+            <button onClick={changePageContent}>Extras</button>
           </div>
         </li>
       </ul>
