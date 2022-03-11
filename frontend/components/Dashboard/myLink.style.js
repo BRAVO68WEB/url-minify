@@ -82,15 +82,12 @@ export default styled.div`
         color: white;
         font-size: 1.1rem;
         margin: 0;
-        padding: 10px 10px 10px 90px;
+        padding: 10px 10px 10px 20px;
         text-align: left;
-        cursor: pointer;
-        display: flex;
-
         :hover {
-          background-color: #07344A;
-          color: #43BFD6;
-          border-left: 5px solid #43BFD6;
+          background-color: #07344a;
+          color: #43bfd6;
+          border-left: 5px solid #43bfd6;
         }
       }
     }

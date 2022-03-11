@@ -42,10 +42,14 @@ function Sidebar1() {
         </div>
         <li className="nav-buttons">
           <div className="nav-item">
-            <button onClick={changePageContent}>Overview</button>
+            <button onClick={changePageContent}>
+              <Link href="./dashboard">Overview</Link>
+            </button>
           </div>
           <div className="nav-item">
-            <button onClick={changePageContent}>My Links</button>
+            <button onClick={changePageContent}>
+              <Link href="./myLinks">My Links</Link>
+            </button>
           </div>
           <div className="nav-item">
             <button onClick={changePageContent}>Extras</button>

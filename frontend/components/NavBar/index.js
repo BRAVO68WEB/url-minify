@@ -19,7 +19,12 @@ import NavbarStyle from './Navbar.style'
 import Logo from './Logo'
 import UserAuth, { UserContext } from 'helpers/user/usercontext'
 import Link from 'next/link'
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout']
+const settings = [
+  <Link href="./dashboard">Profile</Link>,
+  'Account',
+  <Link href="./dashboard">Dashboard</Link>,
+  <Link href="./">Logout</Link>
+]
 import NotFound from '@pages/404'
 
 function Index(props) {
