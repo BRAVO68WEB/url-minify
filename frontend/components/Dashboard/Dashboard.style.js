@@ -2,17 +2,18 @@ import styled from 'styled-components'
 
 export default styled.div`
   display: flex;
-  position: relative;
   height: 100vh;
   @media (max-width: 1100px) {
     display: block;
   }
+
   /* this shows sidebar when menu icon is clicked */
   .toggle_sidebar {
     @media (max-width: 1100px) {
       left: 0px !important;
     }
   }
+
   .sidebar {
     flex-shrink: 0;
     padding-top: 60px;
@@ -21,15 +22,18 @@ export default styled.div`
     height: 100%;
     color: white !important;
     transition: all 0.25s;
+    
     @media (max-width: 1100px) {
       left: -300px;
       position: absolute;
       z-index: 100;
     }
+    
     /* for small screens */
     @media (max-width: 300px) {
       width: 100vw;
     }
+    
     .brand-name {
       margin-top: 40px;
       padding-left: 20px;
@@ -77,9 +81,11 @@ export default styled.div`
         border-radius: 5px;
       }
     }
+
     .close_icon {
       display: none;
       font-size: 2rem;
+
       @media (max-width: 1100px) {
         display: inline-block;
         position: relative;
@@ -110,11 +116,13 @@ export default styled.div`
       }
     }
   }
+
   .main {
     padding-top: 90px;
     flex: 1;
     display: flex;
     flex-direction: column;
+
     .row2 {
       flex: 1;
       display: flex;
@@ -122,12 +130,15 @@ export default styled.div`
       align-items: center;
       padding: 20px 40px;
       justify-content: space-evenly;
+
       @media (max-width: 1100px) {
         margin: 30px 0;
       }
+
       @media (max-width: 800px) {
         flex-direction: column;
       }
+
       .graph {
         border-radius: 10px;
         border: 3px solid #e1e1e1;
@@ -135,9 +146,11 @@ export default styled.div`
         padding: 15px;
         width: 60%;
         max-width: 700px;
+
         @media (max-width: 1100px) {
           height: 500px;
         }
+
         @media (max-width: 800px) {
           width: clamp(200px, 500px, 90vw);
         }
@@ -149,10 +162,12 @@ export default styled.div`
         padding: 15px;
         width: 30%;
         min-width: 250px;
+
         @media (max-width: 800px) {
           margin: 20px 0;
           width: clamp(200px, 500px, 90vw);
         }
+
         .version {
           display: flex;
           margin-bottom: 10px;
@@ -180,16 +195,19 @@ export default styled.div`
       }
     }
   }
+
   .sidebar2 {
     text-align: center;
     margin-top: 10px;
     position: relative;
+    
     .hamburger_icon {
       position: absolute;
       top: 0;
       left: 1rem;
       display: none;
       font-size: 3rem;
+
       @media (max-width: 1100px) {
         display: block;
       }
@@ -204,11 +222,13 @@ export default styled.div`
       align-items: center;
       justify-content: space-evenly;
       overflow-x: auto;
+      
       @media (max-width: 800px) {
         flex-direction: column;
       }
     }
   }
+  
   .column {
     flex: 30%;
     height: 250px;

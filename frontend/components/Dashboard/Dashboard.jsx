@@ -15,39 +15,13 @@ function toggleSidebar1(e) {
   sidebar.classList.toggle('toggle_sidebar')
 }
 
+function changePageContent(e){
+    // change contents of the page according to the option selected by user.
+
+    toggleSidebar1(e);
+}
+
 function Sidebar1() {
-    return (<div className="sidebar">
-        <ul>
-            <div className="nav-item mb-2 brand-name"><h1>Brand Name</h1></div>
-            <div className="profile">
-                <div className="profile-image"><img
-                    src="https://png.pngtree.com/png-vector/20190307/ourlarge/pngtree-vector-edit-profile-icon-png-image_760869.jpg"/>
-                </div>
-                <p className="name">Hayat</p>
-                <p className="profession">Product Designer</p>
-            </div>
-            <div className="creatButton">
-                <button className={""}>Create Link</button>
-            </div>
-            <li className="nav-buttons">
-                <div className="nav-item">
-                    <button>
-                        <Link href="./dashboard">Overview</Link>
-                    </button>
-                </div>
-                <div className="nav-item">
-                    <button>
-                        <Link href="./myLinks">My Links</Link>
-                    </button>
-                </div>
-                <div className="nav-item">
-                    <button>
-                        Extras
-                    </button>
-                </div>
-            </li>
-        </ul>
-    </div>)
   return (
     <div className="sidebar">
       <CloseIcon className="close_icon" onClick={toggleSidebar1} />
@@ -64,23 +38,22 @@ function Sidebar1() {
           <p className="profession">Product Designer</p>
         </div>
         <div className="creatButton">
-          <button className={''}>Create Link</button>
+          <button>Create Link</button>
         </div>
         <li className="nav-buttons">
           <div className="nav-item">
-            <button>Overview</button>
+            <button onClick={changePageContent}>Overview</button>
           </div>
           <div className="nav-item">
-            <button>My Links</button>
+            <button onClick={changePageContent}>My Links</button>
           </div>
           <div className="nav-item">
-            <button>Extras</button>
+            <button onClick={changePageContent}>Extras</button>
           </div>
         </li>
       </ul>
     </div>
   )
-main
 }
 
 function Sidebar2() {
@@ -201,6 +174,7 @@ function Graph() {
           </div>
           <div className="title">Total Views</div>
         </div>
+
       </div>
     </div>
   )

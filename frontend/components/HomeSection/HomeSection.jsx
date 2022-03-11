@@ -123,6 +123,7 @@ function HomeSection(props) {
           </div>
         </motion.span>
         <motion.div initial={{ x: '-100vw', opacity: 0 }} animate={{ x: 0, opacity: 1, transition: { delay: 3, type: 'spring', stiffness: 150 } }} className={styles.searchBox}>
+
           <input
             className={styles.search}
             placeholder="Enter the url to be minified......"
@@ -143,6 +144,7 @@ function HomeSection(props) {
             MINIFY
           </Button>
         </motion.div>
+
         <div className={styles.info} style={{ marginBottom: '40px', color: 'black', fontWeight: 'bold', fontSize: '1rem' }}>
           <motion.h3 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0, transition: { delay: 3.4, duration: 0.4 } }}>
             Need more advanced features? |{' '}
