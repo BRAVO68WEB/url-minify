@@ -4,18 +4,28 @@ import axios from 'helpers/Axios'
 
 const UserAuthProvider = ({ children }) => {
   const [user, setUser] = useState(null)
-  const login = () => {
-    setUser('default')
+  const login = (data) => {
+    axios
+      .post(`http://localhost:5000/user/login`, {
+        email: data.email,
+        password: data.password,
+      })
+      .then((data) => {
+        console.log(data.data)
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
   }
   const createAcc = (data) => {
     axios
-      .post(`/user/register`, {
+      .post(`http://localhost:5000/user/register`, {
         email: data.email,
         password: data.password,
         name: data.name,
       })
-      .then(function (response) {
-        console.log(response)
+      .then((data) => {
+        console.log(data)
       })
       .catch(function (error) {
         console.log(error)

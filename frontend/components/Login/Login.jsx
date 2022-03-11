@@ -2,31 +2,32 @@ import React from 'react'
 import LoginStyle from './Login.style'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faUser,
-  faEnvelope,
-  faLock,
-} from '@fortawesome/free-solid-svg-icons'
-import { UserContext } from '../../helpers/user/usercontext'
+import { faUser, faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons'
+import UserAuth, { UserContext } from '../../helpers/user/usercontext'
 import { useState } from 'react'
 import Link from 'next/link'
 import { useContext } from 'react'
 
 function Login() {
+  const context = useContext(UserAuth)
   const [userData, setUserData] = useState({
     email: '',
     password: '',
   })
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    setUserData(userData)
+    context.login(userData)
+  }
 
   const handleInput = (event) => {
     const name = event.target.name
     const value = event.target.value
     setUserData({ ...userData, [name]: value })
   }
-
   return (
     <LoginStyle>
-      <form className="form-wrapper">
+      <form className="form-wrapper" onSubmit={handleSubmit}>
         <p className="reg-title">Sign in</p>
 
         <img src="/images/user.png"></img>
@@ -61,11 +62,9 @@ function Login() {
           />
         </div>
 
-        <Link href="/">
-          <button type="submit" className="submit-button">
-            Submit
-          </button>
-        </Link>
+        <button type="submit" className="submit-button">
+          Submit
+        </button>
 
         <p className="foot-text">
           New here?&nbsp;
