@@ -42,19 +42,37 @@ module.exports.findUrlById = async (req, res) => {
 }
 
 module.exports.addURL = async (req, res) => {
-   const alias = nanoid(5)
+   // const alias = nanoid(5)  //unique alias
+   const alias = "iRrU2" //duplicate alias
    const minifiedUrl = base_url + alias
-   Minfy.create({
-      originalUrl: req.body.originalUrl,
-      alias: alias,
-      minifiedUrl: minifiedUrl
+   Minfy.find({
+      alias: alias
    })
       .then((data) => {
-         res.json(data)
+         if (data.length === 0) {
+            Minfy.create({
+               originalUrl: req.body.originalUrl,
+               alias: alias,
+               minifiedUrl: minifiedUrl
+            })
+               .then((data) => {
+                  res.json(data)
+               })
+               .catch((err) => {
+                  console.error(err)
+                  res.sendStatus(500)
+               })
+         }
+         else{
+            res.json({
+               message: "Duplicate alias found"
+            })
+         }
       })
       .catch((err) => {
-         console.error(err)
-         res.sendStatus(500)
+         res.json({
+            error: err
+         })
       })
 }
 
