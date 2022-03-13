@@ -6,26 +6,46 @@ import { faUser, faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons'
 import { useState, useContext } from 'react'
 import { Link } from '@mui/material'
 import UserAuth from 'helpers/user/usercontext'
+import CloseIcon from '@mui/icons-material/Close'
+import axios from 'helpers/Axios'
 
 function Reg() {
-  const [userData, setUserData] = useState({
-    username: '',
-    email: '',
-    password: '',
-    repassword: '',
-  })
+  const [name, setName] = useState('Tejas')
+  const [email, setEmail] = useState('tejascs84@gmail.com')
+  const [password, setPassword] = useState('123')
+  const [repassword, setRepassword] = useState('123')
+  const [message, setMessage] = useState('')
+  const [isLoading, setisLoading] = useState(false)
 
-  const handleInput = (event) => {
-    const name = event.target.name
-    const value = event.target.value
-    setUserData({ ...userData, [name]: value })
-  }
-  const handleSubmit = (e) => {
-    e.preventDefault()
-    setUserData(userData)
-    context.createAcc(userData)
-  }
   const context = useContext(UserAuth);
+
+  async function handleSubmit(e){
+    e.preventDefault()
+    
+    if(!name || !email || !password || !repassword){
+      setMessage("Please fill all fields")
+      return
+    }
+    
+    if(repassword !== password){
+      setMessage("Password doesn't match")
+      return
+    }
+    
+    setisLoading(true)
+
+    try {
+      const res = await axios.post(`/user/register`, { name, email, password })
+      console.log(res)
+      setMessage(res.data.message)
+    } 
+    catch (error) {
+      setMessage(error.response.data)
+    }
+
+    setisLoading(false)
+  }
+
   return (
     <RegStyle>
       <form onSubmit={handleSubmit} className="form-wrapper">
@@ -40,8 +60,8 @@ function Reg() {
             name="username"
             autoComplete="off"
             type="text"
-            value={userData.username}
-            onChange={handleInput}
+            value={name}
+            onChange={(e) => setName(e.target.value)}
             placeholder="Full Name"
           />
         </div>
@@ -54,9 +74,9 @@ function Reg() {
             className="reg-input"
             name="email"
             autoComplete="off"
-            onChange={handleInput}
+            onChange={(e) => setEmail(e.target.value)}
             type="text"
-            value={userData.email}
+            value={email}
             placeholder="Email Address"
           />
         </div>
@@ -69,9 +89,9 @@ function Reg() {
             className="reg-input"
             name="password"
             autoComplete="off"
-            onChange={handleInput}
+            onChange={(e) => setPassword(e.target.value)}
             type="password"
-            value={userData.password}
+            value={password}
             placeholder="Password"
           />
         </div>
@@ -84,11 +104,22 @@ function Reg() {
             className="reg-input"
             name="repassword"
             autoComplete="off"
-            onChange={handleInput}
+            onChange={(e) => setRepassword(e.target.value)}
             type="password"
-            value={userData.repassword}
+            value={repassword}
             placeholder="Confirm Password"
           />
+        </div>
+
+        <div className="message_container">
+        {isLoading && <div className="loader"></div>}
+
+          {message && (
+            <div className="message">
+              {message}
+              <CloseIcon className="close" onClick={() => setMessage('')} />
+            </div>
+          )}
         </div>
 
         <button type="submit" className="submit-button">

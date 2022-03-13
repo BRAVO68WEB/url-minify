@@ -84,6 +84,54 @@
   transition: 0.1s;
 }
 
+/* spinner for forms */
+.loader {
+  border-radius: 50%;
+  border-top: 4px solid purple;
+  border-bottom: 4px solid purple;
+  width: 30px;
+  height: 30px;
+  animation: spin 1s linear infinite;
+  margin: 10px auto;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.message_container {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.message {
+  width: 100%;
+  font-size: 1.1rem;
+  background-color: white;
+  padding: 7px;
+  border-radius: 6px;
+  margin: 8px 0;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: medium;
+  cursor: pointer;
+}
+
 .foot-text {
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
