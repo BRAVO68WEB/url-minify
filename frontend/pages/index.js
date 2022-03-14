@@ -3,6 +3,7 @@ import Head from 'next/head'
 import HomeSection from 'components/HomeSection/HomeSection'
 import NavBar from 'components/NavBar'
 import Features from 'components/Features'
+import Toaster from 'react-hot-toast'
 
 export default function Home() {
   const [shortUrl, setShortUrl] = useState(null)
@@ -15,6 +16,9 @@ export default function Home() {
       <Head>
         <title>URL MiniFy</title>
         <link rel="icon" href="/favicon.ico" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=BioRhyme&family=Cabin+Sketch:wght@700&family=IBM+Plex+Serif:ital@1&family=Monoton&family=Montserrat+Alternates:wght@500&family=Open+Sans:wght@300&family=Poppins&family=Share+Tech+Mono&family=Special+Elite&display=swap" rel="stylesheet" />
       </Head>
 
       <main className={'main-bg'}>

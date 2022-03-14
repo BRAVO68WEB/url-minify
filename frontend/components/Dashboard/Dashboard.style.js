@@ -22,11 +22,13 @@ export default styled.div`
     height: 100%;
     color: white !important;
     transition: all 0.25s;
+    overflow: auto;
     
     @media (max-width: 1100px) {
       left: -300px;
       position: absolute;
       z-index: 100;
+      padding-bottom: 100px;
     }
     
     /* for small screens */
@@ -102,12 +104,14 @@ export default styled.div`
         width: 100%;
         background-color: transparent;
         border: none;
+        border-left: 5px solid transparent;
         outline: none;
         color: white;
         font-size: 1.1rem;
         margin: 0;
         padding: 10px 10px 10px 20px;
         text-align: left;
+        cursor: pointer;
         :hover {
           background-color: #07344a;
           color: #43bfd6;
