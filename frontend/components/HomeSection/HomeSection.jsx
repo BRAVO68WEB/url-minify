@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Axios from 'helpers/Axios'
 import { Alert, Button, Collapse, IconButton } from '@mui/material'
+import ReplayIcon from '@mui/icons-material/Replay';
 import CloseIcon from '@mui/icons-material/Close'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import QRCode from 'qrcode'
@@ -12,6 +13,17 @@ import { signup } from '@pages/signup'
 import styles from '../../styles/HomeSection.module.css'
 import toast from 'react-hot-toast'
 import { Toaster } from 'react-hot-toast'
+import { createTheme } from '@mui/material/styles'
+import { ThemeProvider } from '@mui/material/styles'
+
+const theme = createTheme({
+  palette: {
+    action: {
+      disabledBackground: '#222831',
+      disabled: 'white'
+    }
+  }
+})
 
 const spanVariants = {
   visible: { y: 0, scaleY: 1 },
@@ -67,8 +79,6 @@ function HomeSection(props) {
     }
     else {
       setdisabled(true)
-      setTimeout(() => { setdisabled(false) }, 6000)
-      setOpen(false)
       let res
       try {
         res = await Axios.post(`/minify/add`, {
@@ -107,8 +117,16 @@ function HomeSection(props) {
     toast.success("URL copied to clipboard !!")
   }
 
+  const handleResponse = async () => {
+    setOpen(false)
+    props.setLongUrl('')
+    setdisabled(false)
+  }
+
   const text1 = "Url";
   const text2 = "MiniFy";
+
+
 
 
   return (
@@ -136,7 +154,7 @@ function HomeSection(props) {
               props.setLongUrl(e.target.value)
             }}
           />
-          <Button
+          <ThemeProvider theme={theme}><Button
             variant={'contained'}
             disabled={disabled}
             className={styles.btn}
@@ -145,8 +163,8 @@ function HomeSection(props) {
             id="minify"
             onClick={setMinfy}
           >
-            MINIFY
-          </Button>
+            {disabled ? 'MINIFIED' : 'MINIFY'}
+          </Button></ThemeProvider>
         </motion.div>
 
         <div className={styles.info} style={{ marginBottom: '40px', color: 'black', fontWeight: 'bold', fontSize: '1rem' }}>
@@ -163,7 +181,7 @@ function HomeSection(props) {
         {
           // show QR code if a url is generated
           props.showQrCode && open ? (
-            <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1, transition: { ease: 'easeInOut', duration: 1 } }} style={QR}>
+            <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1, transition: { ease: 'easeInOut', duration: 0.7 } }} style={QR}>
               <Image
                 src={props.qrData}
                 placeholder="blur"
@@ -189,6 +207,7 @@ function HomeSection(props) {
               sx={{ padding: '5px 0 0 0' }}
               onClick={() => {
                 setOpen(false)
+                setdisabled(false)
               }}
             >
               <CloseIcon sx={{ marginRight: '10px', '&:hover': { color: 'red', background: '#D1D1D1' } }} />
@@ -204,6 +223,15 @@ function HomeSection(props) {
             <ContentCopyIcon />
           </IconButton>
         </Alert>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <Button
+            variant="contained"
+            component={motion.div}
+            whileHover={{ scale: 1.1, transition: { ease: 'easeOut' } }}
+            whileTap={{ scale: 0.8, transition: { ease: 'easeOut' } }}
+            sx={{ background: '#D82148', boxShadow: 'inset 0 -5px 0 0 #470D21', marginTop: '10px', gap: '5px', textTransform: 'none', borderRadius: '20px', padding: '10px 25px 13px', '&:hover': { background: '#F90716', boxShadow: 'inset 0 -5px 0 0 #470D21' } }}
+            onClick={handleResponse}><ReplayIcon />Have another URL?</Button>
+        </div>
       </Collapse>
       <Toaster position="bottom-right" toastOptions={{ duration: 2500, style: { padding: '5px 10px', borderRadius: '30px', fontWeight: 'bold', fontSize: '14px' } }} />
     </HomeSectionStyle>
