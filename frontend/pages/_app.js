@@ -3,19 +3,41 @@ import '../styles/logostyles.css'
 import '../styles/formStyles.css'
 import '../styles/index.css'
 import '../styles/404.css'
-import UserAuthProvider from 'helpers/user/userState'
 import Page from 'react-page-loading'
-
+import UserContextProvider, { userAuth } from 'helpers/user/usercontext'
+import { useEffect } from 'react'
+import axios from 'helpers/Axios'
 
 function MyApp({ Component, pageProps }) {
+  useEffect(async () => {
+    const token = localStorage.getItem('token')
+    
+    if(!token){
+      return
+    }
+
+    try {
+      const res = await axios.get(`/user/authenticate`, { headers: { authorization: `Bearer ${token}` }})
+      console.log(res)      
+      
+      // add user to the context here if the token is valid
+      
+    } 
+    catch (error) {
+      // if token is invalid remove it from localStorage
+      if(error.response.status === 401){
+         console.log(error.response.data)
+         localStorage.removeItem("token")
+      }
+    }  
+  }, [])
+    
   return (
-    <UserAuthProvider>
+    <UserContextProvider>
       <Page loader={"bar"} color={"#03b1fc"} size={10} >
         <Component {...pageProps} />
-
       </Page>
-
-    </UserAuthProvider>
+    </UserContextProvider>
   )
 }
 

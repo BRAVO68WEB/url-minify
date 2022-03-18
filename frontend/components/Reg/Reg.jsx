@@ -3,21 +3,22 @@ import RegStyle from './Reg.style'
 import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons'
-import { useState, useContext } from 'react'
+import { useState } from 'react'
 import { Link } from '@mui/material'
 import UserAuth from 'helpers/user/usercontext'
 import CloseIcon from '@mui/icons-material/Close'
 import axios from 'helpers/Axios'
+import { userAuth } from 'helpers/user/usercontext'
 
 function Reg() {
-  const [name, setName] = useState('Tejas')
-  const [email, setEmail] = useState('tejascs84@gmail.com')
-  const [password, setPassword] = useState('123')
-  const [repassword, setRepassword] = useState('123')
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [repassword, setRepassword] = useState('')
   const [message, setMessage] = useState('')
   const [isLoading, setisLoading] = useState(false)
+  const { login } = userAuth()
 
-  const context = useContext(UserAuth);
 
   async function handleSubmit(e){
     e.preventDefault()
@@ -35,9 +36,15 @@ function Reg() {
     setisLoading(true)
 
     try {
-      const res = await axios.post(`/user/register`, { name, email, password })
-      console.log(res)
-      setMessage(res.data.message)
+      const { data } = await axios.post(`/user/register`, { name, email, password })
+      const { user } = data
+
+      // login user after registering
+      login({ name: user.name, email: user.email })
+
+      // store the token in localStorage after loggin in
+      localStorage.setItem('token', data.access_token);
+      setMessage(data.message)
     } 
     catch (error) {
       setMessage(error.response.data)
@@ -128,7 +135,7 @@ function Reg() {
 
         <p className="foot-text">
           Already registered? Login&nbsp;
-          <Link href="/login" exact className="foot-text underline">
+          <Link href="/login" className="foot-text underline">
             here
           </Link>
         </p>

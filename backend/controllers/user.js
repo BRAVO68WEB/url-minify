@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken')
 const User = require('../models/user')
 
 module.exports.register = async (req, res) => {
-   const { name, email, password } = req.body;
+   const { name, email, password } = req.body
 
    try {
       // if any fields are missing
@@ -11,15 +11,15 @@ module.exports.register = async (req, res) => {
       }
 
       // if the user is already registered
-      let oldUser = await User.findOne({ email }).catch((err) => {
+      const oldUser = await User.findOne({ email }).catch((err) => {
          console.error(err)
       })
       if (oldUser){
-         return res.status(409).send('User already exists')
+         return res.status(409).send("User already exists")
       }
 
       // saving new user to database
-      let user = new User({ email })
+      let user = new User({ email, name })
       user.setPassword(password)
 
       let validationError = false
@@ -29,14 +29,18 @@ module.exports.register = async (req, res) => {
       })
 
       if (!validationError){
-         return res.status(200).json({ jwt: user.generateJWT(), message: "User successfully registered"})
+         return res.status(200).json({ 
+            access_token: user.generateJWT(), 
+            message: "User successfully registered",
+            user : { name: user.name, email: user.email }
+         })
       }
-   } catch (e) {
+   } 
+   catch (e) {
       console.log(e)
-      return res.status(500).send('Internal Server Error')
+      return res.status(500).send("Internal Server Error")
    }
 }
-
 
 module.exports.login = async (req, res) => {
    const { email, password } = req.body;
@@ -51,33 +55,43 @@ module.exports.login = async (req, res) => {
          console.error(err)
       )
 
-      console.log(user);
+      // if user is not registered
+      if(!user){
+         return res.status(404).send("User not found");
+      }
+      
+      // if password doesn't match
+      if(!user.validatePassword(password)){
+         return res.status(401).send("Incorrect email or password");
+      }
 
-      if (user && user.validatePassword(password))
-         return res.status(200).json({ access_token: user.generateJWT(), message: "Logged In" })
-      return res.status(401).send(null)
+      return res.status(200).json({ 
+         access_token: user.generateJWT(),
+         message: "Logged In",
+         user : { name: user.name, email: user.email }
+      })
    } 
    catch (err) {
       console.log(err)
-      return res.sendStatus(500)
+      return res.status(500).send("Internal Server Error")
    }
 }
 
 
-module.exports.me = async (req, res) => {
+module.exports.authenticate = async (req, res) => {
    try {
       if (!req.user.isAuthenticated) {
-         res.sendStatus(401)
-         return
+         return res.status(401).send('Not Authenticated')         
       }
-      let user = req.user.data
-      res.send({
+
+      const user = req.user.data
+      
+      return res.status(200).json({
          email: user.email,
-         name: user.name,
-         phone: user.phone,
+         name: user.name
       })
    } catch (e) {
       console.log(e)
-      return res.sendStatus(500)
+      return res.status(500).send("Internal Server Error")
    }
 }

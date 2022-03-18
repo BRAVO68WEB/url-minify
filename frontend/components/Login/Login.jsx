@@ -6,19 +6,19 @@ import { faUser, faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons'
 import { UserContext } from '../../helpers/user/usercontext'
 import { useState } from 'react'
 import Link from 'next/link'
-import { useContext } from 'react'
 import CloseIcon from '@mui/icons-material/Close'
 import axios from 'helpers/Axios'
+import { userAuth } from 'helpers/user/usercontext'
 
 function Login() {
-  const [email, setEmail] = useState('tejascs84@gmail.com')
-  const [password, setPassword] = useState('123')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
   const [message, setMessage] = useState('')
   const [isLoading, setisLoading] = useState(false)
+  const { login } = userAuth()
 
   async function handleSubmit(e) {
     e.preventDefault()
-    
 
     if (!email) {
       setMessage('Email should not be blank')
@@ -33,13 +33,18 @@ function Login() {
     setisLoading(true)
 
     try {
-      const res = await axios.post(`/user/login`, { email, password })
-      console.log(res);
-      setMessage(res.data.message)
+      const { data } = await axios.post(`/user/login`, { email, password })
+      const { user } = data
+
+      // add user to context
+      login({name: user.name, email: user.email})
+
+      // store token after logging in
+      localStorage.setItem('token', data.access_token);
+      setMessage(data.message)
     } 
     catch (error) {
-      console.log(error);
-      setMessage('Error occured while Loggin in, please try again!!')
+      setMessage(error.response.data)
     }
     
     setisLoading(false)
@@ -100,7 +105,7 @@ function Login() {
 
         <p className="foot-text">
           New here?&nbsp;
-          <Link href="/signup" exact className="foot-text underline">
+          <Link href="/signup" className="foot-text underline">
             Create an account
           </Link>
         </p>

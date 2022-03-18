@@ -2,7 +2,7 @@
 
 .form-wrapper {
   background-color: rgba(255, 255, 255, 0.5);
-  padding: 20px 30px 40px 30px;
+  padding: 20px 30px;
   border-radius: 20px;
   font-size: 24px;
   text-align: center;
@@ -107,7 +107,7 @@
 .message_container {
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 70%;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -116,7 +116,7 @@
 
 .message {
   width: 100%;
-  font-size: 1.1rem;
+  font-size: 1rem;
   background-color: white;
   padding: 7px;
   border-radius: 6px;
@@ -136,7 +136,7 @@
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 18px;
-  margin-top: 50px;
+  margin-top: 20px;
   color: black;
   text-decoration: none;
 }

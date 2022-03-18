@@ -17,10 +17,9 @@ import GitHubIcon from '@mui/icons-material/GitHub'
 import MenuIcon from '@mui/icons-material/Menu'
 import NavbarStyle from './Navbar.style'
 import Logo from './Logo'
-import UserAuth, { UserContext } from 'helpers/user/usercontext'
+import UserContextProvider, { userAuth } from 'helpers/user/usercontext'
 import Link from 'next/link'
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout']
-import NotFound from '@pages/404'
 
 function Index(props) {
   const [anchorElNav, setAnchorElNav] = React.useState(null)
@@ -41,15 +40,16 @@ function Index(props) {
     setAnchorElUser(null)
   }
 
-  const { user, login, logout } = useContext(UserAuth)
-
+  const { user, login, logout } = userAuth()
+  // user = 0
+  
   return (
     <NavbarStyle
       position="relative"
       sx={{ bgcolor: alpha('#000000', 0.5), m: '0px' }}
     >
       <Container maxWidth="xl">
-        <Toolbar disableGutters="false">
+        <Toolbar disableGutters={false}>
           <span><Logo /></span>
           <Typography component={motion.div} initial={{ y: -50, opacity: 0 }} animate={{ y: 0, opacity: 1, transition: { delay: 1 } }} variant="h5" sx={{ fontWeight: 'bold', fontFamily: "'Montserrat Alternates', sans-serif;" }}>
             UrlMiniFy
@@ -101,7 +101,7 @@ function Index(props) {
                 </a>
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
-                <a href={NotFound}>
+                <a>
                   <Typography textAlign="center" variant="h6" sx={{ display: 'flex' }}>
                     CREDITS
                   </Typography>
@@ -143,7 +143,7 @@ function Index(props) {
                 GitHub
               </Button>
             </a>
-            <a href={NotFound}>
+            <a>
               <Button
                 component={motion.div}
                 initial={{ y: -50, opacity: 0 }}
@@ -163,7 +163,7 @@ function Index(props) {
             </a>
           </Box>
 
-          {user ? (
+          {user.name ? (
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
@@ -207,7 +207,7 @@ function Index(props) {
             }} component={motion.div}
               initial={{ y: -50, opacity: 0 }}
               animate={{ y: 0, opacity: 1, transition: { delay: 1 } }}
-              whileHover={{ scale: 1.1, textShadow: '2px 2px black' }} onClick={login}>
+              whileHover={{ scale: 1.1, textShadow: '2px 2px black' }}>
               <Link href="./login">LOGIN</Link>
             </Typography>
           )}

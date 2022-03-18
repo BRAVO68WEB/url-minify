@@ -44,11 +44,12 @@ UsersSchema.methods.generateJWT = function () {
    return jwt.sign(
       {
          email: this.email,
+         name: this.name,
          hash: this.hash,
          id: this._id,
          exp: parseInt(String(expirationDate.getTime() / 1000), 10),
       },
-      process.env.AUTH_SECRET
+      process.env.AUTH_SECRET,
    )
 }
 
