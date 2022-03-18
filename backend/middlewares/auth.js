@@ -10,15 +10,12 @@ module.exports.auth = async (req, res, next) => {
       try {
          // throws error if token is invalid
          const jwtData = jwt.verify(token, process.env.AUTH_SECRET)
-         console.log(jwtData);
-         
+                  
          const userData = await User.findOne({
             email: jwtData.email,
             hash: jwtData.hash,
          }).catch((err) => console.error(err))
          
-         console.log(`User data: ${userData}`);
-
          user.isAuthenticated = userData ? true : false
          user.data = userData
       } 

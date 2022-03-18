@@ -9,6 +9,8 @@ import { useEffect } from 'react'
 import axios from 'helpers/Axios'
 
 function MyApp({ Component, pageProps }) {
+
+  // runs every time any page is loaded
   useEffect(async () => {
     const token = localStorage.getItem('token')
     
