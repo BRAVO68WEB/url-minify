@@ -4,6 +4,7 @@ import HomeSection from 'components/HomeSection/HomeSection'
 import NavBar from 'components/NavBar'
 import Features from 'components/Features'
 
+
 export default function Home() {
   const [shortUrl, setShortUrl] = useState(null)
   const [longUrl, setLongUrl] = useState('')

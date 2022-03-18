@@ -5,12 +5,25 @@ import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Axios from 'helpers/Axios'
 import { Alert, Button, Collapse, IconButton } from '@mui/material'
+import ReplayIcon from '@mui/icons-material/Replay';
 import CloseIcon from '@mui/icons-material/Close'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 import QRCode from 'qrcode'
 import { signup } from '@pages/signup'
-import NotFound from '@pages/404'
 import styles from '../../styles/HomeSection.module.css'
+import toast from 'react-hot-toast'
+import { Toaster } from 'react-hot-toast'
+import { createTheme } from '@mui/material/styles'
+import { ThemeProvider } from '@mui/material/styles'
+
+const theme = createTheme({
+  palette: {
+    action: {
+      disabledBackground: '#222831',
+      disabled: 'white'
+    }
+  }
+})
 
 const spanVariants = {
   visible: { y: 0, scaleY: 1 },
@@ -31,7 +44,7 @@ const list = {
     opacity: 1,
     transition: {
       when: 'beforeChildren',
-      staggerChildren: 0.3
+      staggerChildren: 0.27
     }
   }
 }
@@ -54,36 +67,38 @@ const QR = {
 function HomeSection(props) {
   let qrCode
   let minifiedUrl
-  const [disabled, setDisabled] = useState(false)
   const [open, setOpen] = useState(false)
+  const [disabled, setdisabled] = useState(false)
 
 
   const setMinfy = async () => {
-    props.setLongUrl('')
-    setOpen(false)
-    setDisabled(true)
-    let res
-    try {
-      res = await Axios.post(`/minify/add`, {
-        originalUrl: props.longUrl,
-      })
-    } catch (err) {
-      console.error(err)
-      return
+    if (props.longUrl === '') {
+      props.setShowQrCode(false)
+      setOpen(false)
+      toast.error("Please enter a valid URL !!");
     }
+    else {
+      setdisabled(true)
+      let res
+      try {
+        res = await Axios.post(`/minify/add`, {
+          originalUrl: props.longUrl,
+        })
+      } catch (err) {
+        console.error(err)
+        return
+      }
+      toast.success("Successfully shortened your URL !!")
+      const data = await res.data
+      console.log(`Data: ${data}`);
 
-    const data = await res.data
-    console.log(`Data: ${data}`);
-
-    props.setShortUrl(data.minifiedUrl)
-    minifiedUrl = data.minifiedUrl
-    navigator.clipboard.writeText(props.shortUrl)
-    if (minifiedUrl) {
-      generateQR()
+      props.setShortUrl(data.minifiedUrl)
+      minifiedUrl = data.minifiedUrl
+      if (minifiedUrl) {
+        generateQR()
+      }
+      setOpen(true)
     }
-    await navigator.clipboard.writeText(data.minifiedUrl)
-    setOpen(true)
-    setDisabled(false)
   }
 
   // Generate QRCODE for the generated link
@@ -97,33 +112,40 @@ function HomeSection(props) {
     }
   }
 
+  const handlecopy = async () => {
+    navigator.clipboard.writeText(props.shortUrl)
+    toast.success("URL copied to clipboard !!")
+  }
+
+  const handleResponse = async () => {
+    setOpen(false)
+    props.setLongUrl('')
+    setdisabled(false)
+  }
+
   const text1 = "Url";
   const text2 = "MiniFy";
+
+
 
 
   return (
     <HomeSectionStyle>
       <div className="content">
         <motion.span style={{ display: 'flex' }} variants={list} initial="hidden" animate="visible">
-          <div style={{ display: 'flex', marginBottom: '20px' }}>
-            {text1.split("").map((Letter, id) => (
-              <motion.div variants={effect}>
-                <span className={styles.head} key={id}>
-                  <motion.h1 className={styles.letter} variants={spanVariants} initial="visible" whileHover="hover">{Letter}</motion.h1>
-                </span></motion.div>
-            ))}
-            &nbsp;&nbsp;&nbsp;&nbsp;
-          </div>
-          <div style={{ display: 'flex' }}>
-            {text2.split("").map((Letter, id) => (
-              <motion.div variants={effect}><span className={styles.head} key={id}>
-                <motion.h1 className={styles.letter} variants={spanVariants} initial="visible" whileHover="hover">{Letter}</motion.h1>
-              </span></motion.div>
-            ))}
-          </div>
+          {text1.split("").map((Letter, id) => (
+            <motion.span variants={effect} className={styles.head} key={id}>
+              <motion.h1 className={styles.letter} variants={spanVariants} initial="visible" whileHover="hover">{Letter}</motion.h1>
+            </motion.span>
+          ))}
+          &nbsp;&nbsp;&nbsp;&nbsp;
+          {text2.split("").map((Letter, id) => (
+            <motion.span variants={effect} className={styles.head} key={id}>
+              <motion.h1 className={styles.letter} variants={spanVariants} initial="visible" whileHover="hover">{Letter}</motion.h1>
+            </motion.span>
+          ))}
         </motion.span>
         <motion.div initial={{ x: '-100vw', opacity: 0 }} animate={{ x: 0, opacity: 1, transition: { delay: 3, type: 'spring', stiffness: 150 } }} className={styles.searchBox}>
-
           <input
             className={styles.search}
             placeholder="Enter the url to be minified......"
@@ -132,7 +154,7 @@ function HomeSection(props) {
               props.setLongUrl(e.target.value)
             }}
           />
-          <Button
+          <ThemeProvider theme={theme}><Button
             variant={'contained'}
             disabled={disabled}
             className={styles.btn}
@@ -141,8 +163,8 @@ function HomeSection(props) {
             id="minify"
             onClick={setMinfy}
           >
-            MINIFY
-          </Button>
+            {disabled ? 'MINIFIED' : 'MINIFY'}
+          </Button></ThemeProvider>
         </motion.div>
 
         <div className={styles.info} style={{ marginBottom: '40px', color: 'black', fontWeight: 'bold', fontSize: '1rem' }}>
@@ -158,8 +180,8 @@ function HomeSection(props) {
 
         {
           // show QR code if a url is generated
-          props.showQrCode ? (
-            <div style={QR}>
+          props.showQrCode && open ? (
+            <motion.div initial={{ y: -20, opacity: 0 }} animate={{ y: 0, opacity: 1, transition: { ease: 'easeInOut', duration: 0.7 } }} style={QR}>
               <Image
                 src={props.qrData}
                 placeholder="blur"
@@ -167,7 +189,7 @@ function HomeSection(props) {
                 width={150}
                 height={150}
               />
-            </div>
+            </motion.div>
           ) : (
             ''
           )
@@ -182,25 +204,38 @@ function HomeSection(props) {
               aria-label="close"
               color="inherit"
               size="small"
+              sx={{ padding: '5px 0 0 0' }}
               onClick={() => {
                 setOpen(false)
+                setdisabled(false)
               }}
             >
-              <CloseIcon fontSize="inherit" />
+              <CloseIcon sx={{ marginRight: '10px', '&:hover': { color: 'red', background: '#D1D1D1' } }} />
             </IconButton>
           }
-          sx={{ mb: 2 }}
+          sx={{ mb: 2, fontWeight: 'bold', color: 'black' }}
         >
           Your Shortened URL: {props.shortUrl}{' '}
           <IconButton
-            onClick={() => navigator.clipboard.writeText(props.shortUrl)}
-            style={{ marginLeft: '15px', padding: 0 }}
+            onClick={handlecopy}
+            sx={{ marginLeft: '15px', padding: 0, '&:hover': { color: 'blue' } }}
           >
             <ContentCopyIcon />
           </IconButton>
         </Alert>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <Button
+            variant="contained"
+            component={motion.div}
+            whileHover={{ scale: 1.1, transition: { ease: 'easeOut' } }}
+            whileTap={{ scale: 0.8, transition: { ease: 'easeOut' } }}
+            sx={{ background: '#D82148', boxShadow: 'inset 0 -5px 0 0 #470D21', marginTop: '10px', gap: '5px', textTransform: 'none', borderRadius: '20px', padding: '10px 25px 13px', '&:hover': { background: '#F90716', boxShadow: 'inset 0 -5px 0 0 #470D21' } }}
+            onClick={handleResponse}><ReplayIcon />Have another URL?</Button>
+        </div>
       </Collapse>
+      <Toaster position="bottom-right" toastOptions={{ duration: 2500, style: { padding: '5px 10px', borderRadius: '30px', fontWeight: 'bold', fontSize: '14px' } }} />
     </HomeSectionStyle>
+
   )
 }
 

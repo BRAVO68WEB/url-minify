@@ -1,12 +1,11 @@
 .head {
   font-family: 'Montserrat Alternates', sans-serif;
   color: #fff;
-  margin-bottom: 30px;
   text-shadow: 3px 2px 1px black;
   line-height: 1.15;
   font-size: 5.5rem;
   font-weight: bold;
-  margin-bottom: 30px;
+  margin-bottom: 17px;
   text-align: center;
 }
 
@@ -34,7 +33,7 @@
   top: 5px;
   height: 40px;
   width: 100px;
-  border-radius: 50px !important  ;
+  border-radius: 50px !important;
 }
 
 .info {
@@ -44,6 +43,7 @@
 
 .showUrl {
   margin-top: 1rem;
+  border-radius: 25px !important;
 }
 
 @media (max-width: 600px) {
