@@ -50,8 +50,19 @@ function Index(props) {
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters="false">
-          <span><Logo /></span>
-          <Typography component={motion.div} initial={{ y: -50, opacity: 0 }} animate={{ y: 0, opacity: 1, transition: { delay: 1 } }} variant="h5" sx={{ fontWeight: 'bold', fontFamily: "'Montserrat Alternates', sans-serif;" }}>
+          <span>
+            <Logo />
+          </span>
+          <Typography
+            component={motion.div}
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1, transition: { delay: 1 } }}
+            variant="h5"
+            sx={{
+              fontWeight: 'bold',
+              fontFamily: "'Montserrat Alternates', sans-serif;",
+            }}
+          >
             UrlMiniFy
           </Typography>
           <Box
@@ -94,7 +105,11 @@ function Index(props) {
                   href="https://github.com/BRAVO68WEB/url-minify"
                   target={'_blank'}
                 >
-                  <Typography textAlign="center" variant="h6" sx={{ display: 'flex' }}>
+                  <Typography
+                    textAlign="center"
+                    variant="h6"
+                    sx={{ display: 'flex' }}
+                  >
                     <GitHubIcon fontSize="medium" />
                     GitHub
                   </Typography>
@@ -102,7 +117,11 @@ function Index(props) {
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
                 <a href={NotFound}>
-                  <Typography textAlign="center" variant="h6" sx={{ display: 'flex' }}>
+                  <Typography
+                    textAlign="center"
+                    variant="h6"
+                    sx={{ display: 'flex' }}
+                  >
                     CREDITS
                   </Typography>
                 </a>
@@ -158,7 +177,7 @@ function Index(props) {
                   fontWeight: 'bold',
                 }}
               >
-                CREDITS
+                <Link href="./contributors">CREDITS</Link>
               </Button>
             </a>
           </Box>
@@ -198,16 +217,20 @@ function Index(props) {
               </Menu>
             </Box>
           ) : (
-            <Typography sx={{
-              color: 'white',
-              display: 'flex',
-              fontSize: 'h6.fontSize',
-              fontFamily: "'Open Sans', sans-serif;",
-              fontWeight: 'bold',
-            }} component={motion.div}
+            <Typography
+              sx={{
+                color: 'white',
+                display: 'flex',
+                fontSize: 'h6.fontSize',
+                fontFamily: "'Open Sans', sans-serif;",
+                fontWeight: 'bold',
+              }}
+              component={motion.div}
               initial={{ y: -50, opacity: 0 }}
               animate={{ y: 0, opacity: 1, transition: { delay: 1 } }}
-              whileHover={{ scale: 1.1, textShadow: '2px 2px black' }} onClick={login}>
+              whileHover={{ scale: 1.1, textShadow: '2px 2px black' }}
+              onClick={login}
+            >
               <Link href="./login">LOGIN</Link>
             </Typography>
           )}

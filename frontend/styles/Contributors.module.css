@@ -1,0 +1,10 @@
+.head {
+  font-family: 'Montserrat Alternates', sans-serif;
+  color: #fff;
+  /* text-shadow: 3px 2px 1px black; */
+  line-height: 1.15;
+  font-size: 5.5rem;
+  font-weight: bold;
+  margin-bottom:300px;
+  text-align: center;
+}
