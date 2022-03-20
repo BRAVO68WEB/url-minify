@@ -94,6 +94,10 @@ module.exports.addURLAuthed = async (req, res) => {
       minifiedUrl,
       createdBy,
    }
+    if (!alias) {
+       res.send('success alias does not exist');
+  }
+   
    Minfy.create(data)
       .then((data) => {
          res.send(data)
