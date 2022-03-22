@@ -4,9 +4,13 @@ export default styled.section`
   flex-direction: column;
   justify-content: center;
   .contributor-cards {
-    margin-top: -200px;
-    display: flex;
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
     justify-content: space-around;
+    align-items: center;
+    grid-gap: 20px;
+    overflow: scroll;
   }
   .contributor-card {
     width: 190px;
@@ -23,16 +27,6 @@ export default styled.section`
     display: flex;
     justify-content: flex-start;
   }
-  .contributor-cardPointerCenter {
-    width: 180px;
-    display: flex;
-    justify-content: center;
-  }
-  .contributor-cardPointerEnd {
-    width: 180px;
-    display: flex;
-    justify-content: flex-end;
-  }
   #circle {
     height: 10px;
     width: 10px;
@@ -40,16 +34,23 @@ export default styled.section`
     background-color: green;
   }
   .contributor-Pic {
-    border-radius: 50%;
+    width: 100px;
+    height: 100px;
   }
   #ImageContainer {
     border-radius: 50%;
-    border: 3px solid green;
+    border: 3px solid #35cdf0;
+    overflow: hidden;
   }
   .contributor-Name {
-    color: #00bfff;
+    color: #1d92e0;
     font-size: 25px;
     font-weight: bold;
+  }
+  #contributorDetailsWrapper {
+    display: flex;
+    flex-direction: column;
+    justfiy-content: flex-start;
   }
   .contributor-GithubUsername {
     display: flex;
@@ -59,10 +60,17 @@ export default styled.section`
   #username {
     color: grey;
     font-weight: bold;
+    padding-left: 4px;
   }
   @media (max-width: 600px) {
     .contributor-cards {
-      width: 100vw;
+      margin-top: 10px;
+      display: grid;
+      grid-template-columns: auto auto auto;
+      justify-content: space-around;
+      align-items: center;
+      grid-gap: 10px;
+      overflow: scroll;
     }
     .contributor-card {
       width: 170px;
@@ -78,12 +86,16 @@ export default styled.section`
       font-size: 20px;
     }
     .contributor-GithubUsername {
-      font-size: 15px;
+      font-size: 16px;
     }
   }
   @media (max-width: 400px) {
     .contributor-cards {
-      width: 100vw;
+      display: grid;
+      grid-template-columns: auto auto;
+      justify-content: space-around;
+      grid-gap: 10px;
+      overflow: scroll;
     }
     .contributor-card {
       width: 130px;
