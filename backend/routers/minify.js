@@ -10,6 +10,7 @@ router.get('/alias/:alias', controller.getURLData)
 
 router.post('/add', controller.addURL)
 router.post('/add/custom', auth, controller.addURLAuthed)
+router.post('/alias/:alias/status', controller.getAliasStatus)
 
 router.patch('/edit/:id', auth, controller.updateUrlData)
 

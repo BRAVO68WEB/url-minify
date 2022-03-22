@@ -1,6 +1,7 @@
 const Minfy = require('../models/minifed_urls')
 const base_url = 'https://minfy.xyz/'
 const { nanoid } = require('nanoid')
+const minifed_urls = require('../models/minifed_urls')
 
 module.exports.getAllData = async (req, res) => {
    Minfy.find({})
@@ -41,9 +42,34 @@ module.exports.findUrlById = async (req, res) => {
       })
 }
 
+module.exports.getAliasStatus = async (req, res) => {
+   try{
+      const alias = req.body.alias;
+      const aliasStatus = await minifed_urls.findOne({ alias });
+
+      if(!aliasStatus){       
+         return res.status(200).json("success: true");
+      }else{
+         return res.status(400).json("success: false")
+      }
+      }catch (error){
+         console.error(error)
+      } 
+}
+
 module.exports.addURL = async (req, res) => {
    const alias = nanoid(5)
    const minifiedUrl = base_url + alias
+   
+   try{
+   const aliasPresent = await minifed_urls.findOne({ alias });
+   if(aliasPresent){   
+      return res.status(400).json("success: false");
+   }
+   }catch (error){
+      console.error(error)
+   } 
+   
    Minfy.create({
       originalUrl: req.body.originalUrl,
       alias: alias,
@@ -56,6 +82,7 @@ module.exports.addURL = async (req, res) => {
          console.error(err)
          res.sendStatus(500)
       })
+      
 }
 
 module.exports.deleteUrlData = async (req, res) => {
