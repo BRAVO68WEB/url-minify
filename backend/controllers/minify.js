@@ -43,13 +43,13 @@ module.exports.findUrlById = async (req, res) => {
 
 module.exports.getAliasStatus = async (req, res) => {
    try{
-      const alias = req.body.alias;
+      const alias = req.params.alias;
       const aliasStatus = await minifed_urls.findOne({ alias });
 
       if(!aliasStatus){       
-         return res.status(200).json("success: true");
+         return res.status(200).json({success: true});
       }else{
-         return res.status(400).json("success: false")
+         return res.status(400).json({success: false})
       }
       }catch (error){
          console.error(error)
@@ -63,7 +63,7 @@ module.exports.addURL = async (req, res) => {
    try{
    const aliasPresent = await minifed_urls.findOne({ alias });
    if(aliasPresent){      
-      return res.status(400).json("success: false");
+      return res.status(400).json({success: false});
    }
    }catch (error){
       console.error(error)
