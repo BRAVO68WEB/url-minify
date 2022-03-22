@@ -1,7 +1,6 @@
 const Minfy = require('../models/minifed_urls')
 const base_url = 'https://minfy.xyz/'
 const { nanoid } = require('nanoid')
-const minifed_urls = require('../models/minifed_urls')
 
 module.exports.getAllData = async (req, res) => {
    Minfy.find({})
@@ -63,7 +62,7 @@ module.exports.addURL = async (req, res) => {
    
    try{
    const aliasPresent = await minifed_urls.findOne({ alias });
-   if(aliasPresent){   
+   if(aliasPresent){      
       return res.status(400).json("success: false");
    }
    }catch (error){
