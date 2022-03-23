@@ -1,13 +1,15 @@
 import React from 'react'
 import RegStyle from './Reg.style'
-import Image from 'next/image'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons'
 import { useState, useContext } from 'react'
 import { Link } from '@mui/material'
 import UserAuth from 'helpers/user/usercontext'
+import { useRouter } from 'next/router'
 
 function Reg() {
+  const router = useRouter()
+  const context = useContext(UserAuth)
   const [userData, setUserData] = useState({
     username: '',
     email: '',
@@ -25,7 +27,10 @@ function Reg() {
     setUserData(userData)
     context.createAcc(userData)
   }
-  const context = useContext(UserAuth);
+
+  if (context.user) {
+    router.push('/dashboard')
+  }
   return (
     <RegStyle>
       <form onSubmit={handleSubmit} className="form-wrapper">
