@@ -1,0 +1,17 @@
+.head {
+  font-family: 'Montserrat Alternates', sans-serif;
+  color: #fff;
+  /* text-shadow: 3px 2px 1px black; */
+  margin-top: 100px;
+  line-height: 1.15;
+  font-size: 5.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+@media (max-width: 600px) {
+  .head {
+    font-size: 2.5rem;
+    margin-top: 2em;
+    margin-bottom: 100px;
+  }
+}
