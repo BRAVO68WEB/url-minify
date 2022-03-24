@@ -47,7 +47,7 @@ module.exports.addURL = async (req, res) => {
    Minfy.create({
       originalUrl: req.body.originalUrl,
       alias: alias,
-      minifiedUrl: minifiedUrl
+      minifiedUrl: minifiedUrl,
    })
       .then((data) => {
          res.json(data)
@@ -112,6 +112,17 @@ module.exports.visitor = async (req, res) => {
    )
       .then((data) => {
          res.send(`views increased`)
+      })
+      .catch((err) => {
+         console.error(err)
+         res.sendStatus(500)
+      })
+}
+
+module.exports.getAllurlsforUser = async (req, res) => {
+   Minfy.find({ createdBy: req.user.data.email })
+      .then((data) => {
+         res.send(data)
       })
       .catch((err) => {
          console.error(err)
