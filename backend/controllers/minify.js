@@ -44,7 +44,7 @@ module.exports.findUrlById = async (req, res) => {
 module.exports.getAliasStatus = async (req, res) => {
    try{
       const alias = req.params.alias;
-      const aliasStatus = await minifed_urls.findOne({ alias });
+      const aliasStatus = await Minfy.findOne({ alias });
 
       if(!aliasStatus){       
          return res.status(200).json({success: true});
@@ -61,7 +61,7 @@ module.exports.addURL = async (req, res) => {
    const minifiedUrl = base_url + alias
    
    try{
-   const aliasPresent = await minifed_urls.findOne({ alias });
+   const aliasPresent = await Minfy.findOne({ alias });
    if(aliasPresent){      
       return res.status(400).json({success: false});
    }
