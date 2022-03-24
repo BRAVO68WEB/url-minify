@@ -41,9 +41,34 @@ module.exports.findUrlById = async (req, res) => {
       })
 }
 
+module.exports.getAliasStatus = async (req, res) => {
+   try{
+      const alias = req.params.alias;
+      const aliasStatus = await Minfy.findOne({ alias });
+
+      if(!aliasStatus){       
+         return res.status(200).json({success: true});
+      }else{
+         return res.status(400).json({success: false})
+      }
+      }catch (error){
+         console.error(error)
+      } 
+}
+
 module.exports.addURL = async (req, res) => {
    const alias = nanoid(5)
    const minifiedUrl = base_url + alias
+   
+   try{
+   const aliasPresent = await Minfy.findOne({ alias });
+   if(aliasPresent){      
+      return res.status(400).json({success: false});
+   }
+   }catch (error){
+      console.error(error)
+   } 
+   
    Minfy.create({
       originalUrl: req.body.originalUrl,
       alias: alias,
@@ -56,6 +81,7 @@ module.exports.addURL = async (req, res) => {
          console.error(err)
          res.sendStatus(500)
       })
+      
 }
 
 module.exports.deleteUrlData = async (req, res) => {
@@ -94,6 +120,7 @@ module.exports.addURLAuthed = async (req, res) => {
       minifiedUrl,
       createdBy,
    }
+   
    Minfy.create(data)
       .then((data) => {
          res.send(data)
