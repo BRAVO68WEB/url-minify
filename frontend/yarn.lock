@@ -401,14 +401,9 @@
   "resolved" "https://registry.npmjs.org/@next/env/-/env-12.0.9.tgz"
   "version" "12.0.9"
 
-"@next/swc-linux-x64-gnu@12.0.9":
-  "integrity" "sha512-bJZ9bkMkQzsY+UyWezEZ77GWQ4TzwKeXdayX3U3+aEkL8k5C6eKBXlidWdrhu0teLmaUXIyWerWrLnJzwGXdfw=="
-  "resolved" "https://registry.npmjs.org/@next/swc-linux-x64-gnu/-/swc-linux-x64-gnu-12.0.9.tgz"
-  "version" "12.0.9"
-
-"@next/swc-linux-x64-musl@12.0.9":
-  "integrity" "sha512-SR9p0R+v1T32DTXPVAXZw31pmJAkSDotC6Afy+mfC0xrEL3pp95R8sGXYAAUCEPkQp0MEeUOVy2LrToe92X7hQ=="
-  "resolved" "https://registry.npmjs.org/@next/swc-linux-x64-musl/-/swc-linux-x64-musl-12.0.9.tgz"
+"@next/swc-win32-x64-msvc@12.0.9":
+  "integrity" "sha512-1c/sxp/4Qz4F6rCxiYqAnrmghCOFt5hHZ9Kd+rXFW5Mqev4C4XDOUMHdBH55HgnJZqngYhOE0r/XNkCtsIojig=="
+  "resolved" "https://registry.npmjs.org/@next/swc-win32-x64-msvc/-/swc-win32-x64-msvc-12.0.9.tgz"
   "version" "12.0.9"
 
 "@popperjs/core@^2.10.1", "@popperjs/core@^2.10.2", "@popperjs/core@^2.4.4":

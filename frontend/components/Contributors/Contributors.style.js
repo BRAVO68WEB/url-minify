@@ -3,24 +3,25 @@ export default styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  .contributor-cards {
-    margin-top: 100px;
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    justify-content: space-around;
-    align-items: center;
-    grid-gap: 20px;
-    overflow: scroll;
+  .contributor-cards{
+    display: flex;
+    width: 85%;
+    align-item: center;
+    justify-content: center;
+    margin:20px;
+    margin-left: 6%
   }
   .contributor-card {
-    width: 190px;
-    height: 210px;
+    width: 240px;
+    height: 250px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     background-color: #ffffff;
     border-radius: 10px;
+    margin: 15px;
+    padding: 5px;
   }
   .contributor-cardPointerStart {
     width: 180px;
@@ -62,56 +63,5 @@ export default styled.section`
     font-weight: bold;
     padding-left: 4px;
   }
-  @media (max-width: 600px) {
-    .contributor-cards {
-      margin-top: 10px;
-      display: grid;
-      grid-template-columns: auto auto auto;
-      justify-content: space-around;
-      align-items: center;
-      grid-gap: 10px;
-      overflow: scroll;
-    }
-    .contributor-card {
-      width: 170px;
-      height: 190px;
-    }
-    .contributor-cardPointerEnd {
-      width: 150px;
-    }
-    .contributor-cardPointerStart {
-      width: 150px;
-    }
-    .contributor-Name {
-      font-size: 20px;
-    }
-    .contributor-GithubUsername {
-      font-size: 16px;
-    }
-  }
-  @media (max-width: 400px) {
-    .contributor-cards {
-      display: grid;
-      grid-template-columns: auto auto;
-      justify-content: space-around;
-      grid-gap: 10px;
-      overflow: scroll;
-    }
-    .contributor-card {
-      width: 130px;
-      height: 190px;
-    }
-    .contributor-cardPointerEnd {
-      width: 120px;
-    }
-    .contributor-cardPointerStart {
-      width: 120px;
-    }
-    .contributor-Name {
-      font-size: 15px;
-    }
-    .contributor-GithubUsername {
-      font-size: 15px;
-    }
-  }
+ 
 `
