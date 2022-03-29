@@ -1,4 +1,7 @@
 .footer{
+    font-family: 'Montserrat', sans-serif;
+    position: fixed;
+    bottom: 0;
     display: flex;
     color: #fff;
     align-items: center;
@@ -8,9 +11,11 @@
     padding: 0;
     margin: 0;
     height: 70px;
+    width: 100%;
 }
 .footer div{
     line-height: 20px;
+    position: relative;
 }
 .icon svg{
     vertical-align: middle;
