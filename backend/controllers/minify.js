@@ -2,6 +2,12 @@ const Minfy = require('../models/minifed_urls')
 const base_url = 'https://minfy.xyz/'
 const { nanoid } = require('nanoid')
 
+const blackListedAliases = ['404','dashboard','qr','credits','github','admin','geo','all','me','go','upload','download','link','about','tos','faqs']
+
+function verifyAlias(alias) {
+   const boolean = blackListedAliases.find(element => element===alias);
+   return boolean;
+}
 module.exports.getAllData = async (req, res) => {
    Minfy.find({})
       .then((data) => {
@@ -72,7 +78,7 @@ module.exports.addURL = async (req, res) => {
    Minfy.create({
       originalUrl: req.body.originalUrl,
       alias: alias,
-      minifiedUrl: minifiedUrl
+      minifiedUrl: minifiedUrl,
    })
       .then((data) => {
          res.json(data)
@@ -111,6 +117,12 @@ module.exports.updateUrlData = async (req, res) => {
 
 module.exports.addURLAuthed = async (req, res) => {
    const { alias, originalUrl } = req.body
+   if(verifyAlias(alias))
+   {
+      res.sendStatus(500);
+      throw new Error('This alias cannot be used, try some another.');
+   }
+
    var createdBy = req.user.data.email
    // console.log(req.user);
    const minifiedUrl = base_url + alias
@@ -139,6 +151,17 @@ module.exports.visitor = async (req, res) => {
    )
       .then((data) => {
          res.send(`views increased`)
+      })
+      .catch((err) => {
+         console.error(err)
+         res.sendStatus(500)
+      })
+}
+
+module.exports.getAllurlsforUser = async (req, res) => {
+   Minfy.find({ createdBy: req.user.data.email })
+      .then((data) => {
+         res.send(data)
       })
       .catch((err) => {
          console.error(err)

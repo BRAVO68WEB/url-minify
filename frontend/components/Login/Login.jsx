@@ -1,18 +1,18 @@
 import React from 'react'
 import LoginStyle from './Login.style'
-import AccountCircleIcon from '@mui/icons-material/AccountCircle'
+// import AccountCircleIcon from '@mui/icons-material/AccountCircle'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import {
-  faUser,
-  faEnvelope,
-  faLock,
-} from '@fortawesome/free-solid-svg-icons'
-import { UserContext } from '../../helpers/user/usercontext'
+import { faEnvelope, faLock } from '@fortawesome/free-solid-svg-icons'
+import UserContext from '../../helpers/user/usercontext'
 import { useState } from 'react'
 import Link from 'next/link'
 import { useContext } from 'react'
+import { useRouter } from 'next/router'
 
 function Login() {
+  const router = useRouter()
+  const user = useContext(UserContext)
+
   const [userData, setUserData] = useState({
     email: '',
     password: '',
@@ -24,9 +24,17 @@ function Login() {
     setUserData({ ...userData, [name]: value })
   }
 
+  const handleLogin = (evt) => {
+    evt.preventDefault()
+    user.login(userData)
+  }
+
+  if (user.user) {
+    router.push('/dashboard')
+  }
   return (
     <LoginStyle>
-      <form className="form-wrapper">
+      <form className="form-wrapper" onSubmit={handleLogin}>
         <p className="reg-title">Sign in</p>
 
         <img src="/images/user.png"></img>
@@ -61,11 +69,9 @@ function Login() {
           />
         </div>
 
-        <Link href="/">
-          <button type="submit" className="submit-button">
-            Submit
-          </button>
-        </Link>
+        <button type="submit" className="submit-button">
+          Submit
+        </button>
 
         <p className="foot-text">
           New here?&nbsp;

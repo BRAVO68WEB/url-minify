@@ -57,6 +57,7 @@
   },
   "homepage": "https://github.com/bravo68web/url-minify#readme",
   "devDependencies": {
+    "nodemon": "^2.0.15",
     "prettier": "2.5.1"
   }
 }
