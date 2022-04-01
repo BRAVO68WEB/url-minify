@@ -12,7 +12,7 @@ export default function Home() {
   const [showQrCode, setShowQrCode] = useState(false)
 
   return (
-    <>
+    <>       
       <Head>
         <title>URL MiniFy</title>
         <link rel="icon" href="/favicon.ico" />

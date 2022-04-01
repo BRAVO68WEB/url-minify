@@ -4,6 +4,7 @@ import Card from "./Card";
 import dynamic from 'next/dynamic';
 import * as ReactBootStrap from "react-bootstrap";
 import Link from 'next/link'
+import UserLinks from '../../helpers/user/userLinks'
 
 const Chart = dynamic(() => import('react-apexcharts'), {ssr: false});
 
@@ -72,11 +73,9 @@ function Sidebar3() {
 }
 
 function Table() {
+    const dataset = UserLinks.userLinks
     const data = [
-        {url:"https://www.facebook.com", alias:"silver", status:"yes", views: "2M"},
-        {url:"https://www.google.com", alias:"silver", status:"yes", views: "2M"},
-        {url:"https://www.amazon.com", alias:"silver", status:"yes", views: "2M"},
-        {url: "https://www.netflix.com", alias:"silver", status:"yes", views: "2M"}
+        {url: dataset.url, alias: dataset.alias, status: dataset.status, views: dataset.views}
     ]
 
     const renderData = (data, index) => {
