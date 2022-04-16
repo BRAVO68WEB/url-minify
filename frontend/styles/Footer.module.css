@@ -1,7 +1,7 @@
 .footer{
     font-family: 'Montserrat', sans-serif;
-    position: fixed;
-    bottom: 0;
+    position: sticky;
+    height: 70px;
     display: flex;
     color: #fff;
     align-items: center;
@@ -10,7 +10,6 @@
     background-color: #73c2fb; 
     padding: 0;
     margin: 0;
-    height: 70px;
     width: 100%;
 }
 .footer div{
