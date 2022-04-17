@@ -1,0 +1,22 @@
+.footer{
+    font-family: 'Montserrat', sans-serif;
+    position: sticky;
+    height: 70px;
+    display: flex;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #73c2fb; 
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+.footer div{
+    line-height: 20px;
+    position: relative;
+}
+.icon svg{
+    vertical-align: middle;
+    font-size: 1.2rem;
+}
