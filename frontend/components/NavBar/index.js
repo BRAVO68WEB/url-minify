@@ -116,15 +116,17 @@ function Index(props) {
                 </a>
               </MenuItem>
               <MenuItem onClick={handleCloseNavMenu}>
-                <a href={NotFound}>
-                  <Typography
-                    textAlign="center"
-                    variant="h6"
-                    sx={{ display: 'flex' }}
-                  >
-                    CREDITS
-                  </Typography>
-                </a>
+                <Link href="/contributors">
+                  <a>
+                    <Typography
+                      textAlign="center"
+                      variant="h6"
+                      sx={{ display: 'flex' }}
+                    >
+                      CREDITS
+                    </Typography>
+                  </a>
+                </Link>
               </MenuItem>
             </Menu>
           </Box>
