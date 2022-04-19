@@ -14,7 +14,8 @@ app.use(
    cors({
       origin:
          process.env.NODE_ENV?.trim() === 'development'
-            ? 'http://localhost:3000'
+            ? // ? 'http://localhost:3000'
+              'https://url-minify-git-fork-olaleye-blessing-fixurlminified-bravo68web.vercel.app'
             : 'https://minfy.xyz',
    })
 )
