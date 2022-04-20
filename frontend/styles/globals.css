@@ -50,4 +50,6 @@ body::-webkit-scrollbar-thumb {
   border-width: 2px 0 2px;
   border-radius: 10px;
 }
-
+.home{
+  cursor: pointer;
+}

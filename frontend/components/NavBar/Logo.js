@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 
 const pathvariant = {
   initial: { pathLength: 0, opacity: 0 },
@@ -9,6 +10,8 @@ const pathvariant = {
 
 export default function Logo() {
   return (
+    <div class="home">
+    <Link href="/">
     <div className="logo-wrapper">
       <motion.svg
         initial={{ rotate: -180 }}
@@ -41,6 +44,8 @@ export default function Logo() {
           fill="none"
         />
       </motion.svg>
+    </div>
+    </Link>
     </div>
   )
 }
