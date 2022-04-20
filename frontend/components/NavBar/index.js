@@ -53,6 +53,8 @@ function Index(props) {
           <span>
             <Logo />
           </span>
+          <div class="home">
+          <Link href="/">
           <Typography
             component={motion.div}
             initial={{ y: -50, opacity: 0 }}
@@ -65,6 +67,8 @@ function Index(props) {
           >
             UrlMiniFy
           </Typography>
+          </Link>
+          </div>
           <Box
             sx={{
               flexGrow: 1,
