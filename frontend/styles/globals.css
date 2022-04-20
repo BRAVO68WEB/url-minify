@@ -54,3 +54,7 @@ body::-webkit-scrollbar-thumb {
 button:disabled {
   cursor: not-allowed;
 }
+
+.home{
+  cursor: pointer;
+}
