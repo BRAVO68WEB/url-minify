@@ -29,6 +29,9 @@ function Login() {
     user.login(userData)
   }
 
+  // disable submit button is any input has not been filled
+  const disabledSubmitBtn = Object.values(userData).some((val) => val === '')
+
   if (user.user) {
     router.push('/dashboard')
   }
@@ -69,7 +72,11 @@ function Login() {
           />
         </div>
 
-        <button type="submit" className="submit-button">
+        <button
+          type="submit"
+          className="submit-button"
+          disabled={disabledSubmitBtn}
+        >
           Submit
         </button>
 

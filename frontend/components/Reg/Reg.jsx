@@ -28,6 +28,9 @@ function Reg() {
     context.createAcc(userData)
   }
 
+  // disable submit button is any input has not been filled
+  const disabledSubmitBtn = Object.values(userData).some((val) => val === '')
+
   if (context.user) {
     router.push('/dashboard')
   }
@@ -96,7 +99,11 @@ function Reg() {
           />
         </div>
 
-        <button type="submit" className="submit-button">
+        <button
+          type="submit"
+          className="submit-button"
+          disabled={disabledSubmitBtn}
+        >
           Submit
         </button>
 
