@@ -180,7 +180,8 @@ module.exports.visitor = async (req, res) => {
    }
    axios(config)
       .then((response) => {
-         if (response.data.continent === 'AS') {
+         switch(response.data.continent){
+         case 'AS': 
             Minfy.findOneAndUpdate(
                { alias: req.params.alias },
                {
@@ -198,7 +199,8 @@ module.exports.visitor = async (req, res) => {
                   console.error(err)
                   res.sendStatus(500)
                })
-         } else if (response.data.continent === 'NA') {
+         break;
+         case 'NA':
             Minfy.findOneAndUpdate(
                { alias: req.params.alias },
                {
@@ -216,7 +218,8 @@ module.exports.visitor = async (req, res) => {
                   console.error(err)
                   res.sendStatus(500)
                })
-         } else if (response.data.continent === 'SA') {
+         break;
+         case 'SA': 
             Minfy.findOneAndUpdate(
                { alias: req.params.alias },
                {
@@ -234,7 +237,8 @@ module.exports.visitor = async (req, res) => {
                   console.error(err)
                   res.sendStatus(500)
                })
-         } else if (response.data.continent === 'OC') {
+         break;
+         case 'OC': 
             Minfy.findOneAndUpdate(
                { alias: req.params.alias },
                {
@@ -252,7 +256,8 @@ module.exports.visitor = async (req, res) => {
                   console.error(err)
                   res.sendStatus(500)
                })
-         } else if (response.data.continent === 'EU') {
+         break;
+         case 'EU': 
             Minfy.findOneAndUpdate(
                { alias: req.params.alias },
                {
@@ -270,7 +275,8 @@ module.exports.visitor = async (req, res) => {
                   console.error(err)
                   res.sendStatus(500)
                })
-         } else if (response.data.continent === 'AF') {
+         break;
+         case 'AF': 
             Minfy.findOneAndUpdate(
                { alias: req.params.alias },
                {
@@ -288,7 +294,8 @@ module.exports.visitor = async (req, res) => {
                   console.error(err)
                   res.sendStatus(500)
                })
-         } else {
+         break;
+         default:
             Minfy.findOneAndUpdate(
                { alias: req.params.alias },
                {
