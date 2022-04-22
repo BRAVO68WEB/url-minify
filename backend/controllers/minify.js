@@ -1,12 +1,37 @@
 const Minfy = require('../models/minifed_urls')
 const base_url = 'https://minfy.xyz/'
 const { nanoid } = require('nanoid')
+const axios = require('axios')
 
-const blackListedAliases = ['404','dashboard','qr','credits','github','admin','geo','all','me','go','upload','download','link','about','tos','faqs']
+const blackListedAliases = [
+   '404',
+   'dashboard',
+   'qr',
+   'credits',
+   'github',
+   'admin',
+   'geo',
+   'all',
+   'me',
+   'go',
+   'upload',
+   'download',
+   'link',
+   'about',
+   'tos',
+   'faqs',
+   'privacy',
+   'contact',
+   'terms',
+   'help',
+   'api',
+   'api-docs',
+   'auto',
+]
 
 function verifyAlias(alias) {
-   const boolean = blackListedAliases.find(element => element===alias);
-   return boolean;
+   const boolean = blackListedAliases.find((element) => element === alias)
+   return boolean
 }
 module.exports.getAllData = async (req, res) => {
    Minfy.find({})
@@ -48,33 +73,33 @@ module.exports.findUrlById = async (req, res) => {
 }
 
 module.exports.getAliasStatus = async (req, res) => {
-   try{
-      const alias = req.params.alias;
-      const aliasStatus = await Minfy.findOne({ alias });
+   try {
+      const alias = req.params.alias
+      const aliasStatus = await Minfy.findOne({ alias })
 
-      if(!aliasStatus){       
-         return res.status(200).json({success: true});
-      }else{
-         return res.status(400).json({success: false})
+      if (!aliasStatus) {
+         return res.status(200).json({ success: true })
+      } else {
+         return res.status(400).json({ success: false })
       }
-      }catch (error){
-         console.error(error)
-      } 
+   } catch (error) {
+      console.error(error)
+   }
 }
 
 module.exports.addURL = async (req, res) => {
    const alias = nanoid(5)
    const minifiedUrl = base_url + alias
-   
-   try{
-   const aliasPresent = await Minfy.findOne({ alias });
-   if(aliasPresent){      
-      return res.status(400).json({success: false});
-   }
-   }catch (error){
+
+   try {
+      const aliasPresent = await Minfy.findOne({ alias })
+      if (aliasPresent) {
+         return res.status(400).json({ success: false })
+      }
+   } catch (error) {
       console.error(error)
-   } 
-   
+   }
+
    Minfy.create({
       originalUrl: req.body.originalUrl,
       alias: alias,
@@ -87,7 +112,6 @@ module.exports.addURL = async (req, res) => {
          console.error(err)
          res.sendStatus(500)
       })
-      
 }
 
 module.exports.deleteUrlData = async (req, res) => {
@@ -116,15 +140,20 @@ module.exports.updateUrlData = async (req, res) => {
 }
 
 module.exports.addURLAuthed = async (req, res) => {
-   const { alias, originalUrl } = req.body
-   if(verifyAlias(alias))
-   {
-      res.sendStatus(500);
-      throw new Error('This alias cannot be used, try some another.');
+   var { alias, originalUrl } = req.body
+   if (alias === undefined) {
+      return res
+         .status(400)
+         .json({ success: false, message: 'Alias is required' })
+   } else if (alias === 'auto') {
+      alias = nanoid(5)
+   }
+   if (verifyAlias(alias)) {
+      res.sendStatus(500)
+      throw new Error('This alias cannot be used, try some another.')
    }
 
    var createdBy = req.user.data.email
-   // console.log(req.user);
    const minifiedUrl = base_url + alias
    const data = {
       alias,
@@ -132,7 +161,7 @@ module.exports.addURLAuthed = async (req, res) => {
       minifiedUrl,
       createdBy,
    }
-   
+
    Minfy.create(data)
       .then((data) => {
          res.send(data)
@@ -144,17 +173,144 @@ module.exports.addURLAuthed = async (req, res) => {
 }
 
 module.exports.visitor = async (req, res) => {
-   Minfy.findOneAndUpdate(
-      { alias: req.params.alias },
-      { $inc: { views: 1 } },
-      { new: true }
-   )
-      .then((data) => {
-         res.send(`views increased`)
+   // console.log(req.ip)
+   const config = {
+      url: 'https://ip.zxq.co/' + req.ip,
+      method: 'GET',
+   }
+   axios(config)
+      .then((response) => {
+         if (response.data.continent === 'AS') {
+            Minfy.findOneAndUpdate(
+               { alias: req.params.alias },
+               {
+                  $inc: {
+                     views: 1,
+                     'viewedFrom.AS': 1,
+                  },
+               },
+               { new: true }
+            )
+               .then((data) => {
+                  res.send(`views increased`)
+               })
+               .catch((err) => {
+                  console.error(err)
+                  res.sendStatus(500)
+               })
+         } else if (response.data.continent === 'NA') {
+            Minfy.findOneAndUpdate(
+               { alias: req.params.alias },
+               {
+                  $inc: {
+                     views: 1,
+                     'viewedFrom.NA': 1,
+                  },
+               },
+               { new: true }
+            )
+               .then((data) => {
+                  res.send(`views increased`)
+               })
+               .catch((err) => {
+                  console.error(err)
+                  res.sendStatus(500)
+               })
+         } else if (response.data.continent === 'SA') {
+            Minfy.findOneAndUpdate(
+               { alias: req.params.alias },
+               {
+                  $inc: {
+                     views: 1,
+                     'viewedFrom.SA': 1,
+                  },
+               },
+               { new: true }
+            )
+               .then((data) => {
+                  res.send(`views increased`)
+               })
+               .catch((err) => {
+                  console.error(err)
+                  res.sendStatus(500)
+               })
+         } else if (response.data.continent === 'OC') {
+            Minfy.findOneAndUpdate(
+               { alias: req.params.alias },
+               {
+                  $inc: {
+                     views: 1,
+                     'viewedFrom.OC': 1,
+                  },
+               },
+               { new: true }
+            )
+               .then((data) => {
+                  res.send(`views increased`)
+               })
+               .catch((err) => {
+                  console.error(err)
+                  res.sendStatus(500)
+               })
+         } else if (response.data.continent === 'EU') {
+            Minfy.findOneAndUpdate(
+               { alias: req.params.alias },
+               {
+                  $inc: {
+                     views: 1,
+                     'viewedFrom.EU': 1,
+                  },
+               },
+               { new: true }
+            )
+               .then((data) => {
+                  res.send(`views increased`)
+               })
+               .catch((err) => {
+                  console.error(err)
+                  res.sendStatus(500)
+               })
+         } else if (response.data.continent === 'AF') {
+            Minfy.findOneAndUpdate(
+               { alias: req.params.alias },
+               {
+                  $inc: {
+                     views: 1,
+                     'viewedFrom.AF': 1,
+                  },
+               },
+               { new: true }
+            )
+               .then((data) => {
+                  res.send(`views increased`)
+               })
+               .catch((err) => {
+                  console.error(err)
+                  res.sendStatus(500)
+               })
+         } else {
+            Minfy.findOneAndUpdate(
+               { alias: req.params.alias },
+               {
+                  $inc: {
+                     views: 1,
+                     'viewedFrom.UKN': 1,
+                  },
+               },
+               { new: true }
+            )
+               .then((data) => {
+                  console.log(data)
+                  res.send(`views increased`)
+               })
+               .catch((err) => {
+                  console.error(err)
+                  res.sendStatus(500)
+               })
+         }
       })
       .catch((err) => {
-         console.error(err)
-         res.sendStatus(500)
+         res.send(err)
       })
 }
 
