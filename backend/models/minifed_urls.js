@@ -24,6 +24,15 @@ const minifiedUrlSchema = new Schema(
          type: String,
          default: 'Anonymous',
       },
+      viewedFrom: {
+         UKN: { type: Number, default: 0 },
+         NA: { type: Number, default: 0 },
+         SA: { type: Number, default: 0 },
+         EU: { type: Number, default: 0 },
+         AS: { type: Number, default: 0 },
+         AF: { type: Number, default: 0 },
+         OC: { type: Number, default: 0 },
+      },
    },
    { timestamp: true }
 )

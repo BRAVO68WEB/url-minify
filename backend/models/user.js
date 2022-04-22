@@ -14,6 +14,14 @@ const UsersSchema = new Schema(
          type: String,
          // required: true,
       },
+      profilepic: {
+         type: String,
+         // required: true,
+      },
+      apiKey: {
+         type: String,
+         default: 'NaN',
+      },
       hash: String,
       salt: String,
    },

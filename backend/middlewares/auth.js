@@ -23,3 +23,22 @@ module.exports.auth = async (req, res, next) => {
    req.user = user
    next()
 }
+
+module.exports.apiAuth = async (req, res, next) => {
+   let user = { isAuthenticated: false }
+   if (req.headers['x-api-key'] && req.headers['x-api-key'] !== null) {
+      try {
+         let apiKey = req.headers['x-api-key']
+         let userData = await User.findOne({
+            apiKey: apiKey,
+         }).catch((err) => console.error(err))
+         user.isAuthenticated = userData ? true : false
+         user.data = userData
+      } catch (err) {
+         user.isAuthenticated = false
+         user.data = null
+      }
+   }
+   req.user = user
+   next()
+}

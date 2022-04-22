@@ -1,5 +1,6 @@
-const jwt = require('jsonwebtoken')
 const User = require('../models/user')
+const { customAlphabet } = require('nanoid')
+const nanoid = customAlphabet('1234567890abcdefghijklmnopqrstuvwxyz', 25)
 
 module.exports.register = async ({ body: { email, password } }, res) => {
    try {
@@ -48,6 +49,22 @@ module.exports.me = async (req, res) => {
          name: user.name,
          phone: user.phone,
       })
+   } catch (e) {
+      console.log(e)
+      return res.sendStatus(500)
+   }
+}
+module.exports.generateAPIKey = async (req, res) => {
+   try {
+      if (!req.user.isAuthenticated) {
+         res.sendStatus(401)
+         return
+      }
+      let user = req.user.data
+      let apiKey = nanoid()
+      user.apiKey = apiKey
+      await user.save()
+      res.json(user.apiKey)
    } catch (e) {
       console.log(e)
       return res.sendStatus(500)

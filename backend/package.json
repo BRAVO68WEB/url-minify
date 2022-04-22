@@ -1,6 +1,6 @@
 {
    "name": "url-minify-api",
-   "version": "1.1.0",
+   "version": "1.2.0",
    "description": "URL Minify Backend",
    "main": "index.js",
    "scripts": {
@@ -37,7 +37,7 @@
       "jsonwebtoken": "^8.5.1",
       "mongoose": "^6.1.8",
       "morgan": "^1.10.0",
-      "nanoid": "^3.2.0"
+      "nanoid": "^3.3.3"
    },
    "devDependencies": {
       "nodemon": "^2.0.15",
