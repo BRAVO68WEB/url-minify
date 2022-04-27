@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useContext } from 'react'
 import HomeSectionStyle from './HomeSection.style'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
@@ -15,6 +15,7 @@ import toast from 'react-hot-toast'
 import { Toaster } from 'react-hot-toast'
 import { createTheme } from '@mui/material/styles'
 import { ThemeProvider } from '@mui/material/styles'
+import UserAuth from 'helpers/user/usercontext'
 
 const theme = createTheme({
   palette: {
@@ -70,6 +71,8 @@ function HomeSection(props) {
   const [open, setOpen] = useState(false)
   const [disabled, setdisabled] = useState(false)
 
+  const context = useContext(UserAuth)
+
 
   const setMinfy = async () => {
     if (props.longUrl === '') {
@@ -81,9 +84,20 @@ function HomeSection(props) {
       setdisabled(true)
       let res
       try {
+       if(!context.jwt){
         res = await Axios.post(`/minify/add`, {
-          originalUrl: props.longUrl,
-        })
+            originalUrl: props.longUrl,
+          })
+       }
+       else{
+
+        res = await Axios.post(`/minify/add/custom`, {
+            originalUrl: props.longUrl,
+            alias:"auto"
+          },{
+              headers:{Authorization:`Bearer ${context?.jwt}`}
+          })
+       }
       } catch (err) {
         console.error(err)
         return

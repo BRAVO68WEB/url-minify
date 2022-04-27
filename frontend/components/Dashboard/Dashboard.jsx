@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState,useContext} from "react";
 import DashboardStyle from "./Dashboard.style";
 import Card from "./Card";
 import dynamic from 'next/dynamic';
@@ -7,6 +7,11 @@ import Link from 'next/link'
 import MenuOpenIcon from '@mui/icons-material/MenuOpen'
 import CloseIcon from '@mui/icons-material/Close'
 import { Close } from '@mui/icons-material'
+import {useQueries,useQuery} from "react-query"
+import axios from "axios"
+import {QueryClientProvider,QueryClient} from "react-query"
+import { ReactQueryDevtools } from 'react-query/devtools'
+import UserAuth from 'helpers/user/usercontext'
 
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
@@ -57,6 +62,19 @@ function Sidebar1() {
 }
 
 function Sidebar2() {
+
+    const context = useContext(UserAuth)
+    function fetchTotalUserLinks(){
+        return axios.get(`http://localhost:5000/minify/all/user`,{
+            headers:{Authorization:`Bearer ${context?.jwt}`}
+        })
+    }
+  
+  
+    const {data} = useQuery("totalUserLinks",()=>fetchTotalUserLinks(),{
+        refetchOnWindowFocus:false,
+        select:(data)=> data?.data
+    })
   return (
     <div className="sidebar2">
       <MenuOpenIcon className="hamburger_icon" onClick={toggleSidebar1} />
@@ -71,7 +89,7 @@ function Sidebar2() {
         />
         <Card
           icon={'/icons/link.svg'}
-          value={220}
+          value={data?.length}
           title={'Links active'}
           color={'rgba(67, 191, 214, 0.2)'}
         />
@@ -86,10 +104,23 @@ function Sidebar2() {
 }
 
 function Graph() {
+    console.log("ran");
   const [graph, setGraph] = useState({
     categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999],
     data: [30, 40, 45, 50, 49, 60, 70, 91],
   })
+
+  function fetchTotalLinks(){
+      return axios.get(`http://localhost:5000/minify/all`)
+  }
+
+
+  const {data} = useQuery("totalLinks",()=>fetchTotalLinks(),{
+      refetchOnWindowFocus:false,
+      select:(data)=> data?.data
+  })
+ console.log(data);
+
   return (
     <div className="row2">
       <div className="graph">
@@ -154,7 +185,7 @@ function Graph() {
               }}
               className="box"
             >
-              120
+              {data?.length}
             </div>
           </div>
           <div className="title">Links Generated</div>
@@ -169,7 +200,7 @@ function Graph() {
               }}
               className="box"
             >
-              3.4k
+              3.4K
             </div>
           </div>
           <div className="title">Total Views</div>
@@ -181,14 +212,19 @@ function Graph() {
 }
 
 function App() {
+
+    const queryClient = new QueryClient();
   return (
-    <DashboardStyle>
-      <Sidebar1 />
-      <div className="main">
-        <Sidebar2 />
-        <Graph />
-      </div>
-    </DashboardStyle>
+      <QueryClientProvider client={queryClient}>
+          <ReactQueryDevtools />
+          <DashboardStyle>
+              <Sidebar1 />
+              <div className="main">
+                  <Sidebar2 />
+                  <Graph />
+              </div>
+          </DashboardStyle>
+      </QueryClientProvider>
   )
 }
 

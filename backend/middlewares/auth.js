@@ -20,6 +20,7 @@ module.exports.auth = async (req, res, next) => {
          user.data = null
       }
    }
+   
    req.user = user
    next()
 }
