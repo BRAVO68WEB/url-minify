@@ -69,12 +69,14 @@ function Sidebar2() {
             headers:{Authorization:`Bearer ${context?.jwt}`}
         })
     }
-  
+    
   
     const {data} = useQuery("totalUserLinks",()=>fetchTotalUserLinks(),{
         refetchOnWindowFocus:false,
         select:(data)=> data?.data
     })
+
+    
   return (
     <div className="sidebar2">
       <MenuOpenIcon className="hamburger_icon" onClick={toggleSidebar1} />
@@ -83,7 +85,15 @@ function Sidebar2() {
       <div className="row">
         <Card
           icon={'/icons/eye.svg'}
-          value={4000}
+          value={
+              data?.reduce((prevObj,nextObj)=>{
+                  if(nextObj.views){
+                      return prevObj + nextObj.views;
+
+                  }
+                  return prevObj;
+              },0) 
+          }
           title={'views'}
           color={'#662CDC33'}
         />
@@ -104,7 +114,6 @@ function Sidebar2() {
 }
 
 function Graph() {
-    console.log("ran");
   const [graph, setGraph] = useState({
     categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999],
     data: [30, 40, 45, 50, 49, 60, 70, 91],
@@ -119,7 +128,7 @@ function Graph() {
       refetchOnWindowFocus:false,
       select:(data)=> data?.data
   })
- console.log(data);
+ 
 
   return (
     <div className="row2">
@@ -200,7 +209,15 @@ function Graph() {
               }}
               className="box"
             >
-              3.4K
+             {
+                  data?.reduce((prevObj,nextObj)=>{
+                    if(nextObj.views){
+                        return prevObj + nextObj.views;
+  
+                    }
+                    return prevObj;
+                  },0)
+             }
             </div>
           </div>
           <div className="title">Total Views</div>
