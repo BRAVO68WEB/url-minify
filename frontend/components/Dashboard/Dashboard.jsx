@@ -63,19 +63,22 @@ function Sidebar1() {
 
 function Sidebar2() {
 
-    const context = useContext(UserAuth)
-    function fetchTotalUserLinks(){
-        return axios.get(`http://localhost:5000/minify/all/user`,{
-            headers:{Authorization:`Bearer ${context?.jwt}`}
-        })
+ 
+
+
+
+
+    function fetchTotalLinks(){
+        return axios.get(`http://localhost:5000/minify/all`)
     }
-    
   
-    const {data} = useQuery("totalUserLinks",()=>fetchTotalUserLinks(),{
+  
+    const {data} = useQuery("totalLinks",()=>fetchTotalLinks(),{
         refetchOnWindowFocus:false,
         select:(data)=> data?.data
     })
-
+    console.log();
+    console.log(new Date(new Date() - 1814400000) );
     
   return (
     <div className="sidebar2">
@@ -99,7 +102,17 @@ function Sidebar2() {
         />
         <Card
           icon={'/icons/link.svg'}
-          value={data?.length}
+
+          //* links that have been click on at least once in 3week will be counted here
+          value={data?.filter((obj)=>{
+              const {updatedAt} = obj;
+
+              if((new Date() - new Date(updatedAt)) <1814400000 )
+              {
+                  return obj;
+              }
+
+          }).length}
           title={'Links active'}
           color={'rgba(67, 191, 214, 0.2)'}
         />
@@ -119,15 +132,20 @@ function Graph() {
     data: [30, 40, 45, 50, 49, 60, 70, 91],
   })
 
-  function fetchTotalLinks(){
-      return axios.get(`http://localhost:5000/minify/all`)
+
+  const context = useContext(UserAuth)
+  function fetchTotalUserLinks(){
+      return axios.get(`http://localhost:5000/minify/all/user`,{
+          headers:{Authorization:`Bearer ${context?.jwt}`}
+      })
   }
+  
 
-
-  const {data} = useQuery("totalLinks",()=>fetchTotalLinks(),{
+  const {data} = useQuery("totalUserLinks",()=>fetchTotalUserLinks(),{
       refetchOnWindowFocus:false,
       select:(data)=> data?.data
   })
+
  
 
   return (
@@ -210,6 +228,7 @@ function Graph() {
               className="box"
             >
              {
+                 //* tota views from all links from logged in user
                   data?.reduce((prevObj,nextObj)=>{
                     if(nextObj.views){
                         return prevObj + nextObj.views;
