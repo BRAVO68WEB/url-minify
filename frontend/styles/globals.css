@@ -33,6 +33,9 @@ section {
   background-position: center;
   background-size: cover;
 }
+.dark-bg{
+  background-color: #27292b;
+}
 .main-bg {
   background-image: url('./../assets/bg/main-bg.png');
   background-repeat: no-repeat;

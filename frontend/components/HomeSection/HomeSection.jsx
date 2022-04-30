@@ -167,7 +167,7 @@ function HomeSection(props) {
           </Button></ThemeProvider>
         </motion.div>
 
-        <div className={styles.info} style={{ marginBottom: '40px', color: 'black', fontWeight: 'bold', fontSize: '1rem' }}>
+        <div className={styles.info} style={{ marginBottom: '40px', color: 'white', fontWeight: 'bold', fontSize: '1rem' }}>
           <motion.h3 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0, transition: { delay: 3.4, duration: 0.4 } }}>
             Need more advanced features? |{' '}
             <Link href="/signup">

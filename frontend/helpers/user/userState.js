@@ -23,6 +23,13 @@ const fetchJWT = () => {
 }
 
 const UserAuthProvider = ({ children }) => {
+   const handleLightMode = () => {
+    setMode('dark')
+  }
+  const handleDarkMode = () => {
+    setMode('light')
+  }
+  const [mode,setMode] = useState('light')
   const [user, setUser] = useState(null)
   const [jwt, setJwt] = useState(null)
   const login = async ({ email, password }) => {
@@ -87,7 +94,7 @@ const UserAuthProvider = ({ children }) => {
     setJwt(null)
     storeJWT(null)
   }
-  const context = { jwt, user, login, logout, createAcc }
+  const context = { jwt, user, mode, login, logout, createAcc, handleLightMode, handleDarkMode }
   useEffect(() => {
     let jwt = fetchJWT()
     if (jwt) {
