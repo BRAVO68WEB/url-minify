@@ -13,6 +13,8 @@ import {
   Typography,
   alpha,
 } from '@mui/material'
+import LightModeIcon from '@mui/icons-material/LightMode'
+import DarkModeIcon from '@mui/icons-material/DarkMode'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import MenuIcon from '@mui/icons-material/Menu'
 import NavbarStyle from './Navbar.style'
@@ -21,11 +23,11 @@ import UserAuth, { UserContext } from 'helpers/user/usercontext'
 import Link from 'next/link'
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout']
 import NotFound from '@pages/404'
-
-function Index(props) {
+function Index() {
+  //IMP
+  // const [mode, handleLightMode, handleDarkMode] = useContext(UserAuth)
   const [anchorElNav, setAnchorElNav] = React.useState(null)
   const [anchorElUser, setAnchorElUser] = React.useState(null)
-
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget)
   }
@@ -40,8 +42,7 @@ function Index(props) {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null)
   }
-
-  const { user, login, logout } = useContext(UserAuth)
+  const { user, login, logout, mode, handleLightMode, handleDarkMode } = useContext(UserAuth)
 
   return (
     <NavbarStyle
@@ -132,6 +133,7 @@ function Index(props) {
                   </a>
                 </Link>
               </MenuItem>
+
             </Menu>
           </Box>
 
@@ -187,7 +189,6 @@ function Index(props) {
               </Button>
             </a>
           </Box>
-
           {user ? (
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title="Open settings">
@@ -240,7 +241,22 @@ function Index(props) {
               <Link href="./login">LOGIN</Link>
             </Typography>
           )}
+        <Box sx={{
+        width: 20,
+        marginLeft: 3,
+        display: 'flex',
+        cursor: 'pointer'
+      }}    
+            >
+              {
+              mode === 'light' ? 
+              <div onClick={handleLightMode}><DarkModeIcon/></div> 
+            : <div onClick={handleDarkMode}><LightModeIcon/></div>
+            }
+
+            </Box>
         </Toolbar>
+        
       </Container>
     </NavbarStyle>
   )
