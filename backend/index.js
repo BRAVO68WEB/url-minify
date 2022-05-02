@@ -11,7 +11,9 @@ const app = express()
 
 app.use(express.json())
 app.use(
-   cors()
+   cors({
+    origin: 'https://minfy.xyz'
+ })
 )
 
 app.use(json())
