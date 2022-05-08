@@ -8,7 +8,7 @@ import MenuOpenIcon from '@mui/icons-material/MenuOpen'
 import CloseIcon from '@mui/icons-material/Close'
 import { Close } from '@mui/icons-material'
 import {useQueries,useQuery} from "react-query"
-import axios from "axios"
+import Axios from 'helpers/Axios'
 import {QueryClientProvider,QueryClient} from "react-query"
 import { ReactQueryDevtools } from 'react-query/devtools'
 import UserAuth from 'helpers/user/usercontext'
@@ -69,7 +69,8 @@ function Sidebar2() {
 
 
     function fetchTotalLinks(){
-        return axios.get(`http://localhost:5000/minify/all`)
+    
+        return Axios.get(`/minify/all`)
     }
   
   
@@ -135,7 +136,7 @@ function Graph() {
 
   const context = useContext(UserAuth)
   function fetchTotalUserLinks(){
-      return axios.get(`http://localhost:5000/minify/all/user`,{
+      return Axios.get(`/minify/all/user`,{
           headers:{Authorization:`Bearer ${context?.jwt}`}
       })
   }
