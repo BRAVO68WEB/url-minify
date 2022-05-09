@@ -34,7 +34,7 @@ const minifiedUrlSchema = new Schema(
          OC: { type: Number, default: 0 },
       },
    },
-   { timestamp: true }
+   { timestamps:{createdAt :"created_at"} }
 )
 //make a model using this schema and export it
 module.exports = mongoose.model('minified_url_model', minifiedUrlSchema)

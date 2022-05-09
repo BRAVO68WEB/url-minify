@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useEffect, useState,useContext} from "react";
 import DashboardStyle from "./Dashboard.style";
 import Card from "./Card";
 import dynamic from 'next/dynamic';
@@ -7,6 +7,11 @@ import Link from 'next/link'
 import MenuOpenIcon from '@mui/icons-material/MenuOpen'
 import CloseIcon from '@mui/icons-material/Close'
 import { Close } from '@mui/icons-material'
+import {useQueries,useQuery} from "react-query"
+import Axios from 'helpers/Axios'
+import {QueryClientProvider,QueryClient} from "react-query"
+import { ReactQueryDevtools } from 'react-query/devtools'
+import UserAuth from 'helpers/user/usercontext'
 
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false })
 
@@ -57,6 +62,25 @@ function Sidebar1() {
 }
 
 function Sidebar2() {
+
+ 
+
+
+
+
+    function fetchTotalLinks(){
+    
+        return Axios.get(`/minify/all`)
+    }
+  
+  
+    const {data} = useQuery("totalLinks",()=>fetchTotalLinks(),{
+        refetchOnWindowFocus:false,
+        select:(data)=> data?.data
+    })
+    console.log();
+    console.log(new Date(new Date() - 1814400000) );
+    
   return (
     <div className="sidebar2">
       <MenuOpenIcon className="hamburger_icon" onClick={toggleSidebar1} />
@@ -65,13 +89,31 @@ function Sidebar2() {
       <div className="row">
         <Card
           icon={'/icons/eye.svg'}
-          value={4000}
+          value={
+              data?.reduce((prevObj,nextObj)=>{
+                  if(nextObj.views){
+                      return prevObj + nextObj.views;
+
+                  }
+                  return prevObj;
+              },0) 
+          }
           title={'views'}
           color={'#662CDC33'}
         />
         <Card
           icon={'/icons/link.svg'}
-          value={220}
+
+          //* links that have been click on at least once in 3week will be counted here
+          value={data?.filter((obj)=>{
+              const {updatedAt} = obj;
+
+              if((new Date() - new Date(updatedAt)) <1814400000 )
+              {
+                  return obj;
+              }
+
+          }).length}
           title={'Links active'}
           color={'rgba(67, 191, 214, 0.2)'}
         />
@@ -90,6 +132,23 @@ function Graph() {
     categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999],
     data: [30, 40, 45, 50, 49, 60, 70, 91],
   })
+
+
+  const context = useContext(UserAuth)
+  function fetchTotalUserLinks(){
+      return Axios.get(`/minify/all/user`,{
+          headers:{Authorization:`Bearer ${context?.jwt}`}
+      })
+  }
+  
+
+  const {data} = useQuery("totalUserLinks",()=>fetchTotalUserLinks(),{
+      refetchOnWindowFocus:false,
+      select:(data)=> data?.data
+  })
+
+ 
+
   return (
     <div className="row2">
       <div className="graph">
@@ -154,7 +213,7 @@ function Graph() {
               }}
               className="box"
             >
-              120
+              {data?.length}
             </div>
           </div>
           <div className="title">Links Generated</div>
@@ -169,7 +228,16 @@ function Graph() {
               }}
               className="box"
             >
-              3.4k
+             {
+                 //* tota views from all links from logged in user
+                  data?.reduce((prevObj,nextObj)=>{
+                    if(nextObj.views){
+                        return prevObj + nextObj.views;
+  
+                    }
+                    return prevObj;
+                  },0)
+             }
             </div>
           </div>
           <div className="title">Total Views</div>
@@ -181,14 +249,19 @@ function Graph() {
 }
 
 function App() {
+
+    const queryClient = new QueryClient();
   return (
-    <DashboardStyle>
-      <Sidebar1 />
-      <div className="main">
-        <Sidebar2 />
-        <Graph />
-      </div>
-    </DashboardStyle>
+      <QueryClientProvider client={queryClient}>
+          <ReactQueryDevtools />
+          <DashboardStyle>
+              <Sidebar1 />
+              <div className="main">
+                  <Sidebar2 />
+                  <Graph />
+              </div>
+          </DashboardStyle>
+      </QueryClientProvider>
   )
 }
 

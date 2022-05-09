@@ -36,6 +36,7 @@ function verifyAlias(alias) {
 module.exports.getAllData = async (req, res) => {
    Minfy.find({})
       .then((data) => {
+        
          res.json(data)
       })
       .catch((err) => {
