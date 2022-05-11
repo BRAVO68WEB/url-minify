@@ -49,13 +49,13 @@ const UserAuthProvider = ({ children }) => {
       })
     return login
   }
-  const createAcc = async ({ email, password, name }) => {
+  const createAcc = async ({ email, password, username }) => {
     let register = true
     await axios
       .post(`/user/register`, {
         email: email,
         password: password,
-        name: name,
+        name: username,
       })
       .then(function (response) {
         console.log(response)
@@ -80,6 +80,7 @@ const UserAuthProvider = ({ children }) => {
       url: '/user/me',
     })
       .then((user) => {
+          console.log(user);
         setUser(user.data)
       })
       .catch((err) => {
@@ -94,7 +95,7 @@ const UserAuthProvider = ({ children }) => {
     setJwt(null)
     storeJWT(null)
   }
-  const context = { jwt, user, mode, login, logout, createAcc, handleLightMode, handleDarkMode }
+  const context = { jwt, user, mode, login, logout, createAcc, handleLightMode, handleDarkMode,fetchUser }
   useEffect(() => {
     let jwt = fetchJWT()
     if (jwt) {

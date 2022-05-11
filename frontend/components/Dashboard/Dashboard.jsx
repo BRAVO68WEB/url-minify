@@ -27,6 +27,9 @@ function changePageContent(e){
 }
 
 function Sidebar1() {
+
+    const {user:{name,email}} = useContext(UserAuth)
+    
   return (
     <div className="sidebar">
       <CloseIcon className="close_icon" onClick={toggleSidebar1} />
@@ -39,8 +42,8 @@ function Sidebar1() {
           <div className="profile-image">
             <img src="https://png.pngtree.com/png-vector/20190307/ourlarge/pngtree-vector-edit-profile-icon-png-image_760869.jpg" />
           </div>
-          <p className="name">Hayat</p>
-          <p className="profession">Product Designer</p>
+          <p className="name">{name}</p>
+          <p className="profession">{email}</p>
         </div>
         <div className="creatButton">
           <button>Create Link</button>
