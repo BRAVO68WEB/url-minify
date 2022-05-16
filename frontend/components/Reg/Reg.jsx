@@ -11,7 +11,7 @@ function Reg() {
   const router = useRouter()
   const context = useContext(UserAuth)
   const [userData, setUserData] = useState({
-    username: '',
+    name: '',
     email: '',
     password: '',
     repassword: '',
@@ -45,10 +45,10 @@ function Reg() {
           </div>
           <input
             className="reg-input"
-            name="username"
+            name="name"
             autoComplete="off"
             type="text"
-            value={userData.username}
+            value={userData.name}
             onChange={handleInput}
             placeholder="Full Name"
           />

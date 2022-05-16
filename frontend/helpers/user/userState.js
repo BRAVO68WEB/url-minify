@@ -49,13 +49,13 @@ const UserAuthProvider = ({ children }) => {
       })
     return login
   }
-  const createAcc = async ({ email, password, username }) => {
+  const createAcc = async ({ email, password, name }) => {
     let register = true
     await axios
       .post(`/user/register`, {
         email: email,
         password: password,
-        name: username,
+        name: name,
       })
       .then(function (response) {
         console.log(response)
