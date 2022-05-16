@@ -36,7 +36,7 @@ function Sidebar1() {
 
       <ul>
         <div className="nav-item mb-2 brand-name">
-          <h1>Brand Name</h1>
+          <h1>URL Minify</h1>
         </div>
         <div className="profile">
           <div className="profile-image">
