@@ -2,14 +2,14 @@ const User = require('../models/user')
 const { customAlphabet } = require('nanoid')
 const nanoid = customAlphabet('1234567890abcdefghijklmnopqrstuvwxyz', 25)
 
-module.exports.register = async ({ body: { email, password } }, res) => {
+module.exports.register = async ({ body: { email, password,name } }, res) => {
    try {
       if (!email || !password) return res.sendStatus(400)
       let oldUser = await User.findOne({ email }).catch((err) => {
          console.error(err)
       })
       if (oldUser) return res.status(400).send('Already Exists')
-      let user = new User({ email })
+      let user = new User({ email,name })
       user.setPassword(password)
       let validationError = false
       await user.save().catch((err) => {

@@ -80,6 +80,7 @@ const UserAuthProvider = ({ children }) => {
       url: '/user/me',
     })
       .then((user) => {
+          console.log(user);
         setUser(user.data)
       })
       .catch((err) => {
@@ -94,7 +95,7 @@ const UserAuthProvider = ({ children }) => {
     setJwt(null)
     storeJWT(null)
   }
-  const context = { jwt, user, mode, login, logout, createAcc, handleLightMode, handleDarkMode }
+  const context = { jwt, user, mode, login, logout, createAcc, handleLightMode, handleDarkMode,fetchUser }
   useEffect(() => {
     let jwt = fetchJWT()
     if (jwt) {

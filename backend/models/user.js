@@ -51,6 +51,7 @@ UsersSchema.methods.generateJWT = function () {
 
    return jwt.sign(
       {
+        name : this.name,
          email: this.email,
          hash: this.hash,
          id: this._id,
