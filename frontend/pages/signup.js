@@ -8,11 +8,14 @@ import UserAuth, { UserContext } from '../helpers/user/usercontext'
 
 export default function signup() {
   const { mode } = useContext(UserAuth)
-  return (
-    <div className={mode == 'light' ? 'flex-column' : 'dark-bg'}>
-      <NavBar />
-      <Reg />
-      <Footer />
-    </div>
-  )
+  return <>
+  
+  <div className={mode == 'light' ? 'flex-column' : 'dark-bg'}>
+    <NavBar />
+    <Reg />
+    <Footer />
+  </div>
+
+ 
+  </>
 }
