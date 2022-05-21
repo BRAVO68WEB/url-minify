@@ -32,6 +32,12 @@ const UserAuthProvider = ({ children }) => {
   const [mode,setMode] = useState('light')
   const [user, setUser] = useState(null)
   const [jwt, setJwt] = useState(null)
+  const [showPopUp,setPopUp] = useState(false)
+
+  const popupHandler = (bool)=>{
+    setPopUp(bool)
+  }
+
   const login = async ({ email, password }) => {
     let login = true
     await axios
@@ -95,7 +101,7 @@ const UserAuthProvider = ({ children }) => {
     setJwt(null)
     storeJWT(null)
   }
-  const context = { jwt, user, mode, login, logout, createAcc, handleLightMode, handleDarkMode,fetchUser }
+  const context = { jwt, user, mode, login, logout, createAcc, handleLightMode, handleDarkMode,fetchUser,popupHandler,showPopUp }
   useEffect(() => {
     let jwt = fetchJWT()
     if (jwt) {

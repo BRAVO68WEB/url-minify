@@ -9,6 +9,9 @@ import Link from 'next/link'
 import { useContext } from 'react'
 import { useRouter } from 'next/router'
 
+import {PopupMain} from "../Pop_up/Popup.jsx"
+import style from "../../styles/popup_style.module.css"
+
 function Login() {
   const router = useRouter()
   const user = useContext(UserContext)
@@ -24,18 +27,31 @@ function Login() {
     setUserData({ ...userData, [name]: value })
   }
 
-  const handleLogin = (evt) => {
+  const handleLogin =async (evt) => {
     evt.preventDefault()
-    user.login(userData)
+   await user.login(userData)
+    user.popupHandler(true)
   }
 
   // disable submit button is any input has not been filled
   const disabledSubmitBtn = Object.values(userData).some((val) => val === '')
 
   if (user.user) {
-    router.push('/dashboard')
+   
+        setTimeout(() => {
+            router.push('/dashboard')
+        }, 4400);
   }
-  return (
+  return <>
+
+      <div className={style["container-modal-main"]}>
+          {
+              (user.showPopUp) ? (user.user) ? <PopupMain message="Successfully Logged In" mode="accept" /> :
+                  <PopupMain message="Invalid Credentials" mode="error" /> : ""
+          }
+
+      </div>
+  
     <LoginStyle>
       <form className="form-wrapper" onSubmit={handleLogin}>
         <p className="reg-title">Sign in</p>
@@ -88,6 +104,7 @@ function Login() {
         </p>
       </form>
     </LoginStyle>
-  )
+  </>
+  
 }
 export default Login

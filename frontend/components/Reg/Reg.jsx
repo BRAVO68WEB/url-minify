@@ -6,6 +6,8 @@ import { useState, useContext } from 'react'
 import { Link } from '@mui/material'
 import UserAuth from 'helpers/user/usercontext'
 import { useRouter } from 'next/router'
+import {PopupMain} from "../Pop_up/Popup.jsx"
+import style from "../../styles/popup_style.module.css"
 
 function Reg() {
   const router = useRouter()
@@ -16,25 +18,39 @@ function Reg() {
     password: '',
     repassword: '',
   })
+  
 
   const handleInput = (event) => {
     const name = event.target.name
     const value = event.target.value
     setUserData({ ...userData, [name]: value })
   }
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setUserData(userData)
-    context.createAcc(userData)
+    await context.createAcc(userData)
+    context.popupHandler(true) //* state change to spwan a popUp
   }
 
   // disable submit button is any input has not been filled
   const disabledSubmitBtn = Object.values(userData).some((val) => val === '')
 
-  if (context.user) {
-    router.push('/dashboard')
+  if (context.user ) {
+     
+        setTimeout(() => {
+            router.push('/dashboard')
+        }, 4400);
   }
-  return (
+  return <>
+  
+      <div className={style["container-modal-main"]}>
+          {
+              (context.showPopUp) ? (context.user) ? <PopupMain message="Successfully Registered" mode="accept" /> :
+                  <PopupMain message="Invalid Credentials" mode="error" /> : ""
+          }
+      
+    </div>
+    
     <RegStyle>
       <form onSubmit={handleSubmit} className="form-wrapper">
         <p className="reg-title">Sign Up</p>
@@ -115,6 +131,9 @@ function Reg() {
         </p>
       </form>
     </RegStyle>
-  )
+    
+  </>
+    
+  
 }
 export default Reg
