@@ -1,7 +1,7 @@
 <h1 align="center">Welcome to url-minify 👋</h1>
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-13-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-26-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 <a href="LICENSE" target="_blank">
@@ -108,7 +108,7 @@ Contributions, issues and feature requests are welcome! Feel free to check the [
 
 ## 🎡 Participations
 
-#### Current:
+#### Past:
 
 <table>
   <tr>
