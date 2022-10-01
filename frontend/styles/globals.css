@@ -34,7 +34,10 @@ section {
   background-size: cover;
 }
 .dark-bg{
-  background-color: #27292b;
+  background-image: url('./../assets/bg/main-bg-dark.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .main-bg {
   background-image: url('./../assets/bg/main-bg.png');
